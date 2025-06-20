@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Ideal Waddle - Server List & Komentar</title>
+  <title>Ideal Waddle - List Server Minecraft</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -31,25 +31,117 @@
       color: #fff;
       opacity: 0.9;
     }
-    .container {
-      max-width: 900px;
-      margin: 32px auto;
-      padding: 28px 20px 38px 20px;
-      background: rgba(15,23,42,0.8);
-      border-radius: 16px;
-      box-shadow: 0 6px 32px rgba(10,0,40,0.3);
-    }
-    .cta {
+    .promo {
+      margin: 32px auto 0 auto;
       background: linear-gradient(90deg, #d90429 0%, #7c3aed 100%);
       color: #fff;
       font-size: 1.2rem;
       font-weight: bold;
+      border-radius: 12px;
+      padding: 18px 32px;
+      max-width: 700px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(124,58,237,0.18);
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      animation: promoGrow 1.2s cubic-bezier(.67,-0.12,.32,1.09);
+    }
+    @keyframes promoGrow {
+      from { transform: scale(0.98);}
+      to   { transform: scale(1);}
+    }
+    .container {
+      max-width: 900px;
+      margin: 18px auto 36px auto;
+      padding: 20px 12px 32px 12px;
+      background: rgba(15,23,42,0.86);
+      border-radius: 16px;
+      box-shadow: 0 6px 32px rgba(10,0,40,0.22);
+    }
+    h2 {
+      margin-top: 0;
+      color: #fff;
+      letter-spacing: 1px;
+      text-shadow: 0 1px 6px #7c3aed;
+    }
+    /* Server Card */
+    .server-card {
+      background: rgba(124, 58, 237, 0.10);
+      border-radius: 12px;
+      margin-bottom: 36px;
+      box-shadow: 0 2px 16px rgba(15,23,42,0.10);
+      padding: 26px 20px 18px 20px;
+      position: relative;
+    }
+    .server-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .server-name {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #d90429;
+      text-shadow: 0 1px 6px #7c3aed;
+    }
+    .server-status.online {
+      color: #49ff49;
+      font-weight: bold;
+      font-size: 1.08rem;
+      margin-left: 12px;
+    }
+    .server-status.offline {
+      color: #ff4949;
+      font-weight: bold;
+      font-size: 1.08rem;
+      margin-left: 12px;
+    }
+    .server-desc {
+      margin: 14px 0 10px 0;
+      color: #e0e6f7;
+      font-size: 1.08rem;
+    }
+    .server-ip-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(15,23,42,0.78);
+      padding: 9px 14px;
+      border-radius: 7px;
+      width: fit-content;
+      margin-bottom: 12px;
+      font-size: 1.12rem;
+      user-select: all;
+    }
+    .copy-btn {
+      background: #7c3aed;
+      color: #fff;
       border: none;
-      border-radius: 8px;
-      padding: 16px 32px;
+      border-radius: 5px;
+      padding: 4px 13px;
+      margin-left: 4px;
+      font-size: 0.99rem;
+      font-weight: 600;
       cursor: pointer;
-      margin: 28px 0 32px 0;
-      box-shadow: 0 2px 12px rgba(124,58,237,0.25);
+      transition: background 0.2s;
+      box-shadow: 0 1px 3px #0f172a44;
+    }
+    .copy-btn:active, .copy-btn.copied {
+      background: #d90429;
+    }
+    .cta {
+      background: linear-gradient(90deg, #d90429 0%, #7c3aed 100%);
+      color: #fff;
+      font-size: 1.08rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 7px;
+      padding: 12px 30px;
+      cursor: pointer;
+      margin: 15px 0 12px 0;
+      box-shadow: 0 2px 12px rgba(124,58,237,0.21);
       transition: background 0.3s;
       display: block;
       width: 100%;
@@ -59,52 +151,21 @@
     .cta:hover {
       background: linear-gradient(90deg, #7c3aed 0%, #d90429 100%);
     }
-    h2 {
-      margin-top: 0;
-      color: #fff;
-      letter-spacing: 1px;
-      text-shadow: 0 1px 6px #7c3aed;
-    }
-    /* Server List Styles */
-    .server-list {
-      margin: 24px 0 36px 0;
-      list-style: none;
-      padding: 0;
-    }
-    .server-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(124, 58, 237, 0.13);
-      border-radius: 8px;
-      padding: 12px 22px;
-      margin-bottom: 14px;
-      font-size: 1.13rem;
-      box-shadow: 0 1px 5px rgba(15,23,42,0.08);
-    }
-    .server-status.online {
-      color: #49ff49;
-      font-weight: bold;
-    }
-    .server-status.offline {
-      color: #ff4949;
-      font-weight: bold;
-    }
     /* Komentar Styles */
     .comments-section {
-      margin-top: 30px;
+      margin-top: 12px;
     }
     .comment-list {
-      margin: 0;
+      margin: 0 0 6px 0;
       padding: 0;
       list-style: none;
     }
     .comment-item {
       background: rgba(255,255,255,0.09);
-      margin-bottom: 18px;
-      border-radius: 10px;
-      padding: 14px 18px 10px 18px;
-      box-shadow: 0 1px 5px rgba(15,23,42,0.09);
+      margin-bottom: 9px;
+      border-radius: 8px;
+      padding: 10px 14px 7px 14px;
+      box-shadow: 0 1px 4px rgba(15,23,42,0.09);
     }
     .comment-user {
       font-weight: bold;
@@ -112,22 +173,22 @@
     }
     .comment-stars {
       color: gold;
-      font-size: 1.08em;
+      font-size: 1.05em;
     }
     .comment-text {
-      margin: 6px 0 0 0;
+      margin: 4px 0 0 0;
       color: #e0e6f7;
     }
     /* Form Styles */
     .comment-form {
-      margin-top: 18px;
-      background: rgba(15,23,42,0.6);
-      padding: 18px 14px;
-      border-radius: 10px;
-      box-shadow: 0 1px 8px rgba(124,58,237,0.18);
+      margin-top: 9px;
+      background: rgba(15,23,42,0.65);
+      padding: 13px 8px 7px 8px;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(124,58,237,0.12);
     }
     .form-row {
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -136,13 +197,14 @@
       flex: 0 0 70px;
       color: #fff;
       font-weight: 500;
+      font-size: 0.96rem;
     }
     .form-row input, .form-row textarea {
       flex: 1 1 0%;
       border: none;
       border-radius: 6px;
-      padding: 8px;
-      font-size: 1rem;
+      padding: 7px;
+      font-size: 0.99rem;
       background: #181c2b;
       color: #fff;
       outline: none;
@@ -154,7 +216,7 @@
       cursor: pointer;
     }
     .star-rating span {
-      font-size: 1.2em;
+      font-size: 1.17em;
       color: #888;
       transition: color 0.2s;
     }
@@ -165,139 +227,194 @@
       background: linear-gradient(90deg, #d90429 0%, #7c3aed 100%);
       color: #fff;
       border: none;
-      padding: 10px 22px;
+      padding: 8px 18px;
       border-radius: 6px;
       font-weight: bold;
       cursor: pointer;
+      font-size: 1rem;
       transition: background 0.3s;
+      margin-top: 5px;
     }
     .comment-form button:hover {
       background: linear-gradient(90deg, #7c3aed 0%, #d90429 100%);
     }
     @media (max-width: 700px) {
       .container {
-        padding: 14px 4vw;
+        padding: 10px 1vw;
       }
-      .server-item {
-        flex-direction: column;
-        gap: 6px;
-        align-items: flex-start;
-      }
+      .promo { padding: 8px 3vw; }
+      .server-card { padding: 13px 5px 8px 5px; }
+      .server-header { flex-direction: column; gap: 3px;}
+      .server-name { font-size: 1.12rem; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">Ideal Waddle Gaming</div>
-    <div class="subtitle">Temukan Server & Main Bersama!</div>
+    <div class="subtitle">List Server Minecraft Indonesia</div>
   </header>
-  <div class="container">
-    <h2>Server Aktif</h2>
-    <ul class="server-list" id="serverList">
-      <!-- Diisi dengan JS -->
-    </ul>
-    <a class="cta" href="#">Ayo, Gabung & Mulai Bermain Sekarang!</a>
-
-    <div class="comments-section">
-      <h2>Komentar & Pendapat Pemain</h2>
-      <ul class="comment-list" id="commentList">
-        <!-- Diisi dengan JS -->
-      </ul>
-      <form class="comment-form" id="commentForm" autocomplete="off">
-        <div class="form-row">
-          <label for="user">Nama</label>
-          <input type="text" id="user" required placeholder="Nama Anda" maxlength="20">
-        </div>
-        <div class="form-row">
-          <label>Rating</label>
-          <div class="star-rating" id="starRating">
-            <span data-star="1">&#9733;</span>
-            <span data-star="2">&#9733;</span>
-            <span data-star="3">&#9733;</span>
-            <span data-star="4">&#9733;</span>
-            <span data-star="5">&#9733;</span>
-          </div>
-        </div>
-        <div class="form-row">
-          <label for="comment">Komentar</label>
-          <textarea id="comment" rows="2" required maxlength="120" placeholder="Tuliskan pendapatmu..."></textarea>
-        </div>
-        <button type="submit">Kirim</button>
-      </form>
-    </div>
+  <div class="promo">
+    Pasang servermu dan buat ramai servermu sekarang juga !
+  </div>
+  <div class="container" id="serversContainer">
+    <!-- Server list with comments rendered by JS -->
   </div>
   <script>
-    // Data server (bisa diganti dari backend)
+    // Data server
     const servers = [
-      { name: "IDWaddle Main", ip: "192.168.1.101:25565", status: "online" },
-      { name: "IDWaddle Adventure", ip: "192.168.1.102:25565", status: "offline" },
-      { name: "IDWaddle MiniGames", ip: "192.168.1.103:25565", status: "online" },
-      { name: "IDWaddle Survival", ip: "192.168.1.104:25565", status: "online" }
+      {
+        name: "IDWaddle Survival",
+        ip: "play.idwaddle.com:25565",
+        desc: "Server survival premium dengan fitur ekonomi, claim tanah, & event mingguan.",
+        status: "online",
+        comments: [
+          { user: "Rafi", stars: 5, text: "Asik banget, staffnya ramah!" },
+          { user: "Maya", stars: 4, text: "Main bareng temen makin seru di sini." }
+        ]
+      },
+      {
+        name: "IDWaddle Adventure",
+        ip: "adventure.idwaddle.com:25575",
+        desc: "Server petualangan dengan quest, boss, dan hadiah menarik tiap minggu.",
+        status: "online",
+        comments: [
+          { user: "Doni", stars: 4, text: "Questnya seru dan menantang!" }
+        ]
+      },
+      {
+        name: "IDWaddle MiniGames",
+        ip: "minigames.idwaddle.com:26666",
+        desc: "Aneka minigame seru seperti bedwars, skywars, spleef, parkour, dan lainnya.",
+        status: "offline",
+        comments: [
+          { user: "Sinta", stars: 3, text: "Sering rame, tapi kadang lag." }
+        ]
+      }
     ];
-    // Render server list
-    const serverList = document.getElementById('serverList');
-    servers.forEach(srv => {
-      const li = document.createElement('li');
-      li.className = "server-item";
-      li.innerHTML = `<span><strong>${srv.name}</strong><br><small>${srv.ip}</small></span>
-        <span class="server-status ${srv.status}">${srv.status.toUpperCase()}</span>`;
-      serverList.appendChild(li);
-    });
 
-    // Data komentar awal
-    let comments = [
-      { user: "Budi", stars: 5, text: "Servernya seru, staff ramah!" },
-      { user: "Desi", stars: 4, text: "Banyak event menarik, recommended!" },
-      { user: "Roni", stars: 3, text: "Lumayan, tapi kadang lag." }
-    ];
-    // Render komentar
-    function renderComments() {
-      const commentList = document.getElementById('commentList');
+    // HTML escape (for safe rendering user input)
+    function escapeHTML(str) {
+      return (str+"").replace(/[<>"'&]/g, s => ({
+        '<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','&':'&amp;'
+      })[s]);
+    }
+
+    // Render all servers
+    function renderServers() {
+      const container = document.getElementById('serversContainer');
+      container.innerHTML = '';
+      servers.forEach((srv, idx) => {
+        const card = document.createElement('div');
+        card.className = "server-card";
+        card.innerHTML = `
+          <div class="server-header">
+            <span class="server-name">${escapeHTML(srv.name)}</span>
+            <span class="server-status ${srv.status}">${srv.status.toUpperCase()}</span>
+          </div>
+          <div class="server-desc">${escapeHTML(srv.desc)}</div>
+          <div class="server-ip-box">
+            <span id="ip-${idx}">${escapeHTML(srv.ip)}</span>
+            <button class="copy-btn" data-idx="${idx}" title="Salin IP & Port">Salin</button>
+          </div>
+          <button class="cta" onclick="window.open('minecraft://?addExternalServer=${encodeURIComponent(srv.name)}|${srv.ip}','_self')">Main di server ini</button>
+          <div class="comments-section" id="comments-section-${idx}">
+            <h3 style="margin-bottom:7px;font-size:1.04rem;">Komentar & Rating</h3>
+            <ul class="comment-list" id="commentList-${idx}">
+              <!-- List komentar -->
+            </ul>
+            <form class="comment-form" id="commentForm-${idx}" autocomplete="off">
+              <div class="form-row">
+                <label for="user-${idx}">Nama</label>
+                <input type="text" id="user-${idx}" required placeholder="Nama Anda" maxlength="20">
+              </div>
+              <div class="form-row">
+                <label>Rating</label>
+                <div class="star-rating" id="starRating-${idx}">
+                  <span data-star="1">&#9733;</span>
+                  <span data-star="2">&#9733;</span>
+                  <span data-star="3">&#9733;</span>
+                  <span data-star="4">&#9733;</span>
+                  <span data-star="5">&#9733;</span>
+                </div>
+              </div>
+              <div class="form-row">
+                <label for="comment-${idx}">Komentar</label>
+                <textarea id="comment-${idx}" rows="2" required maxlength="120" placeholder="Tuliskan pendapatmu..."></textarea>
+              </div>
+              <button type="submit">Kirim</button>
+            </form>
+          </div>
+        `;
+        container.appendChild(card);
+
+        // Komentar per server
+        renderComments(idx);
+
+        // Star rating logic per form
+        let selectedStars = 5;
+        const starEls = card.querySelectorAll(`#starRating-${idx} span`);
+        function highlightStars(n) {
+          starEls.forEach((el, i) => {
+            el.classList.toggle('active', i < n);
+          });
+        }
+        starEls.forEach((el, i) => {
+          el.addEventListener('mouseenter', () => highlightStars(i+1));
+          el.addEventListener('mouseleave', () => highlightStars(selectedStars));
+          el.addEventListener('click', () => {
+            selectedStars = i+1;
+            highlightStars(selectedStars);
+          });
+        });
+        highlightStars(selectedStars);
+
+        // Form komentar submit per server
+        card.querySelector(`#commentForm-${idx}`).addEventListener('submit', function(e) {
+          e.preventDefault();
+          const user = card.querySelector(`#user-${idx}`).value.trim();
+          const comment = card.querySelector(`#comment-${idx}`).value.trim();
+          if (!user || !comment) return;
+          servers[idx].comments.push({ user: escapeHTML(user), stars: selectedStars, text: escapeHTML(comment) });
+          renderComments(idx);
+          this.reset();
+          selectedStars = 5;
+          highlightStars(selectedStars);
+        });
+
+        // Copy IP Button
+        card.querySelector(".copy-btn").addEventListener('click', function() {
+          navigator.clipboard.writeText(srv.ip).then(() => {
+            this.textContent = "Disalin!";
+            this.classList.add('copied');
+            setTimeout(() => {
+              this.textContent = "Salin";
+              this.classList.remove('copied');
+            }, 1200);
+          });
+        });
+      });
+    }
+
+    // Render komentar untuk server tertentu
+    function renderComments(idx) {
+      const commentList = document.getElementById(`commentList-${idx}`);
+      if (!commentList) return;
       commentList.innerHTML = '';
-      comments.slice().reverse().forEach(c => {
+      servers[idx].comments.slice().reverse().forEach(c => {
         const li = document.createElement('li');
         li.className = "comment-item";
         li.innerHTML = `
-          <div class="comment-user">${c.user} 
+          <div class="comment-user">${escapeHTML(c.user)} 
             <span class="comment-stars">${'&#9733;'.repeat(c.stars)}${'&#9734;'.repeat(5-c.stars)}</span>
           </div>
-          <div class="comment-text">${c.text}</div>
+          <div class="comment-text">${escapeHTML(c.text)}</div>
         `;
         commentList.appendChild(li);
       });
     }
-    renderComments();
 
-    // Star rating interaktif
-    let selectedStars = 5;
-    const starEls = document.querySelectorAll('#starRating span');
-    function highlightStars(n) {
-      starEls.forEach((el, i) => {
-        el.classList.toggle('active', i < n);
-      });
-    }
-    starEls.forEach((el, idx) => {
-      el.addEventListener('mouseenter', () => highlightStars(idx+1));
-      el.addEventListener('mouseleave', () => highlightStars(selectedStars));
-      el.addEventListener('click', () => {
-        selectedStars = idx+1;
-        highlightStars(selectedStars);
-      });
-    });
-    highlightStars(selectedStars);
-
-    // Handle form komentar
-    document.getElementById('commentForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const user = document.getElementById('user').value.trim();
-      const comment = document.getElementById('comment').value.trim();
-      if (!user || !comment) return;
-      comments.push({ user, stars: selectedStars, text: comment });
-      renderComments();
-      this.reset();
-      selectedStars = 5;
-      highlightStars(selectedStars);
-    });
+    renderServers();
   </script>
 </body>
 </html>
