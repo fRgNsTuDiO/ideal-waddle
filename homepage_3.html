@@ -1,108 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Ideal Waddle Gaming</title>
+  <title>Ideal Waddle - Server List & Komentar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Gradient background: red → purple → dark blue */
     body {
       margin: 0;
-      min-height: 100vh;
       font-family: 'Segoe UI', Arial, sans-serif;
       background: linear-gradient(135deg, #d90429 0%, #7c3aed 50%, #0f172a 100%);
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
+      min-height: 100vh;
     }
     header {
-      width: 100%;
-      background: rgba(15, 23, 42, 0.7); /* dark blue overlay */
-      padding: 36px 0 18px 0;
+      background: rgba(15, 23, 42, 0.85);
+      padding: 28px 0 16px 0;
       text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
     .logo {
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       font-weight: bold;
-      letter-spacing: 2px;
       color: #d90429;
-      text-shadow: 0 2px 16px #7c3aed, 0 6px 40px #0f172a;
-      margin-bottom: 10px;
+      letter-spacing: 3px;
+      text-shadow: 0 2px 14px #7c3aed, 0 8px 32px #0f172a;
     }
     .subtitle {
-      font-size: 1.2rem;
+      margin-top: 6px;
+      font-size: 1.15rem;
       color: #fff;
-      opacity: 0.88;
-      margin-bottom: 0;
+      opacity: 0.9;
     }
-    nav {
-      margin: 30px 0 10px 0;
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-    }
-    nav a {
-      color: #fff;
-      background: rgba(124, 58, 237, 0.7);
-      text-decoration: none;
-      padding: 12px 26px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      border-radius: 6px;
-      transition: background 0.3s, color 0.3s;
-      box-shadow: 0 2px 8px rgba(15,23,42,0.2);
-    }
-    nav a:hover {
-      background: #d90429;
-      color: #fff;
-    }
-    .main {
-      max-width: 540px;
-      margin: 48px auto 0 auto;
+    .container {
+      max-width: 900px;
+      margin: 32px auto;
+      padding: 28px 20px 38px 20px;
       background: rgba(15,23,42,0.8);
-      border-radius: 18px;
-      box-shadow: 0 8px 40px rgba(15,23,42,0.6);
-      padding: 38px 30px;
-      text-align: center;
+      border-radius: 16px;
+      box-shadow: 0 6px 32px rgba(10,0,40,0.3);
     }
-    .main h2 {
-      font-size: 2rem;
+    .cta {
+      background: linear-gradient(90deg, #d90429 0%, #7c3aed 100%);
       color: #fff;
-      margin-bottom: 16px;
-      text-shadow: 0 1px 8px #7c3aed;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      padding: 16px 32px;
+      cursor: pointer;
+      margin: 28px 0 32px 0;
+      box-shadow: 0 2px 12px rgba(124,58,237,0.25);
+      transition: background 0.3s;
+      display: block;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
     }
-    .main p {
-      font-size: 1.1rem;
+    .cta:hover {
+      background: linear-gradient(90deg, #7c3aed 0%, #d90429 100%);
+    }
+    h2 {
+      margin-top: 0;
+      color: #fff;
+      letter-spacing: 1px;
+      text-shadow: 0 1px 6px #7c3aed;
+    }
+    /* Server List Styles */
+    .server-list {
+      margin: 24px 0 36px 0;
+      list-style: none;
+      padding: 0;
+    }
+    .server-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(124, 58, 237, 0.13);
+      border-radius: 8px;
+      padding: 12px 22px;
+      margin-bottom: 14px;
+      font-size: 1.13rem;
+      box-shadow: 0 1px 5px rgba(15,23,42,0.08);
+    }
+    .server-status.online {
+      color: #49ff49;
+      font-weight: bold;
+    }
+    .server-status.offline {
+      color: #ff4949;
+      font-weight: bold;
+    }
+    /* Komentar Styles */
+    .comments-section {
+      margin-top: 30px;
+    }
+    .comment-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .comment-item {
+      background: rgba(255,255,255,0.09);
+      margin-bottom: 18px;
+      border-radius: 10px;
+      padding: 14px 18px 10px 18px;
+      box-shadow: 0 1px 5px rgba(15,23,42,0.09);
+    }
+    .comment-user {
+      font-weight: bold;
+      color: #7c3aed;
+    }
+    .comment-stars {
+      color: gold;
+      font-size: 1.08em;
+    }
+    .comment-text {
+      margin: 6px 0 0 0;
       color: #e0e6f7;
-      margin-bottom: 28px;
     }
-    .cta-btn {
+    /* Form Styles */
+    .comment-form {
+      margin-top: 18px;
+      background: rgba(15,23,42,0.6);
+      padding: 18px 14px;
+      border-radius: 10px;
+      box-shadow: 0 1px 8px rgba(124,58,237,0.18);
+    }
+    .form-row {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .form-row label {
+      flex: 0 0 70px;
+      color: #fff;
+      font-weight: 500;
+    }
+    .form-row input, .form-row textarea {
+      flex: 1 1 0%;
+      border: none;
+      border-radius: 6px;
+      padding: 8px;
+      font-size: 1rem;
+      background: #181c2b;
+      color: #fff;
+      outline: none;
+      resize: vertical;
+    }
+    .star-rating {
+      display: flex;
+      gap: 2px;
+      cursor: pointer;
+    }
+    .star-rating span {
+      font-size: 1.2em;
+      color: #888;
+      transition: color 0.2s;
+    }
+    .star-rating .active {
+      color: gold;
+    }
+    .comment-form button {
       background: linear-gradient(90deg, #d90429 0%, #7c3aed 100%);
       color: #fff;
       border: none;
-      border-radius: 8px;
-      padding: 16px 36px;
-      font-size: 1.1rem;
-      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 2px 12px rgba(124,58,237,0.4);
       transition: background 0.3s;
-      text-decoration: none;
-      display: inline-block;
     }
-    .cta-btn:hover {
+    .comment-form button:hover {
       background: linear-gradient(90deg, #7c3aed 0%, #d90429 100%);
     }
-    @media (max-width: 600px) {
-      .main {
-        padding: 24px 8px;
+    @media (max-width: 700px) {
+      .container {
+        padding: 14px 4vw;
       }
-      nav {
+      .server-item {
         flex-direction: column;
-        gap: 12px;
+        gap: 6px;
+        align-items: flex-start;
       }
     }
   </style>
@@ -110,22 +189,115 @@
 <body>
   <header>
     <div class="logo">Ideal Waddle Gaming</div>
-    <div class="subtitle">Level Up Your Adventure</div>
+    <div class="subtitle">Temukan Server & Main Bersama!</div>
   </header>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Games</a>
-    <a href="#">News</a>
-    <a href="#">Community</a>
-    <a href="#">Contact</a>
-  </nav>
-  <section class="main">
-    <h2>Welcome to Ideal Waddle!</h2>
-    <p>
-      Your ultimate gaming universe—discover epic titles, join tournaments, and connect with passionate gamers.  
-      Dive in, explore new worlds, and unleash your inner champion!
-    </p>
-    <a href="#" class="cta-btn">Start Your Quest</a>
-  </section>
+  <div class="container">
+    <h2>Server Aktif</h2>
+    <ul class="server-list" id="serverList">
+      <!-- Diisi dengan JS -->
+    </ul>
+    <a class="cta" href="#">Ayo, Gabung & Mulai Bermain Sekarang!</a>
+
+    <div class="comments-section">
+      <h2>Komentar & Pendapat Pemain</h2>
+      <ul class="comment-list" id="commentList">
+        <!-- Diisi dengan JS -->
+      </ul>
+      <form class="comment-form" id="commentForm" autocomplete="off">
+        <div class="form-row">
+          <label for="user">Nama</label>
+          <input type="text" id="user" required placeholder="Nama Anda" maxlength="20">
+        </div>
+        <div class="form-row">
+          <label>Rating</label>
+          <div class="star-rating" id="starRating">
+            <span data-star="1">&#9733;</span>
+            <span data-star="2">&#9733;</span>
+            <span data-star="3">&#9733;</span>
+            <span data-star="4">&#9733;</span>
+            <span data-star="5">&#9733;</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="comment">Komentar</label>
+          <textarea id="comment" rows="2" required maxlength="120" placeholder="Tuliskan pendapatmu..."></textarea>
+        </div>
+        <button type="submit">Kirim</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    // Data server (bisa diganti dari backend)
+    const servers = [
+      { name: "IDWaddle Main", ip: "192.168.1.101:25565", status: "online" },
+      { name: "IDWaddle Adventure", ip: "192.168.1.102:25565", status: "offline" },
+      { name: "IDWaddle MiniGames", ip: "192.168.1.103:25565", status: "online" },
+      { name: "IDWaddle Survival", ip: "192.168.1.104:25565", status: "online" }
+    ];
+    // Render server list
+    const serverList = document.getElementById('serverList');
+    servers.forEach(srv => {
+      const li = document.createElement('li');
+      li.className = "server-item";
+      li.innerHTML = `<span><strong>${srv.name}</strong><br><small>${srv.ip}</small></span>
+        <span class="server-status ${srv.status}">${srv.status.toUpperCase()}</span>`;
+      serverList.appendChild(li);
+    });
+
+    // Data komentar awal
+    let comments = [
+      { user: "Budi", stars: 5, text: "Servernya seru, staff ramah!" },
+      { user: "Desi", stars: 4, text: "Banyak event menarik, recommended!" },
+      { user: "Roni", stars: 3, text: "Lumayan, tapi kadang lag." }
+    ];
+    // Render komentar
+    function renderComments() {
+      const commentList = document.getElementById('commentList');
+      commentList.innerHTML = '';
+      comments.slice().reverse().forEach(c => {
+        const li = document.createElement('li');
+        li.className = "comment-item";
+        li.innerHTML = `
+          <div class="comment-user">${c.user} 
+            <span class="comment-stars">${'&#9733;'.repeat(c.stars)}${'&#9734;'.repeat(5-c.stars)}</span>
+          </div>
+          <div class="comment-text">${c.text}</div>
+        `;
+        commentList.appendChild(li);
+      });
+    }
+    renderComments();
+
+    // Star rating interaktif
+    let selectedStars = 5;
+    const starEls = document.querySelectorAll('#starRating span');
+    function highlightStars(n) {
+      starEls.forEach((el, i) => {
+        el.classList.toggle('active', i < n);
+      });
+    }
+    starEls.forEach((el, idx) => {
+      el.addEventListener('mouseenter', () => highlightStars(idx+1));
+      el.addEventListener('mouseleave', () => highlightStars(selectedStars));
+      el.addEventListener('click', () => {
+        selectedStars = idx+1;
+        highlightStars(selectedStars);
+      });
+    });
+    highlightStars(selectedStars);
+
+    // Handle form komentar
+    document.getElementById('commentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = document.getElementById('user').value.trim();
+      const comment = document.getElementById('comment').value.trim();
+      if (!user || !comment) return;
+      comments.push({ user, stars: selectedStars, text: comment });
+      renderComments();
+      this.reset();
+      selectedStars = 5;
+      highlightStars(selectedStars);
+    });
+  </script>
 </body>
 </html>
