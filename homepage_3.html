@@ -8,28 +8,28 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #d90429 0%, #7c3aed 50%, #0f172a 100%);
-      color: #fff;
+      background: #fff;
+      color: #232323;
       min-height: 100vh;
     }
     header {
-      background: rgba(15, 23, 42, 0.85);
+      background: #f4f4fc;
       padding: 28px 0 16px 0;
       text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
     .logo {
       font-size: 2.6rem;
       font-weight: bold;
       color: #d90429;
       letter-spacing: 3px;
-      text-shadow: 0 2px 14px #7c3aed, 0 8px 32px #0f172a;
+      text-shadow: 0 2px 14px #f5e5ff, 0 8px 32px #b1a7f3;
     }
     .subtitle {
       margin-top: 6px;
       font-size: 1.15rem;
-      color: #fff;
-      opacity: 0.9;
+      color: #333;
+      opacity: 0.86;
     }
     .promo {
       margin: 32px auto 0 auto;
@@ -41,7 +41,7 @@
       padding: 18px 32px;
       max-width: 700px;
       text-align: center;
-      box-shadow: 0 2px 12px rgba(124,58,237,0.18);
+      box-shadow: 0 2px 12px rgba(124,58,237,0.11);
       letter-spacing: 1px;
       margin-bottom: 20px;
       animation: promoGrow 1.2s cubic-bezier(.67,-0.12,.32,1.09);
@@ -54,24 +54,25 @@
       max-width: 900px;
       margin: 18px auto 36px auto;
       padding: 20px 12px 32px 12px;
-      background: rgba(15,23,42,0.86);
+      background: #fff;
       border-radius: 16px;
-      box-shadow: 0 6px 32px rgba(10,0,40,0.22);
+      box-shadow: 0 6px 32px rgba(10,0,40,0.07);
     }
     h2 {
       margin-top: 0;
-      color: #fff;
+      color: #232323;
       letter-spacing: 1px;
-      text-shadow: 0 1px 6px #7c3aed;
+      text-shadow: 0 1px 6px #f4ebfe;
     }
     /* Server Card */
     .server-card {
-      background: rgba(124, 58, 237, 0.10);
+      background: #f7f5fb;
       border-radius: 12px;
       margin-bottom: 36px;
-      box-shadow: 0 2px 16px rgba(15,23,42,0.10);
+      box-shadow: 0 2px 12px rgba(124, 58, 237, 0.04);
       padding: 26px 20px 18px 20px;
       position: relative;
+      border: 1px solid #eceefe;
     }
     .server-header {
       display: flex;
@@ -84,10 +85,10 @@
       font-size: 1.4rem;
       font-weight: bold;
       color: #d90429;
-      text-shadow: 0 1px 6px #7c3aed;
+      text-shadow: 0 1px 6px #f5e5ff;
     }
     .server-status.online {
-      color: #49ff49;
+      color: #38be3c;
       font-weight: bold;
       font-size: 1.08rem;
       margin-left: 12px;
@@ -100,20 +101,22 @@
     }
     .server-desc {
       margin: 14px 0 10px 0;
-      color: #e0e6f7;
+      color: #232323;
       font-size: 1.08rem;
+      opacity: 0.92;
     }
     .server-ip-box {
       display: flex;
       align-items: center;
       gap: 10px;
-      background: rgba(15,23,42,0.78);
+      background: #efecf8;
       padding: 9px 14px;
       border-radius: 7px;
       width: fit-content;
       margin-bottom: 12px;
       font-size: 1.12rem;
       user-select: all;
+      border: 1px solid #e1d7f1;
     }
     .copy-btn {
       background: #7c3aed;
@@ -126,7 +129,7 @@
       font-weight: 600;
       cursor: pointer;
       transition: background 0.2s;
-      box-shadow: 0 1px 3px #0f172a44;
+      box-shadow: 0 1px 3px #0f172a1a;
     }
     .copy-btn:active, .copy-btn.copied {
       background: #d90429;
@@ -141,7 +144,7 @@
       padding: 12px 30px;
       cursor: pointer;
       margin: 15px 0 12px 0;
-      box-shadow: 0 2px 12px rgba(124,58,237,0.21);
+      box-shadow: 0 2px 12px rgba(124,58,237,0.09);
       transition: background 0.3s;
       display: block;
       width: 100%;
@@ -161,31 +164,35 @@
       list-style: none;
     }
     .comment-item {
-      background: rgba(255,255,255,0.09);
+      background: #f2f1f6;
       margin-bottom: 9px;
       border-radius: 8px;
       padding: 10px 14px 7px 14px;
-      box-shadow: 0 1px 4px rgba(15,23,42,0.09);
+      box-shadow: 0 1px 4px #d5cdf3;
+      border: 1px solid #e7e0fa;
     }
     .comment-user {
       font-weight: bold;
       color: #7c3aed;
     }
     .comment-stars {
-      color: gold;
+      color: #ffd700;
       font-size: 1.05em;
+      letter-spacing: 0.5px;
     }
     .comment-text {
       margin: 4px 0 0 0;
-      color: #e0e6f7;
+      color: #232323;
+      opacity: 0.95;
     }
     /* Form Styles */
     .comment-form {
       margin-top: 9px;
-      background: rgba(15,23,42,0.65);
+      background: #f7f5fb;
       padding: 13px 8px 7px 8px;
       border-radius: 8px;
-      box-shadow: 0 1px 5px rgba(124,58,237,0.12);
+      box-shadow: 0 1px 5px #e8e2f7;
+      border: 1px solid #eceefe;
     }
     .form-row {
       margin-bottom: 8px;
@@ -195,18 +202,18 @@
     }
     .form-row label {
       flex: 0 0 70px;
-      color: #fff;
+      color: #232323;
       font-weight: 500;
       font-size: 0.96rem;
     }
     .form-row input, .form-row textarea {
       flex: 1 1 0%;
-      border: none;
+      border: 1px solid #e1d7f1;
       border-radius: 6px;
       padding: 7px;
       font-size: 0.99rem;
-      background: #181c2b;
-      color: #fff;
+      background: #fff;
+      color: #232323;
       outline: none;
       resize: vertical;
     }
@@ -217,11 +224,11 @@
     }
     .star-rating span {
       font-size: 1.17em;
-      color: #888;
+      color: #bdbdbd;
       transition: color 0.2s;
     }
     .star-rating .active {
-      color: gold;
+      color: #ffd700;
     }
     .comment-form button {
       background: linear-gradient(90deg, #d90429 0%, #7c3aed 100%);
@@ -293,14 +300,13 @@
       }
     ];
 
-    // HTML escape (for safe rendering user input)
+    // HTML escape
     function escapeHTML(str) {
       return (str+"").replace(/[<>"'&]/g, s => ({
         '<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','&':'&amp;'
       })[s]);
     }
 
-    // Render all servers
     function renderServers() {
       const container = document.getElementById('serversContainer');
       container.innerHTML = '';
