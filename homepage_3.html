@@ -2,420 +2,126 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Daftar Server Minecraft - Ideal Waddle</title>
+  <title>Kami Akan Hadir ! Untuk Anda !</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
+    html, body {
       margin: 0;
-      background: #fff;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      color: #232323;
-    }
-    h1 {
-      text-align: center;
-      margin: 54px 0 32px 0;
-      color: #7c3aed;
-      letter-spacing: 2.5px;
-      text-shadow: 0 4px 32px #e1d7f1;
-      font-size: 3.6rem;
-      font-weight: 900;
-      font-family: 'Segoe UI', Arial, sans-serif;
-    }
-    .server-list {
-      max-width: 900px;
-      margin: 0 auto 44px auto;
-      padding: 0 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-    .server-box {
-      background: rgba(24,24,27,0.80);
-      border-radius: 18px;
-      box-shadow: 0 4px 32px #1111;
-      padding: 38px 26px 28px 26px;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      position: relative;
-      overflow: hidden;
-      border: 2px solid #222;
-    }
-    /* Unik Judul tiap Server */
-    .server-title-0 {
-      font-size: 2.7rem;
-      font-weight: bold;
-      color: #ffce00;
-      text-shadow: 0 3px 12px #7c3aed88;
-      font-family: 'Russo One', Arial, sans-serif;
-      letter-spacing: 2px;
-      margin-bottom: 4px;
-      background: linear-gradient(90deg, #ffce00 40%, #ff2e63 80%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .server-title-1 {
-      font-size: 3.1rem;
-      font-weight: 900;
-      color: #00eaff;
-      font-family: 'Orbitron', Arial, sans-serif;
-      letter-spacing: 3px;
-      margin-bottom: 4px;
-      text-shadow: 2px 2px 18px #ff2e6388, 0 0 12px #00eaff55;
-    }
-    .server-title-2 {
-      font-size: 2.2rem;
-      font-weight: bold;
-      color: #ff2e63;
-      font-family: 'Pacifico', cursive, Arial, sans-serif;
-      letter-spacing: 1.5px;
-      margin-bottom: 4px;
-      text-shadow: 0 2px 18px #00eaffbb, 0 0 10px #ffce0099;
-      transform: rotate(-2deg);
-      display: inline-block;
-    }
-    .server-desc {
-      font-size: 0.97rem;
-      color: #ececec;
-      margin-bottom: 12px;
-      line-height: 1.6;
-      margin-top: 4px;
-      text-align: justify;
-      opacity: 0.88;
-    }
-    .server-ip-box {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: #232323;
-      padding: 10px 18px;
-      border-radius: 7px;
-      font-size: 1.08rem;
-      user-select: all;
-      font-family: 'Courier New', monospace;
-      margin-bottom: 7px;
-      border: 1px solid #363636;
-    }
-    .copy-btn {
-      background: #7c3aed;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      padding: 4px 11px;
-      margin-left: 5px;
-      font-size: 0.97rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-      box-shadow: 0 1px 3px #0f172a1a;
-    }
-    .copy-btn:active, .copy-btn.copied {
-      background: #ff2e63;
-    }
-    .rating-box {
-      margin: 11px 0 0 0;
-      font-size: 1.15rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .stars {
-      display: flex;
-      gap: 1px;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    .stars span {
-      color: #ffd700;
-      opacity: 0.60;
-      transition: opacity 0.18s;
-    }
-    .stars .active {
-      opacity: 1;
-    }
-    .stars .disabled {
-      cursor: default;
-      opacity: 0.29 !important;
-    }
-    .rating-label {
-      margin-left: 8px;
-      color: #fff;
-      font-size: 1.03rem;
-      opacity: 0.82;
-    }
-    /* Komentar */
-    .comment-section {
-      margin-top: 17px;
-      background: rgba(21,21,23,0.88);
-      border-radius: 8px;
-      padding: 13px 11px 10px 11px;
-      color: #fff;
-      border: 1px solid #292929;
-      box-shadow: 0 2px 8px #0f172a15;
-    }
-    .comment-list {
-      list-style: none;
       padding: 0;
-      margin: 0 0 7px 0;
+      height: 100%;
+      background: #fff;
+      color: #222;
+      font-family: 'Segoe UI', Arial, sans-serif;
     }
-    .comment-item {
-      margin-bottom: 7px;
-      border-bottom: 1px dashed #363636;
-      padding-bottom: 4px;
-      font-size: 0.99rem;
-    }
-    .comment-item:last-child { border-bottom: none; }
-    .comment-user {
-      font-weight: bold;
-      color: #7c3aed;
-      font-size: 0.97rem;
-      margin-right: 5px;
-    }
-    .comment-stars {
-      color: #ffd700;
-      font-size: 1.04em;
-      letter-spacing: 0.4px;
-    }
-    .comment-text {
-      color: #e1e1e1;
-      margin-left: 3px;
-    }
-    .comment-form {
-      margin-top: 6px;
+    body {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
-    .comment-form input, .comment-form textarea {
-      border-radius: 5px;
-      border: 1px solid #363636;
-      padding: 6px;
-      background: #222;
-      color: #fff;
-      font-size: 0.97rem;
-      margin-bottom: 2px;
+    .title {
+      font-size: 3.2rem;
+      font-weight: bold;
+      color: #7c3aed;
+      margin-top: 60px;
+      letter-spacing: 2px;
+    }
+    .subtitle {
+      color: #ff2e63;
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+      margin-top: 12px;
+    }
+    .coming-soon {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
+    .countdown {
+      font-size: 2.1rem;
+      color: #222;
+      font-weight: 700;
+      margin: 0 0 36px 0;
+      letter-spacing: 2px;
+    }
+    .newsletter-form {
+      margin: 0 auto 68px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      max-width: 320px;
+    }
+    .newsletter-form input[type="email"] {
+      padding: 10px 18px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1.08rem;
+      width: 100%;
+      box-sizing: border-box;
       outline: none;
-      resize: vertical;
     }
-    .comment-form textarea { min-height: 30px; }
-    .comment-form button {
+    .newsletter-form button {
       background: linear-gradient(90deg, #7c3aed 0%, #ff2e63 100%);
       color: #fff;
-      padding: 7px 16px;
-      font-weight: bold;
       border: none;
       border-radius: 8px;
-      font-size: 0.97rem;
+      padding: 10px 18px;
+      font-size: 1.08rem;
+      font-weight: bold;
       cursor: pointer;
       margin-top: 3px;
-      align-self: flex-end;
       transition: background 0.2s;
+      width: 100%;
     }
-    .comment-form button:hover {
+    .newsletter-form button:hover {
       background: linear-gradient(90deg, #ff2e63 0%, #7c3aed 100%);
     }
-    /* Bagian bawah promosi */
-    .promo-bottom {
-      margin: 48px auto 0 auto;
-      max-width: 700px;
+    .footer {
+      position: fixed;
+      bottom: 12px;
+      width: 100vw;
+      color: #999;
+      font-size: 1rem;
       text-align: center;
-      font-size: 1.28rem;
-      font-weight: bold;
-      background: linear-gradient(90deg, #7c3aed 0%, #ff2e63 100%);
-      color: #fff;
-      border-radius: 27px;
-      padding: 18px 17px 18px 17px;
-      letter-spacing: 1.1px;
-      box-shadow: 0 3px 28px #7c3aed33;
-      border: 2px solid #ff2e63;
-      animation: promoGrow 1.2s cubic-bezier(.67,-0.12,.32,1.09);
+      letter-spacing: 1px;
+      opacity: 0.86;
     }
-    @keyframes promoGrow {
-      from { transform: scale(0.95);}
-      to   { transform: scale(1);}
+    @media (max-width: 600px) {
+      .title { font-size: 2rem; }
+      .coming-soon { font-size: 1.1rem; }
+      .countdown { font-size: 1.2rem; }
     }
-    @media (max-width: 700px) {
-      .server-list { gap: 22px; }
-      .server-box { padding: 17px 4vw 12px 4vw; }
-      h1 { font-size: 2.1rem; }
-      .promo-bottom { font-size: 0.96rem; padding: 13px 5vw;}
-      .server-title-0, .server-title-1, .server-title-2 { font-size: 1.45rem !important; }
-    }
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Russo+One&family=Pacifico&display=swap');
   </style>
 </head>
 <body>
-  <h1>Daftar Server Minecraft Rekomendasi Ideal Waddle</h1>
-  <div class="server-list" id="serverList"></div>
-  <div class="promo-bottom">
-    Ingin servermu tampil disini? <br>
-    <span style="font-size:1.17em;color:#ffce00;">Gas lah hub kami !</span>
-    <br>Wa <a href="https://wa.me/62882008612013" target="_blank" style="color:#00eaff;text-decoration:underline;">0882008612013</a>
-  </div>
+  <div class="title">Ideal Waddle</div>
+  <div class="subtitle">Gaming Website</div>
+  <div class="coming-soon">Website kami akan segera hadir!</div>
+  <div class="countdown" id="countdown">100 Hari 01:30:50</div>
+  <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Terima kasih! Kami akan kabari saat launching.'); this.reset();">
+    <input type="email" placeholder="Masukkan email untuk update" required>
+    <button type="submit">Dapatkan Notifikasi</button>
+  </form>
+  <div class="footer">&copy; 2025 Ideal Waddle. All rights reserved.</div>
   <script>
-    // Data server
-    const servers = [
-      {
-        name: "IDWaddle Survival",
-        styleClass: "server-title-0",
-        ip: "play.idwaddle.com:25565",
-        desc: "Selamat datang di IDWaddle Survival, server premium dengan pengalaman bertahan hidup yang autentik! Nikmati sistem ekonomi yang mendalam, claim tanah anti-grief, sistem klan, serta berbagai fitur unik seperti marketplace player, custom mob dan event mingguan dengan hadiah menarik. Komunitas yang aktif dan staff yang siap membantu, cocok untuk kamu yang suka tantangan dan membangun dunia bersama teman maupun solo. Bergabunglah dan jadikan petualangan survivalmu lebih seru di dunia IDWaddle!",
-        ratings: [5,5,4,4,5],
-        comments: [
-          {user:"Rafi", stars:5, text:"Server terbaik buat survival! Fitur dan eventnya keren, staff juga responsif."},
-          {user:"Maya", stars:4, text:"Komunitasnya asik, kadang ada lag tapi overall mantap!"},
-        ]
-      },
-      {
-        name: "IDWaddle Adventure",
-        styleClass: "server-title-1",
-        ip: "adventure.idwaddle.com:25575",
-        desc: "Ingin merasakan petualangan epik penuh misteri? IDWaddle Adventure menghadirkan eksplorasi dunia luas dengan quest harian, boss legendaris, dungeon menantang, serta sistem leveling dan skill yang inovatif. Setiap minggunya ada update konten dan treasure hunt berhadiah! Cocok untuk kamu yang suka tantangan dan kerja sama tim. Jangan ragu untuk membentuk party dan ukir namamu di Hall of Fame server ini!",
-        ratings: [5,4,4,4,5,4],
-        comments: [
-          {user:"Doni", stars:4, text:"Questnya bervariasi dan boss battle seru banget. Sering main ramean bareng guild."},
-        ]
-      },
-      {
-        name: "IDWaddle MiniGames",
-        styleClass: "server-title-2",
-        ip: "minigames.idwaddle.com:26666",
-        desc: "Kumpulan minigame paling lengkap di Indonesia! Mulai dari Bedwars, Skywars, Spleef, Parkour, hingga custom games eksklusif hanya di IDWaddle MiniGames. Server ini sering mengadakan turnamen dengan hadiah saldo dan rank premium. Dengan anticheat terbaru dan leaderboard mingguan, cocok buat kamu yang kompetitif maupun sekedar cari hiburan ringan bersama teman. Setiap kemenangan menambah poin yang bisa ditukar reward menarik!",
-        ratings: [4,4,4,3,5,4],
-        comments: [
-          {user:"Sinta", stars:4, text:"Pilihan minigamenya banyak, kadang crowd tapi seru!"},
-        ]
-      }
-    ];
-
-    // Render list server
-    function renderServers() {
-      const list = document.getElementById('serverList');
-      list.innerHTML = '';
-      servers.forEach((srv, idx) => {
-        const avgRating = (srv.ratings.reduce((a,b)=>a+b,0)/srv.ratings.length).toFixed(1);
-        const box = document.createElement('div');
-        box.className = 'server-box';
-        box.innerHTML = `
-          <div class="${srv.styleClass}">${srv.name}</div>
-          <div class="server-desc">${srv.desc}</div>
-          <div class="server-ip-box">
-            <span id="ip-${idx}">${srv.ip}</span>
-            <button class="copy-btn" data-idx="${idx}">Salin</button>
-          </div>
-          <div class="rating-box" id="rating-box-${idx}">
-            <span>Rating:</span>
-            <span class="stars" id="stars-${idx}">
-              <!-- Bintang -->
-            </span>
-            <span class="rating-label">(${avgRating} / 5)</span>
-            <span class="rating-user" id="rating-user-${idx}" style="margin-left:12px;"></span>
-          </div>
-          <div class="comment-section">
-            <ul class="comment-list" id="comment-list-${idx}">
-              <!-- Komentar -->
-            </ul>
-            <form class="comment-form" id="comment-form-${idx}">
-              <input type="text" id="user-${idx}" placeholder="Nama Anda" maxlength="16" required>
-              <textarea id="comment-${idx}" placeholder="Tulis komentarmu..." maxlength="110" required></textarea>
-              <button type="submit">Kirim</button>
-            </form>
-          </div>
-        `;
-        list.appendChild(box);
-
-        // Bintang rating tampilan & 1x vote
-        renderStars(`stars-${idx}`, avgRating, idx);
-
-        // Komentar awal
-        renderComments(idx);
-
-        // Form komentar
-        box.querySelector(`#comment-form-${idx}`).addEventListener('submit', function(e){
-          e.preventDefault();
-          const user = box.querySelector(`#user-${idx}`).value.trim();
-          const comment = box.querySelector(`#comment-${idx}`).value.trim();
-          if (!user || !comment) return;
-          srv.comments.push({user, stars:0, text:comment});
-          renderComments(idx);
-          this.reset();
-        });
-
-        // Copy IP
-        box.querySelector('.copy-btn').addEventListener('click', function(){
-          navigator.clipboard.writeText(srv.ip).then(()=>{
-            this.textContent = "Disalin!";
-            this.classList.add('copied');
-            setTimeout(()=>{
-              this.textContent = "Salin";
-              this.classList.remove('copied');
-            }, 1200);
-          });
-        });
-      });
+    // Set tanggal launching (misal: 1 Agustus 2025)
+    const launchDate = new Date("2025-08-01T00:00:00");
+    function updateCountdown() {
+      const now = new Date();
+      let diff = launchDate - now;
+      if (diff < 0) diff = 0;
+      const days = String(Math.floor(diff / (1000*60*60*24))).padStart(2,'0');
+      const hours = String(Math.floor((diff/(1000*60*60))%24)).padStart(2,'0');
+      const mins = String(Math.floor((diff/(1000*60))%60)).padStart(2,'0');
+      const secs = String(Math.floor((diff/1000)%60)).padStart(2,'0');
+      document.getElementById('countdown').textContent = `${days} Hari ${hours}:${mins}:${secs}`;
     }
-
-    // Render tampilan bintang rating (1x vote per browser)
-    function renderStars(id, value, idx) {
-      const starBox = document.getElementById(id);
-      let val = Math.round(Number(value));
-      if (val < 0) val = 0; if (val > 5) val = 5;
-      starBox.innerHTML = '';
-      // Cek localStorage untuk server idx
-      let voted = localStorage.getItem('server-rating-'+idx);
-      // Render bintang
-      for(let i=1;i<=5;i++){
-        const el = document.createElement('span');
-        el.innerHTML = '&#9733;';
-        if(i <= val) el.className = 'active';
-        if(!voted) el.style.cursor = 'pointer';
-        else el.classList.add('disabled');
-        // Voting hanya jika belum pernah
-        if(!voted){
-          el.addEventListener('mouseenter', ()=> {
-            for(let j=0;j<5;j++)
-              starBox.children[j].classList.toggle('active',j<i);
-          });
-          el.addEventListener('mouseleave', ()=> {
-            for(let j=0;j<5;j++)
-              starBox.children[j].classList.toggle('active',j<val);
-          });
-          el.addEventListener('click', ()=>{
-            servers[idx].ratings.push(i);
-            localStorage.setItem('server-rating-'+idx, i);
-            renderServers();
-          });
-        }
-        starBox.appendChild(el);
-      }
-      // Tampilkan pesan jika sudah vote
-      const userInfo = document.getElementById('rating-user-'+idx);
-      if (voted) {
-        userInfo.textContent = `Kamu sudah vote: ${voted} ⭐`;
-      } else {
-        userInfo.textContent = '';
-      }
-    }
-
-    // Render komentar
-    function renderComments(idx) {
-      const ul = document.getElementById(`comment-list-${idx}`);
-      ul.innerHTML = '';
-      servers[idx].comments.slice().reverse().forEach(c => {
-        const li = document.createElement('li');
-        li.className = "comment-item";
-        li.innerHTML = `
-          <span class="comment-user">${c.user}</span>
-          ${c.stars > 0 ? `<span class="comment-stars">${'&#9733;'.repeat(c.stars)}${'&#9734;'.repeat(5-c.stars)}</span>` : ''}
-          <span class="comment-text">${c.text}</span>
-        `;
-        ul.appendChild(li);
-      });
-    }
-
-    renderServers();
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
