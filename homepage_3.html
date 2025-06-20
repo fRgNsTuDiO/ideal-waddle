@@ -13,11 +13,13 @@
     }
     h1 {
       text-align: center;
-      margin: 38px 0 24px 0;
+      margin: 54px 0 32px 0;
       color: #7c3aed;
-      letter-spacing: 1.5px;
-      text-shadow: 0 3px 16px #e1d7f1;
-      font-size: 2.25rem;
+      letter-spacing: 2.5px;
+      text-shadow: 0 4px 32px #e1d7f1;
+      font-size: 3.6rem;
+      font-weight: 900;
+      font-family: 'Segoe UI', Arial, sans-serif;
     }
     .server-list {
       max-width: 900px;
@@ -28,10 +30,10 @@
       gap: 32px;
     }
     .server-box {
-      background: #18181b;
+      background: rgba(24,24,27,0.80);
       border-radius: 18px;
-      box-shadow: 0 4px 32px #1111  ;
-      padding: 36px 26px 28px 26px;
+      box-shadow: 0 4px 32px #1111;
+      padding: 38px 26px 28px 26px;
       color: #fff;
       display: flex;
       flex-direction: column;
@@ -42,44 +44,45 @@
     }
     /* Unik Judul tiap Server */
     .server-title-0 {
-      font-size: 1.8rem;
+      font-size: 2.7rem;
       font-weight: bold;
       color: #ffce00;
       text-shadow: 0 3px 12px #7c3aed88;
       font-family: 'Russo One', Arial, sans-serif;
       letter-spacing: 2px;
-      margin-bottom: 7px;
+      margin-bottom: 4px;
       background: linear-gradient(90deg, #ffce00 40%, #ff2e63 80%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .server-title-1 {
-      font-size: 2.1rem;
-      font-weight: 800;
+      font-size: 3.1rem;
+      font-weight: 900;
       color: #00eaff;
       font-family: 'Orbitron', Arial, sans-serif;
       letter-spacing: 3px;
-      margin-bottom: 7px;
+      margin-bottom: 4px;
       text-shadow: 2px 2px 18px #ff2e6388, 0 0 12px #00eaff55;
     }
     .server-title-2 {
-      font-size: 1.7rem;
+      font-size: 2.2rem;
       font-weight: bold;
       color: #ff2e63;
       font-family: 'Pacifico', cursive, Arial, sans-serif;
       letter-spacing: 1.5px;
-      margin-bottom: 7px;
+      margin-bottom: 4px;
       text-shadow: 0 2px 18px #00eaffbb, 0 0 10px #ffce0099;
       transform: rotate(-2deg);
       display: inline-block;
     }
     .server-desc {
-      font-size: 1.11rem;
+      font-size: 0.97rem;
       color: #ececec;
       margin-bottom: 12px;
-      line-height: 1.68;
-      margin-top: 8px;
+      line-height: 1.6;
+      margin-top: 4px;
       text-align: justify;
+      opacity: 0.88;
     }
     .server-ip-box {
       display: inline-flex;
@@ -112,35 +115,40 @@
     }
     .rating-box {
       margin: 11px 0 0 0;
-      font-size: 1.14rem;
+      font-size: 1.15rem;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      flex-wrap: wrap;
     }
     .stars {
       display: flex;
       gap: 1px;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       cursor: pointer;
     }
     .stars span {
       color: #ffd700;
-      opacity: 0.75;
-      transition: opacity 0.2s;
+      opacity: 0.60;
+      transition: opacity 0.18s;
     }
     .stars .active {
       opacity: 1;
     }
+    .stars .disabled {
+      cursor: default;
+      opacity: 0.29 !important;
+    }
     .rating-label {
       margin-left: 8px;
       color: #fff;
-      font-size: 0.98rem;
+      font-size: 1.03rem;
       opacity: 0.82;
     }
     /* Komentar */
     .comment-section {
       margin-top: 17px;
-      background: #151517;
+      background: rgba(21,21,23,0.88);
       border-radius: 8px;
       padding: 13px 11px 10px 11px;
       color: #fff;
@@ -213,7 +221,7 @@
       margin: 48px auto 0 auto;
       max-width: 700px;
       text-align: center;
-      font-size: 1.23rem;
+      font-size: 1.28rem;
       font-weight: bold;
       background: linear-gradient(90deg, #7c3aed 0%, #ff2e63 100%);
       color: #fff;
@@ -228,12 +236,12 @@
       from { transform: scale(0.95);}
       to   { transform: scale(1);}
     }
-    /* Responsive */
     @media (max-width: 700px) {
       .server-list { gap: 22px; }
-      .server-box { padding: 19px 7px 14px 7px; }
-      h1 { font-size: 1.4rem; }
-      .promo-bottom { font-size: 0.99rem; padding: 13px 5vw;}
+      .server-box { padding: 17px 4vw 12px 4vw; }
+      h1 { font-size: 2.1rem; }
+      .promo-bottom { font-size: 0.96rem; padding: 13px 5vw;}
+      .server-title-0, .server-title-1, .server-title-2 { font-size: 1.45rem !important; }
     }
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Russo+One&family=Pacifico&display=swap');
   </style>
@@ -254,7 +262,6 @@
         styleClass: "server-title-0",
         ip: "play.idwaddle.com:25565",
         desc: "Selamat datang di IDWaddle Survival, server premium dengan pengalaman bertahan hidup yang autentik! Nikmati sistem ekonomi yang mendalam, claim tanah anti-grief, sistem klan, serta berbagai fitur unik seperti marketplace player, custom mob dan event mingguan dengan hadiah menarik. Komunitas yang aktif dan staff yang siap membantu, cocok untuk kamu yang suka tantangan dan membangun dunia bersama teman maupun solo. Bergabunglah dan jadikan petualangan survivalmu lebih seru di dunia IDWaddle!",
-        rating: 4.7,
         ratings: [5,5,4,4,5],
         comments: [
           {user:"Rafi", stars:5, text:"Server terbaik buat survival! Fitur dan eventnya keren, staff juga responsif."},
@@ -266,7 +273,6 @@
         styleClass: "server-title-1",
         ip: "adventure.idwaddle.com:25575",
         desc: "Ingin merasakan petualangan epik penuh misteri? IDWaddle Adventure menghadirkan eksplorasi dunia luas dengan quest harian, boss legendaris, dungeon menantang, serta sistem leveling dan skill yang inovatif. Setiap minggunya ada update konten dan treasure hunt berhadiah! Cocok untuk kamu yang suka tantangan dan kerja sama tim. Jangan ragu untuk membentuk party dan ukir namamu di Hall of Fame server ini!",
-        rating: 4.4,
         ratings: [5,4,4,4,5,4],
         comments: [
           {user:"Doni", stars:4, text:"Questnya bervariasi dan boss battle seru banget. Sering main ramean bareng guild."},
@@ -277,7 +283,6 @@
         styleClass: "server-title-2",
         ip: "minigames.idwaddle.com:26666",
         desc: "Kumpulan minigame paling lengkap di Indonesia! Mulai dari Bedwars, Skywars, Spleef, Parkour, hingga custom games eksklusif hanya di IDWaddle MiniGames. Server ini sering mengadakan turnamen dengan hadiah saldo dan rank premium. Dengan anticheat terbaru dan leaderboard mingguan, cocok buat kamu yang kompetitif maupun sekedar cari hiburan ringan bersama teman. Setiap kemenangan menambah poin yang bisa ditukar reward menarik!",
-        rating: 4.0,
         ratings: [4,4,4,3,5,4],
         comments: [
           {user:"Sinta", stars:4, text:"Pilihan minigamenya banyak, kadang crowd tapi seru!"},
@@ -306,6 +311,7 @@
               <!-- Bintang -->
             </span>
             <span class="rating-label">(${avgRating} / 5)</span>
+            <span class="rating-user" id="rating-user-${idx}" style="margin-left:12px;"></span>
           </div>
           <div class="comment-section">
             <ul class="comment-list" id="comment-list-${idx}">
@@ -314,33 +320,14 @@
             <form class="comment-form" id="comment-form-${idx}">
               <input type="text" id="user-${idx}" placeholder="Nama Anda" maxlength="16" required>
               <textarea id="comment-${idx}" placeholder="Tulis komentarmu..." maxlength="110" required></textarea>
-              <div class="stars" id="input-stars-${idx}" style="margin-bottom:3px;">
-                ${[1,2,3,4,5].map(n=>`<span data-rate="${n}">&#9733;</span>`).join('')}
-              </div>
               <button type="submit">Kirim</button>
             </form>
           </div>
         `;
         list.appendChild(box);
 
-        // Bintang rating tampilan
-        renderStars(`stars-${idx}`, avgRating, false);
-
-        // Bintang input form
-        let selectedStars = 5;
-        const inputStars = box.querySelectorAll(`#input-stars-${idx} span`);
-        function highlightInputStars(n) {
-          inputStars.forEach((el, i) => el.classList.toggle('active', i < n));
-        }
-        inputStars.forEach((el, i) => {
-          el.addEventListener('mouseenter', () => highlightInputStars(i+1));
-          el.addEventListener('mouseleave', () => highlightInputStars(selectedStars));
-          el.addEventListener('click', () => {
-            selectedStars = i+1;
-            highlightInputStars(selectedStars);
-          });
-        });
-        highlightInputStars(selectedStars);
+        // Bintang rating tampilan & 1x vote
+        renderStars(`stars-${idx}`, avgRating, idx);
 
         // Komentar awal
         renderComments(idx);
@@ -351,13 +338,9 @@
           const user = box.querySelector(`#user-${idx}`).value.trim();
           const comment = box.querySelector(`#comment-${idx}`).value.trim();
           if (!user || !comment) return;
-          srv.comments.push({user, stars:selectedStars, text:comment});
-          srv.ratings.push(selectedStars);
+          srv.comments.push({user, stars:0, text:comment});
           renderComments(idx);
-          renderStars(`stars-${idx}`, (srv.ratings.reduce((a,b)=>a+b,0)/srv.ratings.length).toFixed(1), false);
           this.reset();
-          selectedStars = 5;
-          highlightInputStars(selectedStars);
         });
 
         // Copy IP
@@ -374,17 +357,45 @@
       });
     }
 
-    // Render tampilan bintang rating (read only)
-    function renderStars(id, value, interactive) {
+    // Render tampilan bintang rating (1x vote per browser)
+    function renderStars(id, value, idx) {
       const starBox = document.getElementById(id);
       let val = Math.round(Number(value));
       if (val < 0) val = 0; if (val > 5) val = 5;
       starBox.innerHTML = '';
+      // Cek localStorage untuk server idx
+      let voted = localStorage.getItem('server-rating-'+idx);
+      // Render bintang
       for(let i=1;i<=5;i++){
         const el = document.createElement('span');
         el.innerHTML = '&#9733;';
         if(i <= val) el.className = 'active';
+        if(!voted) el.style.cursor = 'pointer';
+        else el.classList.add('disabled');
+        // Voting hanya jika belum pernah
+        if(!voted){
+          el.addEventListener('mouseenter', ()=> {
+            for(let j=0;j<5;j++)
+              starBox.children[j].classList.toggle('active',j<i);
+          });
+          el.addEventListener('mouseleave', ()=> {
+            for(let j=0;j<5;j++)
+              starBox.children[j].classList.toggle('active',j<val);
+          });
+          el.addEventListener('click', ()=>{
+            servers[idx].ratings.push(i);
+            localStorage.setItem('server-rating-'+idx, i);
+            renderServers();
+          });
+        }
         starBox.appendChild(el);
+      }
+      // Tampilkan pesan jika sudah vote
+      const userInfo = document.getElementById('rating-user-'+idx);
+      if (voted) {
+        userInfo.textContent = `Kamu sudah vote: ${voted} ⭐`;
+      } else {
+        userInfo.textContent = '';
       }
     }
 
@@ -397,7 +408,7 @@
         li.className = "comment-item";
         li.innerHTML = `
           <span class="comment-user">${c.user}</span>
-          <span class="comment-stars">${'&#9733;'.repeat(c.stars)}${'&#9734;'.repeat(5-c.stars)}</span>
+          ${c.stars > 0 ? `<span class="comment-stars">${'&#9733;'.repeat(c.stars)}${'&#9734;'.repeat(5-c.stars)}</span>` : ''}
           <span class="comment-text">${c.text}</span>
         `;
         ul.appendChild(li);
