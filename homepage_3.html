@@ -1,127 +1,393 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Kami Akan Hadir ! Untuk Anda !</title>
+  <title>Minecraft Servers Indonesia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: #fff;
-      color: #222;
-      font-family: 'Segoe UI', Arial, sans-serif;
-    }
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    body { font-family: Arial, sans-serif; background: #f7f7fa; margin:0; color:#222;}
+    header {
+      background: #232323;
+      color: #fff;
+      padding: 24px 0 16px 0;
       text-align: center;
+      letter-spacing:2px;
+      font-size: 2.3rem;
+      font-weight:bold;
     }
-    .title {
-      font-size: 3.2rem;
-      font-weight: bold;
-      color: #7c3aed;
-      margin-top: 60px;
-      letter-spacing: 2px;
-    }
-    .subtitle {
-      color: #ff2e63;
-      font-size: 1.25rem;
-      margin-bottom: 30px;
-      margin-top: 12px;
-    }
-    .coming-soon {
-      font-size: 1.6rem;
-      font-weight: 500;
-      margin-bottom: 40px;
+    nav {
+      background: #313131;
+      color: #fff;
+      padding: 11px 0;
+      text-align: center;
+      font-size: 1.08rem;
       letter-spacing: 1px;
     }
-    .countdown {
-      font-size: 2.1rem;
-      color: #222;
-      font-weight: 700;
-      margin: 0 0 36px 0;
-      letter-spacing: 2px;
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: 500;
+      transition:.2s;
     }
-    .newsletter-form {
-      margin: 0 auto 68px auto;
+    nav a:hover { color: #ffce00; }
+    .container {
+      max-width: 1200px;
+      margin: 32px auto 24px auto;
+      background: #fff;
+      border-radius: 9px;
+      box-shadow: 0 2px 22px #aaa2;
+      padding: 24px 22px;
       display: flex;
-      flex-direction: column;
+      gap: 32px;
+    }
+    .sidebar {
+      min-width: 210px;
+      max-width: 220px;
+      background: #f2f2f9;
+      border-radius: 6px;
+      padding: 18px 12px;
+      border:1px solid #e0e0ea;
+      font-size:0.97rem;
+      height: fit-content;
+    }
+    .sidebar h3 {
+      font-size: 1.11rem;
+      color:#7c3aed;
+      margin-top:0;
+      margin-bottom:8px;
+    }
+    .sidebar label { display: block; margin: 7px 0;}
+    .sidebar select, .sidebar input[type="checkbox"] { margin-right: 8px;}
+    .sidebar .banner-ad {
+      margin: 14px 0 0 0;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      text-align:center;
+    }
+    .main {
+      flex:1;
+      min-width:0;
+    }
+    .filter-bar {
+      display: flex;
       align-items: center;
-      gap: 12px;
-      max-width: 320px;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      font-size: 0.98rem;
     }
-    .newsletter-form input[type="email"] {
-      padding: 10px 18px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1.08rem;
+    .filter-bar select, .filter-bar input[type="checkbox"] {
+      margin-right: 6px;
+    }
+    .filter-bar label { font-weight: 500; margin-right: 7px;}
+    .server-table-wrap {
+      overflow-x: auto;
+      border-radius:7px;
+      box-shadow: 0 1px 8px #ddd;
+    }
+    table.server-table {
       width: 100%;
-      box-sizing: border-box;
-      outline: none;
+      border-collapse: collapse;
+      background: #fff;
+      min-width: 900px;
+      margin-bottom: 14px;
     }
-    .newsletter-form button {
-      background: linear-gradient(90deg, #7c3aed 0%, #ff2e63 100%);
+    table.server-table th, table.server-table td {
+      padding: 11px 8px;
+      border-bottom: 1px solid #e9e9ef;
+      text-align: left;
+    }
+    table.server-table th {
+      background: #f0f0fa;
+      color: #7c3aed;
+      font-weight: bold;
+      font-size: 1.01rem;
+      letter-spacing: 0.5px;
+    }
+    table.server-table td.center { text-align: center;}
+    table.server-table td.banner img {
+      height: 46px;
+      border-radius:4px;
+      box-shadow:0 1px 4px #bbb2;
+    }
+    .server-name {
+      font-weight: bold;
+      font-size: 1.11rem;
+      color: #222;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 2px;
+    }
+    .server-premium {
+      background: #ffd700;
+      color: #232323;
+      font-size: 0.82em;
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-left: 7px;
+      vertical-align: middle;
+    }
+    .server-desc {
+      color: #555;
+      font-size: 0.97em;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+    .server-ip-box {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Courier New', monospace;
+      font-size: .99em;
+      background: #f7f7fa;
+      border-radius: 4px;
+      padding: 2px 8px;
+      border: 1px solid #eee;
+      width: max-content;
+    }
+    .copy-btn {
+      border:none;
+      background: #7c3aed;
+      color: #fff;
+      font-size: 0.91em;
+      border-radius: 4px;
+      padding: 2px 9px;
+      cursor: pointer;
+      margin-left: 2px;
+      transition: background .2s;
+    }
+    .copy-btn:active, .copy-btn.copied { background: #ff2e63;}
+    .status-online {
+      color: #379b38;
+      font-weight: bold;
+    }
+    .status-offline {
+      color: #c00;
+      font-weight: bold;
+    }
+    .pagination {
+      display: flex;
+      gap: 4px;
+      justify-content: flex-end;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+    .pagination button, .pagination span {
+      padding: 5px 13px;
+      border-radius: 5px;
+      border: none;
+      font-weight: bold;
+      background: #f2f2fa;
+      color: #333;
+      cursor: pointer;
+      font-size: 1.04rem;
+      margin-right: 2px;
+      margin-bottom: 3px;
+      transition:.18s;
+    }
+    .pagination .active, .pagination button.active {
+      background: #7c3aed;
+      color: #fff;
+      cursor: default;
+    }
+    .pagination button:hover:not(.active) { background: #ffce00; color:#232323;}
+    .footer {
+      background: #232323;
+      color: #eee;
+      text-align: center;
+      padding: 18px 0 11px 0;
+      font-size: 1.05rem;
+      letter-spacing:.7px;
+      margin-top: 38px;
+    }
+    .add-server-btn {
+      background: linear-gradient(90deg,#7c3aed 0%,#ff2e63 100%);
       color: #fff;
       border: none;
       border-radius: 8px;
-      padding: 10px 18px;
+      padding: 12px 28px;
       font-size: 1.08rem;
       font-weight: bold;
       cursor: pointer;
-      margin-top: 3px;
+      margin: 19px 0 26px 0;
+      box-shadow: 0 2px 12px #7c3aed12;
       transition: background 0.2s;
+      display: block;
       width: 100%;
+      text-align: center;
+      text-decoration: none;
+      letter-spacing:1px;
     }
-    .newsletter-form button:hover {
+    .add-server-btn:hover {
       background: linear-gradient(90deg, #ff2e63 0%, #7c3aed 100%);
     }
-    .footer {
-      position: fixed;
-      bottom: 12px;
-      width: 100vw;
-      color: #999;
-      font-size: 1rem;
-      text-align: center;
-      letter-spacing: 1px;
-      opacity: 0.86;
+    @media(max-width:1000px){
+      .container{flex-direction:column;}
+      .sidebar{max-width: none; min-width:0;}
     }
-    @media (max-width: 600px) {
-      .title { font-size: 2rem; }
-      .coming-soon { font-size: 1.1rem; }
-      .countdown { font-size: 1.2rem; }
+    @media(max-width:700px){
+      .container{padding:7px 2vw;}
+      header{font-size:1.2rem;}
     }
   </style>
 </head>
 <body>
-  <div class="title">Upsss....</div>
-  <div class="subtitle">Belum Hadir nich 🤗</div>
-  <div class="coming-soon">Website kami akan segera hadir!</div>
-  <div class="countdown" id="countdown">100 Hari 01:30:50</div>
-  <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Terima kasih! Kami akan kabari saat launching.'); this.reset();">
-    <input type="email" placeholder="Masukkan email untuk update" required>
-    <button type="submit">Dapatkan Notifikasi</button>
-  </form>
-  <div class="footer">&copy; 2025 Firguna. All rights reserved.</div>
+  <header>
+    Minecraft MP - Indonesia Servers
+  </header>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Servers</a>
+    <a href="#" class="add-server-btn" style="display:inline-block;padding:4px 12px;font-size:1rem;">Add Server</a>
+    <a href="#">API</a>
+    <a href="#">Premium</a>
+    <a href="#">Login/Register</a>
+  </nav>
+  <div class="container">
+    <aside class="sidebar">
+      <h3>Filter</h3>
+      <label><input type="checkbox" checked> Online Only</label>
+      <label><input type="checkbox"> Premium Only</label>
+      <label><input type="checkbox"> Has Banner</label>
+      <label><input type="checkbox"> Has Discord</label>
+      <label>Version:
+        <select>
+          <option>All Versions</option>
+          <option>1.20+</option>
+          <option>1.19</option>
+          <option>1.18</option>
+        </select>
+      </label>
+      <label>Country:
+        <select>
+          <option selected>Indonesia</option>
+          <option>Singapore</option>
+          <option>Malaysia</option>
+        </select>
+      </label>
+      <div class="banner-ad">
+        <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/3d2b6f9c-3d2c-4e3f-9d99-233c96a7f65e-profile_image-300x300.png" alt="Ad" width="100%">
+      </div>
+    </aside>
+    <main class="main">
+      <a href="#" class="add-server-btn">+ Add Server</a>
+      <div class="filter-bar">
+        <label>Sort by:
+          <select>
+            <option>Rank</option>
+            <option>Players</option>
+            <option>Votes</option>
+            <option>Latest</option>
+            <option>Random</option>
+          </select>
+        </label>
+        <label>Search:
+          <input type="text" placeholder="Search server...">
+        </label>
+      </div>
+      <div class="server-table-wrap">
+        <table class="server-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Banner</th>
+              <th>Server Name</th>
+              <th>Players</th>
+              <th>Location</th>
+              <th>IP</th>
+              <th>Status</th>
+              <th>Vote</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="center">1</td>
+              <td class="banner"><img src="https://i.imgur.com/0h8OhqK.png" alt="server banner"></td>
+              <td>
+                <a href="#" class="server-name">IDWaddle Survival</a>
+                <span class="server-premium">Premium</span>
+                <div class="server-desc">Survival | Economy | 1.20+ | Discord | Event Mingguan | <a href="#" style="color:#7c3aed;">[Website]</a></div>
+              </td>
+              <td class="center">78/150</td>
+              <td class="center"><img src="https://minecraft-mp.com/images/flags/id.png" alt="ID" style="height:20px;"></td>
+              <td>
+                <div class="server-ip-box">
+                  play.idwaddle.com
+                  <button class="copy-btn" onclick="copyIP('play.idwaddle.com',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-online">Online</span></td>
+              <td class="center">
+                <span>1234</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="center">2</td>
+              <td class="banner"><img src="https://i.imgur.com/rwXzZ0G.png" alt="server banner"></td>
+              <td>
+                <a href="#" class="server-name">GarudaCraft</a>
+                <div class="server-desc">MiniGames | Bedwars, Skywars | 1.19+ | Factions | <a href="#" style="color:#7c3aed;">[Discord]</a></div>
+              </td>
+              <td class="center">24/80</td>
+              <td class="center"><img src="https://minecraft-mp.com/images/flags/id.png" alt="ID" style="height:20px;"></td>
+              <td>
+                <div class="server-ip-box">
+                  mc.garudacraft.id
+                  <button class="copy-btn" onclick="copyIP('mc.garudacraft.id',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-online">Online</span></td>
+              <td class="center">
+                <span>875</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="center">3</td>
+              <td class="banner"><img src="https://i.imgur.com/9vCk0v1.png" alt="server banner"></td>
+              <td>
+                <a href="#" class="server-name">Nusantara SMP</a>
+                <div class="server-desc">SMP | Survival | 1.18+ | Friendly Community | No Grief | <a href="#" style="color:#7c3aed;">[Discord]</a></div>
+              </td>
+              <td class="center">31/75</td>
+              <td class="center"><img src="https://minecraft-mp.com/images/flags/id.png" alt="ID" style="height:20px;"></td>
+              <td>
+                <div class="server-ip-box">
+                  nusantara.smp.id
+                  <button class="copy-btn" onclick="copyIP('nusantara.smp.id',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-offline">Offline</span></td>
+              <td class="center">
+                <span>632</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pagination">
+        <button disabled>&laquo; Prev</button>
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <span>...</span>
+        <button>12</button>
+        <button>Next &raquo;</button>
+      </div>
+    </main>
+  </div>
+  <footer class="footer">
+    &copy; 2025 Minecraft MP (Reference) | <a href="#" style="color:#ffce00;">About</a> | <a href="#" style="color:#ffce00;">Contact</a> | <a href="#" style="color:#ffce00;">Terms</a>
+  </footer>
   <script>
-    // Set tanggal launching (misal: 1 Agustus 2025)
-    const launchDate = new Date("2025-10-25T01:50:00");
-    function updateCountdown() {
-      const now = new Date();
-      let diff = launchDate - now;
-      if (diff < 0) diff = 0;
-      const days = String(Math.floor(diff / (1000*60*60*24))).padStart(2,'0');
-      const hours = String(Math.floor((diff/(1000*60*60))%24)).padStart(2,'0');
-      const mins = String(Math.floor((diff/(1000*60))%60)).padStart(2,'0');
-      const secs = String(Math.floor((diff/1000)%60)).padStart(2,'0');
-      document.getElementById('countdown').textContent = `${days} Hari ${hours}:${mins}:${secs}`;
+    function copyIP(ip, btn){
+      navigator.clipboard.writeText(ip);
+      btn.textContent = "Copied!";
+      btn.classList.add("copied");
+      setTimeout(()=>{btn.textContent="Copy";btn.classList.remove("copied")},1200);
     }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
