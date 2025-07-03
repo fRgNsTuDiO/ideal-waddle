@@ -9,7 +9,7 @@
     header {
       background: #232323;
       color: #fff;
-     16px 0;
+      padding: 24px 0 16px 0;
       text-align: center;
       letter-spacing:2px;
       font-size: 2.3rem;
@@ -247,7 +247,7 @@
               <td class="center">1</td>
               <td>
                 <a href="https://vinaty.my.id" class="server-name" target="_blank">Vinaty Server</a>
-                | Discord | Event Mingguan | <a href="https://vinaty.my.id" style="color:#7c3aed;" target="_blank">[Website]</a></div>
+                <div class="server-desc">Survival | Economy | 1.21+ | Discord | Event Mingguan | <a href="https://vinaty.my.id" style="color:#7c3aed;" target="_blank">[Website]</a></div>
               </td>
               <td class="center">Syamil</td>
               <td>
@@ -274,7 +274,13 @@
                 </div>
               </td>
               <td class="center"><span class="status-online">Online</span></td>
-              <td class="center"><span>875</span></ class="server-name">Nusantara SMP</a>
+              <td class="center"><span>875</span></td>
+            </tr>
+            <!-- Rank 3 -->
+            <tr>
+              <td class="center">3</td>
+              <td>
+                <a href="#" class="server-name">Nusantara SMP</a>
                 <div class="server-desc">SMP | Survival | 1.18+ | Friendly Community | No Grief | <a href="#" style="color:#7c3aed;">[Discord]</a></div>
               </td>
               <td class="center">NusaOwner</td>
@@ -342,7 +348,8 @@
   <script>
     function copyIP(ip, btn){
       navigator.clipboard.writeText(ip);
-      btn.text.add("copied");
+      btn.textContent = "Copied!";
+      btn.classList.add("copied");
       setTimeout(()=>{btn.textContent="Copy";btn.classList.remove("copied")},1200);
     }
   </script>
