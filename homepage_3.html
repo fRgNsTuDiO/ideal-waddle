@@ -1,112 +1,460 @@
-<tr>
-  <td class="center">4</td>
-  <td>
-    <a href="#" class="server-name">SuryaCraft</a>
-    <div class="server-desc">Survival | 1.20 | Discord Aktif</div>
-  </td>
-  <td class="center">SuryaID</td>
-  <td>
-    <div class="server-ip-box">
-      play.suryacraft.id
-      <button class="copy-btn" onclick="copyIP('play.suryacraft.id',this)">Copy</button>
-    </div>
-  </td>
-  <td class="center"><span class="status-online">Online</span></td>
-  <td class="center"><span>401</span></td>
-</tr>
-<tr>
-  <td class="center">5</td>
-  <td>
-    <a href="#" class="server-name">BeeBlock</a>
-    <div class="server-desc">Skyblock | 1.19 | Event Mingguan</div>
-  </td>
-  <td class="center">BeeMaster</td>
-  <td>
-    <div class="server-ip-box">
-      bee.block.id
-      <button class="copy-btn" onclick="copyIP('bee.block.id',this)">Copy</button>
-    </div>
-  </td>
-  <td class="center"><span class="status-online">Online</span></td>
-  <td class="center"><span>312</span></td>
-</tr>
-<tr>
-  <td class="center">6</td>
-  <td>
-    <a href="#" class="server-name">KampungSMP</a>
-    <div class="server-desc">SMP | 1.17+ | No Grief</div>
-  </td>
-  <td class="center">KampoengDev</td>
-  <td>
-    <div class="server-ip-box">
-      kampungsmp.id
-      <button class="copy-btn" onclick="copyIP('kampungsmp.id',this)">Copy</button>
-    </div>
-  </td>
-  <td class="center"><span class="status-offline">Offline</span></td>
-  <td class="center"><span>208</span></td>
-</tr>
-<tr>
-  <td class="center">7</td>
-  <td>
-    <a href="#" class="server-name">PixelWorld</a>
-    <div class="server-desc">MiniGames | 1.20</div>
-  </td>
-  <td class="center">PixelAdmin</td>
-  <td>
-    <div class="server-ip-box">
-      play.pixelworld.id
-      <button class="copy-btn" onclick="copyIP('play.pixelworld.id',this)">Copy</button>
-    </div>
-  </td>
-  <td class="center"><span class="status-online">Online</span></td>
-  <td class="center"><span>187</span></td>
-</tr>
-<tr>
-  <td class="center">8</td>
-  <td>
-    <a href="#" class="server-name">RedstoneIndo</a>
-    <div class="server-desc">Teknik | Survival | 1.18</div>
-  </td>
-  <td class="center">RedstoneID</td>
-  <td>
-    <div class="server-ip-box">
-      redstone.indo.id
-      <button class="copy-btn" onclick="copyIP('redstone.indo.id',this)">Copy</button>
-    </div>
-  </td>
-  <td class="center"><span class="status-maintenance">Maintenance</span></td>
-  <td class="center"><span>99</span></td>
-</tr>
-<tr>
-  <td class="center">9</td>
-  <td>
-    <a href="#" class="server-name">BatikCraft</a>
-    <div class="server-desc">Survival | Economy | 1.20</div>
-  </td>
-  <td class="center">BatikDev</td>
-  <td>
-    <div class="server-ip-box">
-      batik.craft.id
-      <button class="copy-btn" onclick="copyIP('batik.craft.id',this)">Copy</button>
-    </div>
-  </td>
-  <td class="center"><span class="status-online">Online</span></td>
-  <td class="center"><span>68</span></td>
-</tr>
-<tr>
-  <td class="center">10</td>
-  <td>
-    <a href="#" class="server-name">CendolTown</a>
-    <div class="server-desc">SMP | Chill & Friendly</div>
-  </td>
-  <td class="center">CendolGuy</td>
-  <td>
-    <div class="server-ip-box">
-      cendoltown.id
-      <button class="copy-btn" onclick="copyIP('cendoltown.id',this)">Copy</button>
-    </div>
-  </td>
-  <td class="center"><span class="status-online">Online</span></td>
-  <td class="center"><span>45</span></td>
-</tr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Minecraft Servers Indonesia - Responsive Reference</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f7f7fa; margin:0; color:#222;}
+    header {
+      background: #232323;
+      color: #fff;
+      padding: 24px 0 16px 0;
+      text-align: center;
+      letter-spacing:2px;
+      font-size: 2.3rem;
+      font-weight:bold;
+    }
+    .top-buttons {
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      margin:20px 0;
+    }
+    .top-buttons a {
+      background: #7c3aed;
+      color: #fff;
+      padding: 10px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      letter-spacing: .5px;
+      box-shadow: 0 1px 6px #7c3aed22;
+      transition: background .17s;
+      display:inline-block;
+    }
+    .top-buttons a.chat {
+      background: #25d366;
+      box-shadow: 0 1px 6px #25d36622;
+    }
+    .top-buttons a:hover { background: #ff2e63; color:#fff; }
+    .top-buttons a.chat:hover { background: #128c7e; }
+    .container {
+      max-width: 900px;
+      margin: 32px auto 24px auto;
+      background: #fff;
+      border-radius: 9px;
+      box-shadow: 0 2px 22px #aaa2;
+      padding: 20px 8px 24px 8px;
+    }
+    .main { width: 100%; }
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      font-size: 0.98rem;
+      justify-content: flex-end;
+    }
+    .filter-bar label { font-weight: 500; margin-right: 7px;}
+    .server-table-wrap {
+      overflow-x: auto;
+      border-radius:7px;
+      box-shadow: 0 1px 8px #ddd;
+      margin-bottom: 12px;
+    }
+    table.server-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      min-width: 600px;
+      margin-bottom: 14px;
+    }
+    table.server-table th, table.server-table td {
+      padding: 11px 8px;
+      border-bottom: 1px solid #e9e9ef;
+      text-align: left;
+    }
+    table.server-table th {
+      background: #f0f0fa;
+      color: #7c3aed;
+      font-weight: bold;
+      font-size: 1.01rem;
+      letter-spacing: 0.5px;
+    }
+    table.server-table td.center { text-align: center;}
+    .server-name {
+      font-weight: bold;
+      font-size: 1.11rem;
+      color: #222;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 2px;
+    }
+    .server-desc {
+      color: #555;
+      font-size: 0.97em;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+    .server-ip-box {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Courier New', monospace;
+      font-size: .99em;
+      background: #f7f7fa;
+      border-radius: 4px;
+      padding: 2px 8px;
+      border: 1px solid #eee;
+      width: max-content;
+    }
+    .copy-btn {
+      border:none;
+      background: #7c3aed;
+      color: #fff;
+      font-size: 0.91em;
+      border-radius: 4px;
+      padding: 2px 9px;
+      cursor: pointer;
+      margin-left: 2px;
+      transition: background .2s;
+    }
+    .copy-btn:active, .copy-btn.copied { background: #ff2e63;}
+    .status-online {
+      color: #379b38;
+      font-weight: bold;
+    }
+    .status-offline {
+      color: #c00;
+      font-weight: bold;
+    }
+    .status-maintenance {
+      color: #f6c700;
+      font-weight: bold;
+    }
+    .pagination {
+      display: flex;
+      gap: 4px;
+      justify-content: flex-end;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+    .pagination button, .pagination span {
+      padding: 5px 13px;
+      border-radius: 5px;
+      border: none;
+      font-weight: bold;
+      background: #f2f2fa;
+      color: #333;
+      cursor: pointer;
+      font-size: 1.04rem;
+      margin-right: 2px;
+      margin-bottom: 3px;
+      transition:.18s;
+    }
+    .pagination .active, .pagination button.active {
+      background: #7c3aed;
+      color: #fff;
+      cursor: default;
+    }
+    .pagination button:hover:not(.active) { background: #ffce00; color:#232323;}
+    .footer {
+      background: #232323;
+      color: #eee;
+      text-align: center;
+      padding: 18px 0 11px 0;
+      font-size: 1.05rem;
+      letter-spacing:.7px;
+      margin-top: 38px;
+    }
+    @media(max-width:900px){
+      .container{
+        max-width: 100vw;
+        margin:10px 0;
+        border-radius:0;
+        padding:10px 0;
+        box-shadow:none;
+      }
+      table.server-table{min-width:500px;}
+    }
+    @media(max-width:600px){
+      header{font-size:1.25rem;}
+      .server-table-wrap{box-shadow:none;}
+      table.server-table th,table.server-table td{padding:7px 4px;font-size:.96em;}
+      table.server-table{min-width:400px;}
+      .footer{font-size:.93rem;}
+    }
+    @media(max-width:420px){
+      table.server-table{min-width:340px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Minecraft MP - Indonesia Servers
+  </header>
+  <div class="top-buttons">
+    <a href="index.js">Home</a>
+    <a href="https://wa.me/message/P27NTCQQAL7ED1" class="chat" target="_blank">Chat</a>
+  </div>
+  <div class="container">
+    <main class="main">
+      <div class="filter-bar">
+        <label>Sort by:
+          <select>
+            <option>Rank</option>
+            <option>Owner</option>
+            <option>Votes</option>
+            <option>Latest</option>
+            <option>Random</option>
+          </select>
+        </label>
+        <label>Search:
+          <input type="text" placeholder="Search server...">
+        </label>
+      </div>
+      <div class="server-table-wrap">
+        <table class="server-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Server Name</th>
+              <th>Nama Owner Server</th>
+              <th>IP</th>
+              <th>Status</th>
+              <th>Vote</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rank 1 -->
+            <tr>
+              <td class="center">1</td>
+              <td>
+                <a href="#" class="server-name">IDWaddle Survival</a>
+                <div class="server-desc">Survival | Economy | 1.20+ | Discord | Event Mingguan | <a href="#" style="color:#7c3aed;">[Website]</a></div>
+              </td>
+              <td class="center">fRgNsTuDiO</td>
+              <td>
+                <div class="server-ip-box">
+                  play.idwaddle.com
+                  <button class="copy-btn" onclick="copyIP('play.idwaddle.com',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-maintenance">Maintenance</span></td>
+              <td class="center"><span>1234</span></td>
+            </tr>
+            <!-- Rank 2 -->
+            <tr>
+              <td class="center">2</td>
+              <td>
+                <a href="#" class="server-name">GarudaCraft</a>
+                <div class="server-desc">MiniGames | Bedwars, Skywars | 1.19+ | Factions | <a href="#" style="color:#7c3aed;">[Discord]</a></div>
+              </td>
+              <td class="center">GarudaDev</td>
+              <td>
+                <div class="server-ip-box">
+                  mc.garudacraft.id
+                  <button class="copy-btn" onclick="copyIP('mc.garudacraft.id',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-online">Online</span></td>
+              <td class="center"><span>875</span></td>
+            </tr>
+            <!-- Rank 3 -->
+            <tr>
+              <td class="center">3</td>
+              <td>
+                <a href="#" class="server-name">Nusantara SMP</a>
+                <div class="server-desc">SMP | Survival | 1.18+ | Friendly Community | No Grief | <a href="#" style="color:#7c3aed;">[Discord]</a></div>
+              </td>
+              <td class="center">NusaOwner</td>
+              <td>
+                <div class="server-ip-box">
+                  nusantara.smp.id
+                  <button class="copy-btn" onclick="copyIP('nusantara.smp.id',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-offline">Offline</span></td>
+              <td class="center"><span>632</span></td>
+            </tr>
+            <!-- Rank 4 -->
+            <tr>
+              <td class="center">4</td>
+              <td>
+                <a href="#" class="server-name">SuryaCraft</a>
+                <div class="server-desc">Survival | 1.20 | Discord Aktif</div>
+              </td>
+              <td class="center">SuryaID</td>
+              <td>
+                <div class="server-ip-box">
+                  play.suryacraft.id
+                  <button class="copy-btn" onclick="copyIP('play.suryacraft.id',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-online">Online</span></td>
+              <td class="center"><span>401</span></td>
+            </tr>
+            <!-- Rank 5 -->
+            <tr>
+              <td class="center">5</td>
+              <td>
+                <a href="#" class="server-name">BeeBlock</a>
+                <div class="server-desc">Skyblock | 1.19 | Event Mingguan</div>
+              </td>
+              <td class="center">BeeMaster</td>
+              <td>
+                <div class="server-ip-box">
+                  bee.block.id
+                  <button class="copy-btn" onclick="copyIP('bee.block.id',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-online">Online</span></td>
+              <td class="center"><span>312</span></td>
+            </tr>
+            <!-- Rank 6 -->
+            <tr>
+              <td class="center">6</td>
+              <td>
+                <a href="#" class="server-name">KampungSMP</a>
+                <div class="server-desc">SMP | 1.17+ | No Grief</div>
+              </td>
+              <td class="center">KampoengDev</td>
+              <td>
+                <div class="server-ip-box">
+                  kampungsmp.id
+                  <button class="copy-btn" onclick="copyIP('kampungsmp.id',this)">Copy</button>
+                </div>
+              </tdtd class="center"><span>208</span></td>
+            </tr>
+            <!-- Rank 7 -->
+            <tr>
+              <td class="center">7</td>
+              <td>
+                <a href="#" class="server-name">PixelWorld</a>
+                <div class="server-desc">MiniGames | 1.20</div>
+              </td>
+              <td class="center">PixelAdmin</td>
+              <td>
+                <div class="server-ip-box">
+                  play.pixelworld.id
+                  <button class="copy-btn" onclick="copyIP('play.pixelworld.id',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-online">Online</span></td>
+              <td class="center"><span>187</span></td>
+            </tr>
+            <!-- Rank 8 -->
+            <tr>
+              <td class="center">8</td>
+              <td>
+                <a href="#" class="server-name">RedstoneIndo</a>
+                <div class="server-desc">Teknik | Survival | 1.18</div>
+              </td>
+              <td class="center">RedstoneID</td>
+              <td>
+                <div class="server-ip-box">
+                  redstone.indo.id
+                  <button class="copy-btn" onclick="copyIP('redstone.indo.id',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-maintenance">Maintenance</span></td>
+              <td class="center"><span>99</span></td>
+            </tr>
+            <!-- Rank 9 -->
+            <tr>
+              <td class="center">9</td>
+              <td>
+                <a href="#" class="server-name">BatikCraft</a>
+                <div class="server-desc">Survival | Economy | 1.20</div>
+              </td>
+              <td class="center">BatikDev</td>
+              <td>
+                <div class="server-ip-box">
+                  batik.craft.id
+                  <button class="copy-btn" onclick="copyIP('batik.craft.id',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-online">Online</span></td>
+              <td class="center"><span>68</span></td>
+            </tr>
+            <!-- Rank 10 -->
+            <tr>
+              <td class="center">10</td>
+              <td>
+                <a href="#" class="server-name">CendolTown</a>
+                <div class="server-desc">SMP | Chill & Friendly</div>
+              </td>
+              <td class="center">CendolGuy</td>
+              <td>
+                <div class="server-ip-box">
+                  cendoltown.id
+                  <button class="copy-btn" onclick="copyIP('cendoltown.id',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-online">Online</span></td>
+              <td class="center"><span>45</span></td>
+            </tr>
+            <!-- Rank 11 - 50 (contoh, silakan edit sesuai kebutuhan) -->
+            <tr>
+              <td class="center">11</td>
+              <td>
+                <a href="#" class="server-name">Server 11</a>
+                <div class="server-desc">Deskripsi Server 11</div>
+              </td>
+              <td class=">
+td>
+                <div class="server-ip-box">
+                  server11.id
+                  <button class="copy-btn" onclick="copyIP('server11.id',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-online">Online</span></td>
+              <td class="center"><span>11</span></td>
+            </tr>
+            <!-- dst hingga rank 50 -->
+            <tr>
+              <td class="center">50</td>
+              <td>
+                <a href="#" class="server-name">Server 50</a>
+                <div class="server-desc">Deskripsi Server 50</div>
+              </td>
+              <td class="center">Owner50</td>
+              <td>
+                <div class="server-ip-box">
+                  server50.id
+                  <button class="copy-btn" onclick="copyIP('server50.id',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-online">Online</span></td>
+              <td class="center"><span>1</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pagination">
+        <button disabled>&laquo; Prev</button>
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <span>...</span>
+        <button>5</button>
+        <button>Next &raquo;</button>
+      </div>
+    </main>
+  </div>
+  <footer class="footer">
+    &copy; 2025 Minecraft MP (Reference) | <a href="#" style="color:#ffce00;">About</a> | <a href="#" style="color:#ffce00;">Contact</a> | <a href="#" style="color:#ffce00;">Terms</a>
+  </footer>
+  <script>
+    function copyIP(ip, btn){
+      navigator.clipboard.writeText(ip);
+      btn.textContent = "Copied!";
+      btn.classList.add("copied");
+      setTimeout(()=>{btn.textContent="Copy";btn.classList.remove("copied")},1200);
+    }
+  </script>
+</body>
+</html>
