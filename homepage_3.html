@@ -15,6 +15,31 @@
       font-size: 2.3rem;
       font-weight:bold;
     }
+    .top-buttons {
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      margin:20px 0;
+    }
+    .top-buttons a {
+      background: #7c3aed;
+      color: #fff;
+      padding: 10px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      letter-spacing: .5px;
+      box-shadow: 0 1px 6px #7c3aed22;
+      transition: background .17s;
+      display:inline-block;
+    }
+    .top-buttons a.chat {
+      background: #25d366;
+      box-shadow: 0 1px 6px #25d36622;
+    }
+    .top-buttons a:hover { background: #ff2e63; color:#fff; }
+    .top-buttons a.chat:hover { background: #128c7e; }
     .container {
       max-width: 900px;
       margin: 32px auto 24px auto;
@@ -106,6 +131,10 @@
       color: #c00;
       font-weight: bold;
     }
+    .status-maintenance {
+      color: #f6c700;
+      font-weight: bold;
+    }
     .pagination {
       display: flex;
       gap: 4px;
@@ -167,6 +196,10 @@
   <header>
     Minecraft MP - Indonesia Servers
   </header>
+  <div class="top-buttons">
+    <a href="index.js">Home</a>
+    <a href="https://wa.me/message/P27NTCQQAL7ED1" class="chat" target="_blank">Chat</a>
+  </div>
   <div class="container">
     <main class="main">
       <div class="filter-bar">
@@ -210,7 +243,7 @@
                   <button class="copy-btn" onclick="copyIP('play.idwaddle.com',this)">Copy</button>
                 </div>
               </td>
-              <td class="center"><span class="status-online">Online</span></td>
+              <td class="center"><span class="status-maintenance">Maintenance</span></td>
               <td class="center"><span>1234</span></td>
             </tr>
             <!-- Rank 2 -->
@@ -247,29 +280,74 @@
               <td class="center"><span class="status-offline">Offline</span></td>
               <td class="center"><span>632</span></td>
             </tr>
-            <!-- Rank 4 - 50, sama dengan rank 2 -->
-            <script>
-              for(let i=4;i<=50;i++) {
-                document.write(`
-                  <tr>
-                    <td class="center">${i}</td>
-                    <td>
-                      <a href="#" class="server-name">GarudaCraft</a>
-                      <div class="server-desc">MiniGames | Bedwars, Skywars | 1.19+ | Factions | <a href="#" style="color:#7c3aed;">[Discord]</a></div>
-                    </td>
-                    <td class="center">GarudaDev</td>
-                    <td>
-                      <div class="server-ip-box">
-                        mc.garudacraft.id
-                        <button class="copy-btn" onclick="copyIP('mc.garudacraft.id',this)">Copy</button>
-                      </div>
-                    </td>
-                    <td class="center"><span class="status-online">Online</span></td>
-                    <td class="center"><span>875</span></td>
-                  </tr>
-                `);
-              }
-            </script>
+            <!-- Rank 4 - 50: Ubah data sesuai kebutuhan -->
+            <tr>
+              <td class="center">4</td>
+              <td>
+                <a href="#" class="server-name">Example Server 4</a>
+                <div class="server-desc">Survival | 1.20+ | Discord | <a href="#">[Website]</a></div>
+              </td>
+              <td class="center">Owner4</td>
+              <td>
+                <div class="server-ip-box">
+                  example4.server.id
+                  <button class="copy-btn" onclick="copyIP('example4.server.id',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-online">Online</span></td>
+              <td class="center"><span>555</span></td>
+            </tr>
+            <tr>
+              <td class="center">5</td>
+              <td>
+                <a href="#" class="server-name">Example Server 5</a>
+                <div class="server-desc">Creative | 1.19 | <a href="#">[Discord]</a></div>
+              </td>
+              <td class="center">Owner5</td>
+              <td>
+                <div class="server-ip-box">
+                  creative5.server.id
+                  <button class="copy-btn" onclick="copyIP('creative5.server.id',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-online">Online</span></td>
+              <td class="center"><span>320</span></td>
+            </tr>
+            <!-- ... Ubah rank 6-50 sesuai kebutuhan, berikut contoh skeleton (copy & edit sendiri!) -->
+            <tr>
+              <td class="center">6</td>
+              <td>
+                <a href="#" class="server-name">Nama Server 6</a>
+                <div class="server-desc">Deskripsi server 6</div>
+              </td>
+              <td class="center">Owner6</td>
+              <td>
+                <div class="server-ip-box">
+                  server6.id
+                  <button class="copy-btn" onclick="copyIP('server6.id',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-offline">Offline</span></td>
+              <td class="center"><span>97</span></td>
+            </tr>
+            <!-- Tambahkan baris berikutnya hingga rank 50 -->
+            <!-- ... -->
+            <tr>
+              <td class="center">50</td>
+              <td>
+                <a href="#" class="server-name">Nama Server 50</a>
+                <div class="server-desc">Deskripsi server 50</div>
+              </td>
+              <td class="center">Owner50</td>
+              <td>
+                <div class="server-ip-box">
+                  server50.id
+                  <button class="copy-btn" onclick="copyIP('server50.id',this)">Copy</button>
+                </div>
+              </td>
+              <td class="center"><span class="status-online">Online</span></td>
+              <td class="center"><span>3</span></td>
+            </tr>
           </tbody>
         </table>
       </div>
