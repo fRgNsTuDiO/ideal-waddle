@@ -15,22 +15,6 @@
       font-size: 2.3rem;
       font-weight:bold;
     }
-    nav {
-      background: #313131;
-      color: #fff;
-      padding: 11px 0;
-      text-align: center;
-      font-size: 1.08rem;
-      letter-spacing: 1px;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 18px;
-      font-weight: 500;
-      transition:.2s;
-    }
-    nav a:hover { color: #ffce00; }
     .container {
       max-width: 900px;
       margin: 32px auto 24px auto;
@@ -39,30 +23,7 @@
       box-shadow: 0 2px 22px #aaa2;
       padding: 20px 8px 24px 8px;
     }
-    .main {
-      width: 100%;
-    }
-    .add-server-btn {
-      background: linear-gradient(90deg,#7c3aed 0%,#ff2e63 100%);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 12px 28px;
-      font-size: 1.08rem;
-      font-weight: bold;
-      cursor: pointer;
-      margin: 10px 0 20px 0;
-      box-shadow: 0 2px 12px #7c3aed12;
-      transition: background 0.2s;
-      display: block;
-      width: 100%;
-      text-align: center;
-      text-decoration: none;
-      letter-spacing:1px;
-    }
-    .add-server-btn:hover {
-      background: linear-gradient(90deg, #ff2e63 0%, #7c3aed 100%);
-    }
+    .main { width: 100%; }
     .filter-bar {
       display: flex;
       align-items: center;
@@ -106,16 +67,6 @@
       text-decoration: none;
       display: inline-block;
       margin-bottom: 2px;
-    }
-    .server-premium {
-      background: #ffd700;
-      color: #232323;
-      font-size: 0.82em;
-      padding: 2px 7px;
-      border-radius: 6px;
-      font-weight: bold;
-      margin-left: 7px;
-      vertical-align: middle;
     }
     .server-desc {
       color: #555;
@@ -202,7 +153,6 @@
     }
     @media(max-width:600px){
       header{font-size:1.25rem;}
-      .add-server-btn{padding:10px 0;}
       .server-table-wrap{box-shadow:none;}
       table.server-table th,table.server-table td{padding:7px 4px;font-size:.96em;}
       table.server-table{min-width:400px;}
@@ -217,17 +167,8 @@
   <header>
     Minecraft MP - Indonesia Servers
   </header>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Servers</a>
-    <a href="#" class="add-server-btn" style="display:inline-block;padding:4px 12px;font-size:1rem;">Add Server</a>
-    <a href="#">API</a>
-    <a href="#">Premium</a>
-    <a href="#">Login/Register</a>
-  </nav>
   <div class="container">
     <main class="main">
-      <a href="#" class="add-server-btn">+ Add Server</a>
       <div class="filter-bar">
         <label>Sort by:
           <select>
@@ -255,12 +196,11 @@
             </tr>
           </thead>
           <tbody>
-            <!-- Sample Top 3 -->
+            <!-- Rank 1 -->
             <tr>
               <td class="center">1</td>
               <td>
                 <a href="#" class="server-name">IDWaddle Survival</a>
-                <span class="server-premium">Premium</span>
                 <div class="server-desc">Survival | Economy | 1.20+ | Discord | Event Mingguan | <a href="#" style="color:#7c3aed;">[Website]</a></div>
               </td>
               <td class="center">fRgNsTuDiO</td>
@@ -273,6 +213,7 @@
               <td class="center"><span class="status-online">Online</span></td>
               <td class="center"><span>1234</span></td>
             </tr>
+            <!-- Rank 2 -->
             <tr>
               <td class="center">2</td>
               <td>
@@ -289,6 +230,7 @@
               <td class="center"><span class="status-online">Online</span></td>
               <td class="center"><span>875</span></td>
             </tr>
+            <!-- Rank 3 -->
             <tr>
               <td class="center">3</td>
               <td>
@@ -305,25 +247,25 @@
               <td class="center"><span class="status-offline">Offline</span></td>
               <td class="center"><span>632</span></td>
             </tr>
-            <!-- Auto-generated 4 - 50 -->
+            <!-- Rank 4 - 50, sama dengan rank 2 -->
             <script>
               for(let i=4;i<=50;i++) {
                 document.write(`
                   <tr>
                     <td class="center">${i}</td>
                     <td>
-                      <a href="#" class="server-name">Server ${i}</a>
-                      <div class="server-desc">Deskripsi server ${i} | Survival | 1.20+</div>
+                      <a href="#" class="server-name">GarudaCraft</a>
+                      <div class="server-desc">MiniGames | Bedwars, Skywars | 1.19+ | Factions | <a href="#" style="color:#7c3aed;">[Discord]</a></div>
                     </td>
-                    <td class="center">Owner${i}</td>
+                    <td class="center">GarudaDev</td>
                     <td>
                       <div class="server-ip-box">
-                        server${i}.id
-                        <button class="copy-btn" onclick="copyIP('server${i}.id',this)">Copy</button>
+                        mc.garudacraft.id
+                        <button class="copy-btn" onclick="copyIP('mc.garudacraft.id',this)">Copy</button>
                       </div>
                     </td>
                     <td class="center"><span class="status-online">Online</span></td>
-                    <td class="center"><span>${Math.floor(Math.random()*1000)}</span></td>
+                    <td class="center"><span>875</span></td>
                   </tr>
                 `);
               }
