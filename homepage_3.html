@@ -5,7 +5,7 @@
   <title>Minecraft Servers Indonesia - Responsive Reference</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: Arial, sans-serif; background: #f7f7fa; margin:0; color:#222;}
+    body { font-family: sans-serif; background: #f7f7fa; margin:0; color:#222;}
     header {
       background: #232323;
       color: #fff;
@@ -33,12 +33,10 @@
       box-shadow: 0 1px 6px #7c3aed22;
       transition: background .17s;
       display:inline-block;
+      font-family: sans-serif;
     }
     .top-buttons a.chat {
-      background: #25d366;
-      box-shadow: 0 1px 6px #25d36622;
-    }
-    .top-buttons a:hover { background: #ff2e63; color:#fff; }
+      background:top-buttons a:hover { background: #ff2e63; color:#fff; }
     .top-buttons a.chat:hover { background: #128c7e; }
     .container {
       max-width: 900px;
@@ -47,16 +45,13 @@
       border-radius: 9px;
       box-shadow: 0 2px 22px #aaa2;
       padding: 20px 8px 24px 8px;
+      font-family: sans-serif;
     }
     .main { width: 100%; }
     .filter-bar {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 18px;
-      flex-wrap: wrap;
-      font-size: 0.98rem;
+     -size: 0.98rem;
       justify-content: flex-end;
+      font-family: sans-serif;
     }
     .filter-bar label { font-weight: 500; margin-right: 7px;}
     .server-table-wrap {
@@ -64,6 +59,7 @@
       border-radius:7px;
       box-shadow: 0 1px 8px #ddd;
       margin-bottom: 12px;
+      font-family: sans-serif;
     }
     table.server-table {
       width: 100%;
@@ -71,11 +67,13 @@
       background: #fff;
       min-width: 600px;
       margin-bottom: 14px;
+      font-family: sans-serif;
     }
     table.server-table th, table.server-table td {
       padding: 11px 8px;
       border-bottom: 1px solid #e9e9ef;
       text-align: left;
+      font-family: sans-serif;
     }
     table.server-table th {
       background: #f0f0fa;
@@ -83,6 +81,7 @@
       font-weight: bold;
       font-size: 1.01rem;
       letter-spacing: 0.5px;
+      font-family: sans-serif;
     }
     table.server-table td.center { text-align: center;}
     .server-name {
@@ -92,12 +91,14 @@
       text-decoration: none;
       display: inline-block;
       margin-bottom: 2px;
+      font-family: sans-serif;
     }
     .server-desc {
       color: #555;
       font-size: 0.97em;
       margin-top: 2px;
       margin-bottom: 2px;
+      font-family: sans-serif;
     }
     .server-ip-box {
       display: flex;
@@ -121,6 +122,7 @@
       cursor: pointer;
       margin-left: 2px;
       transition: background .2s;
+      font-family: sans-serif;
     }
     .copy-btn:active, .copy-btn.copied { background: #ff2e63;}
     .status-online {
@@ -141,6 +143,7 @@
       justify-content: flex-end;
       margin-top: 14px;
       flex-wrap: wrap;
+      font-family: sans-serif;
     }
     .pagination button, .pagination span {
       padding: 5px 13px;
@@ -154,6 +157,7 @@
       margin-right: 2px;
       margin-bottom: 3px;
       transition:.18s;
+      font-family: sans-serif;
     }
     .pagination .active, .pagination button.active {
       background: #7c3aed;
@@ -169,6 +173,7 @@
       font-size: 1.05rem;
       letter-spacing:.7px;
       margin-top: 38px;
+      font-family: sans-serif;
     }
     @media(max-width:900px){
       .container{
@@ -194,10 +199,10 @@
 </head>
 <body>
   <header>
-    Minecraft MP - Indonesia Servers
+    Minecraft Server
   </header>
   <div class="top-buttons">
-    <a href="index.js">Home</a>
+    <a href="index.html">Home</a>
     <a href="https://wa.me/message/P27NTCQQAL7ED1" class="chat" target="_blank">Chat</a>
   </div>
   <div class="container">
@@ -229,41 +234,38 @@
             </tr>
           </thead>
           <tbody>
-            <!-- Rank 1 -->
             <tr>
               <td class="center">1</td>
               <td>
-                <a href="#" class="server-name">IDWaddle Survival</a>
-                <div class="server-desc">Survival | Economy | 1.20+ | Discord | Event Mingguan | <a href="#" style="color:#7c3aed;">[Website]</a></div>
+                <a href="#" class="server-name">Vinaty Server</a>
+                <div class="server-desc">Survival | Economy | 1.21+ | Discord | Event Mingguan | <a href="#" style="color:#7c3aed;">[Website]</a>vinaty.my.id</div>
               </td>
-              <td class="center">fRgNsTuDiO</td>
+              <td class="center">Syamil</td>
               <td>
                 <div class="server-ip-box">
-                  play.idwaddle.com
-                  <button class="copy-btn" onclick="copyIP('play.idwaddle.com',this)">Copy</button>
+                  vinaty.my.id
+('vinaty.my.id',this)">Copy</button>
                 </div>
               </td>
               <td class="center"><span class="status-maintenance">Maintenance</span></td>
               <td class="center"><span>1234</span></td>
             </tr>
-            <!-- Rank 2 -->
             <tr>
               <td class="center">2</td>
               <td>
-                <a href="#" class="server-name">GarudaCraft</a>
-                <div class="server-desc">MiniGames | Bedwars, Skywars | 1.19+ | Factions | <a href="#" style="color:#7c3aed;">[Discord]</a></div>
+                <a href="#" class="server-name">Minecube</a>
+                <div class="server-desc">Roleplay | Economy | 1.21+ | Regions | Crossplay | <a href="#" style="color:#7c3aed;">[Group]</a>https://chat.whatsapp.com/Eb42XvbZa4vFqP45agT8Gi</div>
               </td>
-              <td class="center">GarudaDev</td>
+              <td class="center">Superoki</td>
               <td>
                 <div class="server-ip-box">
-                  mc.garudacraft.id
-                  <button class="copy-btn" onclick="copyIP('mc.garudacraft.id',this)">Copy</button>
+                  mc.minecubex.my.id:19137
+                  <button class="copy-btn" onclick="copyIP('mc.minecubex.my.id:19137',this)">Copy</button>
                 </div>
               </td>
               <td class="center"><span class="status-online">Online</span></td>
               <td class="center"><span>875</span></td>
             </tr>
-            <!-- Rank 3 -->
             <tr>
               <td class="center">3</td>
               <td>
@@ -280,7 +282,6 @@
               <td class="center"><span class="status-offline">Offline</span></td>
               <td class="center"><span>632</span></td>
             </tr>
-            <!-- Rank 4 -->
             <tr>
               <td class="center">4</td>
               <td>
@@ -297,7 +298,6 @@
               <td class="center"><span class="status-online">Online</span></td>
               <td class="center"><span>401</span></td>
             </tr>
-            <!-- Rank 5 -->
             <tr>
               <td class="center">5</td>
               <td>
@@ -314,7 +314,6 @@
               <td class="center"><span class="status-online">Online</span></td>
               <td class="center"><span>312</span></td>
             </tr>
-            <!-- Rank 6 -->
             <tr>
               <td class="center">6</td>
               <td>
@@ -331,7 +330,6 @@
               <td class="center"><span class="status-offline">Offline</span></td>
               <td class="center"><span>208</span></td>
             </tr>
-            <!-- Rank 7 -->
             <tr>
               <td class="center">7</td>
               <td>
@@ -348,11 +346,8 @@
               <td class="center"><span class="status-online">Online</span></td>
               <td class="center"><span>187</span></td>
             </tr>
-            <!-- Rank 8 -->
             <tr>
-              <td class="center">8</td>
-              <td>
-                <a href="#" class="server-name">RedstoneIndo</a>
+ class="server-name">RedstoneIndo</a>
                 <div class="server-desc">Teknik | Survival | 1.18</div>
               </td>
               <td class="center">RedstoneID</td>
@@ -365,7 +360,6 @@
               <td class="center"><span class="status-maintenance">Maintenance</span></td>
               <td class="center"><span>99</span></td>
             </tr>
-            <!-- Rank 9 -->
             <tr>
               <td class="center">9</td>
               <td>
@@ -382,7 +376,6 @@
               <td class="center"><span class="status-online">Online</span></td>
               <td class="center"><span>68</span></td>
             </tr>
-            <!-- Rank 10 -->
             <tr>
               <td class="center">10</td>
               <td>
@@ -399,7 +392,7 @@
               <td class="center"><span class="status-online">Online</span></td>
               <td class="center"><span>45</span></td>
             </tr>
-            <!-- Rank 11 - 50 (contoh, silakan edit sesuai kebutuhan) -->
+            <!-- Rank 11-50 contoh, silakan edit -->
             <tr>
               <td class="center">11</td>
               <td>
@@ -416,12 +409,11 @@
               <td class="center"><span class="status-online">Online</span></td>
               <td class="center"><span>11</span></td>
             </tr>
-            <!-- dst hingga rank 50 -->
             <tr>
               <td class="center">50</td>
               <td>
-                <a href="#" class="server-name">Server 50</a>
-                <div class="server-desc">Deskripsi Server 50</div>
+                <a href="#" class="server-name">Server 12</a>
+                <div class="server-desc">Deskripsi Server 12</div>
               </td>
               <td class="center">Owner50</td>
               <td>
@@ -448,7 +440,7 @@
     </main>
   </div>
   <footer class="footer">
-    &copy; 2025 Minecraft MP (Reference) | <a href="#" style="color:#ffce00;">About</a> | <a href="#" style="color:#ffce00;">Contact</a> | <a href="#" style="color:#ffce00;">Terms</a>
+    &copy; 2025 Firguna | <a href="#" style="color:#ffce00;">About</a> | <a href="#" style="color:#ffce00;">Contact</a> | <a href="#" style="color:#ffce00;">Terms</a>
   </footer>
   <script>
     function copyIP(ip, btn){
