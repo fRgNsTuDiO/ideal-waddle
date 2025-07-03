@@ -38,7 +38,6 @@
       border-radius: 9px;
       box-shadow: 0 2px 22px #aaa2;
       padding: 20px 8px 24px 8px;
-      /* No sidebar, just center */
     }
     .main {
       width: 100%;
@@ -233,7 +232,7 @@
         <label>Sort by:
           <select>
             <option>Rank</option>
-            <option>Players</option>
+            <option>Owner</option>
             <option>Votes</option>
             <option>Latest</option>
             <option>Random</option>
@@ -249,14 +248,14 @@
             <tr>
               <th>Rank</th>
               <th>Server Name</th>
-              <th>Players</th>
-              <th>Location</th>
+              <th>Nama Owner Server</th>
               <th>IP</th>
               <th>Status</th>
               <th>Vote</th>
             </tr>
           </thead>
           <tbody>
+            <!-- Sample Top 3 -->
             <tr>
               <td class="center">1</td>
               <td>
@@ -264,8 +263,7 @@
                 <span class="server-premium">Premium</span>
                 <div class="server-desc">Survival | Economy | 1.20+ | Discord | Event Mingguan | <a href="#" style="color:#7c3aed;">[Website]</a></div>
               </td>
-              <td class="center">78/150</td>
-              <td class="center"><img src="https://minecraft-mp.com/images/flags/id.png" alt="ID" style="height:20px;"></td>
+              <td class="center">fRgNsTuDiO</td>
               <td>
                 <div class="server-ip-box">
                   play.idwaddle.com
@@ -273,9 +271,7 @@
                 </div>
               </td>
               <td class="center"><span class="status-online">Online</span></td>
-              <td class="center">
-                <span>1234</span>
-              </td>
+              <td class="center"><span>1234</span></td>
             </tr>
             <tr>
               <td class="center">2</td>
@@ -283,8 +279,7 @@
                 <a href="#" class="server-name">GarudaCraft</a>
                 <div class="server-desc">MiniGames | Bedwars, Skywars | 1.19+ | Factions | <a href="#" style="color:#7c3aed;">[Discord]</a></div>
               </td>
-              <td class="center">24/80</td>
-              <td class="center"><img src="https://minecraft-mp.com/images/flags/id.png" alt="ID" style="height:20px;"></td>
+              <td class="center">GarudaDev</td>
               <td>
                 <div class="server-ip-box">
                   mc.garudacraft.id
@@ -292,9 +287,7 @@
                 </div>
               </td>
               <td class="center"><span class="status-online">Online</span></td>
-              <td class="center">
-                <span>875</span>
-              </td>
+              <td class="center"><span>875</span></td>
             </tr>
             <tr>
               <td class="center">3</td>
@@ -302,8 +295,7 @@
                 <a href="#" class="server-name">Nusantara SMP</a>
                 <div class="server-desc">SMP | Survival | 1.18+ | Friendly Community | No Grief | <a href="#" style="color:#7c3aed;">[Discord]</a></div>
               </td>
-              <td class="center">31/75</td>
-              <td class="center"><img src="https://minecraft-mp.com/images/flags/id.png" alt="ID" style="height:20px;"></td>
+              <td class="center">NusaOwner</td>
               <td>
                 <div class="server-ip-box">
                   nusantara.smp.id
@@ -311,10 +303,31 @@
                 </div>
               </td>
               <td class="center"><span class="status-offline">Offline</span></td>
-              <td class="center">
-                <span>632</span>
-              </td>
+              <td class="center"><span>632</span></td>
             </tr>
+            <!-- Auto-generated 4 - 50 -->
+            <script>
+              for(let i=4;i<=50;i++) {
+                document.write(`
+                  <tr>
+                    <td class="center">${i}</td>
+                    <td>
+                      <a href="#" class="server-name">Server ${i}</a>
+                      <div class="server-desc">Deskripsi server ${i} | Survival | 1.20+</div>
+                    </td>
+                    <td class="center">Owner${i}</td>
+                    <td>
+                      <div class="server-ip-box">
+                        server${i}.id
+                        <button class="copy-btn" onclick="copyIP('server${i}.id',this)">Copy</button>
+                      </div>
+                    </td>
+                    <td class="center"><span class="status-online">Online</span></td>
+                    <td class="center"><span>${Math.floor(Math.random()*1000)}</span></td>
+                  </tr>
+                `);
+              }
+            </script>
           </tbody>
         </table>
       </div>
@@ -324,7 +337,7 @@
         <button>2</button>
         <button>3</button>
         <span>...</span>
-        <button>12</button>
+        <button>5</button>
         <button>Next &raquo;</button>
       </div>
     </main>
