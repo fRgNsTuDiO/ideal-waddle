@@ -9,7 +9,7 @@
     header {
       background: #232323;
       color: #fff;
-      padding: 24px 0 16px 0;
+     16px 0;
       text-align: center;
       letter-spacing:2px;
       font-size: 2.3rem;
@@ -36,7 +36,10 @@
       font-family: sans-serif;
     }
     .top-buttons a.chat {
-      background:top-buttons a:hover { background: #ff2e63; color:#fff; }
+      background: #25d366;
+      box-shadow: 0 1px 6px #25d36622;
+    }
+    .top-buttons a:hover { background: #ff2e63; color:#fff; }
     .top-buttons a.chat:hover { background: #128c7e; }
     .container {
       max-width: 900px;
@@ -49,7 +52,12 @@
     }
     .main { width: 100%; }
     .filter-bar {
-     -size: 0.98rem;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      font-size: 0.98rem;
       justify-content: flex-end;
       font-family: sans-serif;
     }
@@ -199,7 +207,7 @@
 </head>
 <body>
   <header>
-    Minecraft Server
+    Minecraft MP - Indonesia Servers
   </header>
   <div class="top-buttons">
     <a href="index.html">Home</a>
@@ -234,42 +242,39 @@
             </tr>
           </thead>
           <tbody>
+            <!-- Rank 1 -->
             <tr>
               <td class="center">1</td>
               <td>
-                <a href="#" class="server-name">Vinaty Server</a>
-                <div class="server-desc">Survival | Economy | 1.21+ | Discord | Event Mingguan | <a href="#" style="color:#7c3aed;">[Website]</a> </div>
+                <a href="https://vinaty.my.id" class="server-name" target="_blank">Vinaty Server</a>
+                | Discord | Event Mingguan | <a href="https://vinaty.my.id" style="color:#7c3aed;" target="_blank">[Website]</a></div>
               </td>
               <td class="center">Syamil</td>
               <td>
                 <div class="server-ip-box">
                   vinaty.my.id
-('vinaty.my.id',this)">Copy</button>
+                  <button class="copy-btn" onclick="copyIP('vinaty.my.id',this)">Copy</button>
                 </div>
               </td>
               <td class="center"><span class="status-maintenance">Maintenance</span></td>
               <td class="center"><span>1234</span></td>
             </tr>
+            <!-- Rank 2 -->
             <tr>
               <td class="center">2</td>
               <td>
-                <a href="#" class="server-name">Minecube</a>
-                <div class="server-desc">Roleplay | Economy | 1.21+ | Regions | Crossplay | <a href="#" style="color:#7c3aed;">[Group]</a> </div>
+                <a href="#" class="server-name">Minecubex</a>
+                <div class="server-desc">Roleplay | Economy | 1.21+ | Regions | Crossplay | <a href="#" style="color:#7c3aed;">[Group]</a></div>
               </td>
               <td class="center">Superoki</td>
               <td>
                 <div class="server-ip-box">
-                  mc.minecubex.my.id:19137
-                  <button class="copy-btn" onclick="copyIP('mc.minecubex.my.id:19137',this)">Copy</button>
+                  mc.minecubex.my.id
+                  <button class="copy-btn" onclick="copyIP('mc.minecubex.my.id',this)">Copy</button>
                 </div>
               </td>
               <td class="center"><span class="status-online">Online</span></td>
-              <td class="center"><span>875</span></td>
-            </tr>
-            <tr>
-              <td class="center">3</td>
-              <td>
-                <a href="#" class="server-name">Nusantara SMP</a>
+              <td class="center"><span>875</span></ class="server-name">Nusantara SMP</a>
                 <div class="server-desc">SMP | Survival | 1.18+ | Friendly Community | No Grief | <a href="#" style="color:#7c3aed;">[Discord]</a></div>
               </td>
               <td class="center">NusaOwner</td>
@@ -282,6 +287,7 @@
               <td class="center"><span class="status-offline">Offline</span></td>
               <td class="center"><span>632</span></td>
             </tr>
+            <!-- Rank 4 -->
             <tr>
               <td class="center">4</td>
               <td>
@@ -298,6 +304,7 @@
               <td class="center"><span class="status-online">Online</span></td>
               <td class="center"><span>401</span></td>
             </tr>
+            <!-- Rank 5 -->
             <tr>
               <td class="center">5</td>
               <td>
@@ -314,117 +321,7 @@
               <td class="center"><span class="status-online">Online</span></td>
               <td class="center"><span>312</span></td>
             </tr>
-            <tr>
-              <td class="center">6</td>
-              <td>
-                <a href="#" class="server-name">KampungSMP</a>
-                <div class="server-desc">SMP | 1.17+ | No Grief</div>
-              </td>
-              <td class="center">KampoengDev</td>
-              <td>
-                <div class="server-ip-box">
-                  kampungsmp.id
-                  <button class="copy-btn" onclick="copyIP('kampungsmp.id',this)">Copy</button>
-                </div>
-              </td>
-              <td class="center"><span class="status-offline">Offline</span></td>
-              <td class="center"><span>208</span></td>
-            </tr>
-            <tr>
-              <td class="center">7</td>
-              <td>
-                <a href="#" class="server-name">PixelWorld</a>
-                <div class="server-desc">MiniGames | 1.20</div>
-              </td>
-              <td class="center">PixelAdmin</td>
-              <td>
-                <div class="server-ip-box">
-                  play.pixelworld.id
-                  <button class="copy-btn" onclick="copyIP('play.pixelworld.id',this)">Copy</button>
-                </div>
-              </td>
-              <td class="center"><span class="status-online">Online</span></td>
-              <td class="center"><span>187</span></td>
-            </tr>
-            <tr>
- class="server-name">RedstoneIndo</a>
-                <div class="server-desc">Teknik | Survival | 1.18</div>
-              </td>
-              <td class="center">RedstoneID</td>
-              <td>
-                <div class="server-ip-box">
-                  redstone.indo.id
-                  <button class="copy-btn" onclick="copyIP('redstone.indo.id',this)">Copy</button>
-                </div>
-              </td>
-              <td class="center"><span class="status-maintenance">Maintenance</span></td>
-              <td class="center"><span>99</span></td>
-            </tr>
-            <tr>
-              <td class="center">9</td>
-              <td>
-                <a href="#" class="server-name">BatikCraft</a>
-                <div class="server-desc">Survival | Economy | 1.20</div>
-              </td>
-              <td class="center">BatikDev</td>
-              <td>
-                <div class="server-ip-box">
-                  batik.craft.id
-                  <button class="copy-btn" onclick="copyIP('batik.craft.id',this)">Copy</button>
-                </div>
-              </td>
-              <td class="center"><span class="status-online">Online</span></td>
-              <td class="center"><span>68</span></td>
-            </tr>
-            <tr>
-              <td class="center">10</td>
-              <td>
-                <a href="#" class="server-name">CendolTown</a>
-                <div class="server-desc">SMP | Chill & Friendly</div>
-              </td>
-              <td class="center">CendolGuy</td>
-              <td>
-                <div class="server-ip-box">
-                  cendoltown.id
-                  <button class="copy-btn" onclick="copyIP('cendoltown.id',this)">Copy</button>
-                </div>
-              </td>
-              <td class="center"><span class="status-online">Online</span></td>
-              <td class="center"><span>45</span></td>
-            </tr>
-            <!-- Rank 11-50 contoh, silakan edit -->
-            <tr>
-              <td class="center">11</td>
-              <td>
-                <a href="#" class="server-name">Server 11</a>
-                <div class="server-desc">Deskripsi Server 11</div>
-              </td>
-              <td class="center">Owner11</td>
-              <td>
-                <div class="server-ip-box">
-                  server11.id
-                  <button class="copy-btn" onclick="copyIP('server11.id',this)">Copy</button>
-                </div>
-              </td>
-              <td class="center"><span class="status-online">Online</span></td>
-              <td class="center"><span>11</span></td>
-            </tr>
-            <tr>
-              <td class="center">50</td>
-              <td>
-                <a href="#" class="server-name">Server 12</a>
-                <div class="server-desc">Deskripsi Server 12</div>
-              </td>
-              <td class="center">Owner50</td>
-              <td>
-                <div class="server-ip-box">
-                  server50.id
-                  <button class="copy-btn" onclick="copyIP('server50.id',this)">Copy</button>
-                </div>
-              </td>
-              <td class="center"><span class="status-online">Online</span></td>
-              <td class="center"><span>1</span></td>
-            </tr>
+            <!-- dst ... -->
           </tbody>
         </table>
       </div>
@@ -440,13 +337,12 @@
     </main>
   </div>
   <footer class="footer">
-    &copy; 2025 Firguna | <a href="#" style="color:#ffce00;">About</a> | <a href="#" style="color:#ffce00;">Contact</a> | <a href="#" style="color:#ffce00;">Terms</a>
+    &copy; 2025 Minecraft MP (Reference) | <a href="#" style="color:#ffce00;">About</a> | <a href="#" style="color:#ffce00;">Contact</a> | <a href="#" style="color:#ffce00;">Terms</a>
   </footer>
   <script>
     function copyIP(ip, btn){
       navigator.clipboard.writeText(ip);
-      btn.textContent = "Copied!";
-      btn.classList.add("copied");
+      btn.text.add("copied");
       setTimeout(()=>{btn.textContent="Copy";btn.classList.remove("copied")},1200);
     }
   </script>
