@@ -1,554 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>firguna portofolio</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 
-  <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <title>Firguna - Beranda</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-digimedia-v3.css">
-    <link rel="stylesheet" href="assets/css/animated.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-<!--
-
-TemplateMo 568 DigiMedia
-
-https://templatemo.com/tm-568-digimedia
-
--->
-  </head>
-
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; scroll-behavior: smooth;}
+    body {background: linear-gradient(45deg, #0a0215, #1b0033); color: #fff; text-align: center; overflow-x: hidden; position: relative;}
+    #gameCanvas {position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 10;}
+    .profile {margin-top: 60px; position: relative; z-index: 11;}
+    .profile img {width: 150px; height: 150px; border-radius: 50%; border: 3px solid #ff00ff; box-shadow: 0 0 15px #ff00ff;}
+    .content {margin-top: 20px; padding-bottom: 50px; position: relative; z-index: 11;}
+    .neon-text {color: #ff00ff; text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;}
+    .navbar {display: flex; flex-direction: column; align-items: flex-start; justify-content: center; margin: 10px auto; max-width: 350px; padding: 10px 20px;}
+    .navbar-item {padding: 12px; width: 100%; background: rgba(255, 0, 255, 0.2); margin-bottom: 10px; border-radius: 5px; cursor: pointer; text-align: left; transition: 0.3s; display: flex; justify-content: space-between; align-items: center;}
+    .navbar-item:hover {background: rgba(255, 0, 255, 0.4);}
+    .navbar-item span {font-size: 14px; color: #ff00ff; font-weight: bold;}
+    .accordion-content {display: none; flex-direction: column; width: 100%; margin-top: 5px;}
+    .method {padding: 10px; background: rgba(0,255,255,0.2); border-radius: 5px; margin-top: 5px; cursor: pointer;}
+    .method:hover {background: rgba(0,255,255,0.4);}
+    .method-number {display: none; margin-top: 5px; font-size: 14px; color: #00ffff;}
+    .copy-btn {margin-left: 10px; background: #ff00ff; border: none; color: #fff; padding: 3px 6px; border-radius: 3px; cursor: pointer;}
+    .list {list-style: none; padding: 0; margin-top: 15px;}
+    .list-item {font-size: 18px; margin: 10px 0; color: #00ffff; text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;}
+    footer {background: rgba(0, 0, 0, 0.9); padding: 20px; text-align: center; border-top: 3px solid #ff00ff; position: relative; z-index: 11;}
+    .wa-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      padding: 10px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #25D366;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .wa-btn img {
+      width: 35px;
+      height: 35px;
+    }
+  </style>
+</head>
 <body>
 
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
+<canvas id="gameCanvas"></canvas>
+
+<!-- Profile -->
+<div class="profile" data-aos="zoom-in">
+  <img src="https://files.catbox.moe/arxi36.jpg" alt="RiffXD profile">
+  <h2 class="neon-text">Firguna</h2>
+</div>
+
+<!-- Content -->
+<div class="content">
+  <section id="about" class="section" data-aos="fade-up">
+    <p>Welcome to Firguna's short link, please continue your destination by interacting with the available buttons</p>
+  </section>
+
+  <section id="links" class="section" data-aos="fade-up">
+    <div class="navbar">
+      <!-- Payment Accordion -->
+      <div class="navbar-item" onclick="toggleAccordion('payment')">
+        Payment <span>▼</span>
       </div>
-    </div>
+      <div id="payment" class="accordion-content">
+        <div class="method" onclick="toggleNumber('dana')">Dana
+          <div id="dana" class="method-number">0882008612013 A.N Muhammad Nadif Setiawan 
+            <button class="copy-btn" onclick="copyText(event, '0882008612013')">Salin</button>
+          </div>
+        </div>
+        <div class="method" onclick="toggleNumber('gopay')">Gopay
+          <div id="gopay" class="method-number">0882008612013 A.N Nadif Setiawan 
+            <button class="copy-btn" onclick="copyText(event, '0882008612013')">Salin</button>
+          </div>
+        </div>
+        <div class="method" onclick="toggleNumber('ovo')">Ovo
+          <div id="ovo" class="method-number">0882008612013 A.N Firguna 
+            <button class="copy-btn" onclick="copyText(event, '0882008612013')">Salin</button>
+          </div>
+        </div>
+        <div class="method" onclick="toggleNumber('qris')">Qris
+          <div id="qris" class="method-number">Nanti terlampir</div>
+        </div>
+      </div>
+
+   <!-- Table for other links -->
+    <table style="width:100%; margin-top:15px; border-collapse:collapse; color:white; text-align:left;">
+      <tr>
+        <td style="padding:10px; background:rgba(255, 0, 255, 0.2); border-radius:5px;">
+          <a href="https://sociabuzz.com/firgun/tribe" target="_blank" style="color:white; text-decoration:none;">Donation</a>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:10px; background:rgba(255, 0, 255, 0.2); border-radius:5px; margin-top:5px;">
+          <a href="https://firguna.my.id" target="_blank" style="color:white; text-decoration:none;">Website</a>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:10px; background:rgba(255, 0, 255, 0.2); border-radius:5px; margin-top:5px;">
+          <a href="https://chat.whatsapp.com/JTwXN6jT0CaJALfGJmamGR?mode=ac_t" target="_blank" style="color:white; text-decoration:none;">Information</a>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:10px; background:rgba(255, 0, 255, 0.2); border-radius:5px; margin-top:5px;">
+          <a href="https://whatsapp.com/firguna/0029Vb4G0rVDJ6H3Ne5DSE05" target="_blank" style="color:white; text-decoration:none;">Testimonials</a>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:10px; background:rgba(255, 0, 255, 0.2); border-radius:5px; margin-top:5px;">
+          <a href="https://lynk.id/firguna" target="_blank" style="color:white; text-decoration:none;">Short Link 2</a>
+        </td>
+      </tr>
+    </table>
   </div>
-  <!-- ***** Preloader End ***** -->
+</section>
 
-  <!-- Pre-header Starts -->
-  <div class="pre-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-sm-8 col-7">
-          <ul class="info">
-            <li><a href="#"><i class="fa fa-envelope"></i>firguna@gmail.com</a></li>
-            <li><a href="#"><i class="fa fa-phone"></i>0882-0086-12013</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-4 col-sm-4 col-5">
-          <ul class="social-media">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-behance"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-          </ul>
-        </div>
-      </div>
+<section id="skills" class="section" data-aos="fade-up">
+    <h2 class="neon-text">Skills</h2>
+    <div class="navbar">
+      <div class="navbar-item">management <span>80%</span></div>
+      <div class="navbar-item">interactions <span>95%</span></div>
+      <div class="navbar-item">friendlines <span>100%</span></div>
+      <div class="navbar-item">Trust <span>99%</span></div>
+      <div class="navbar-item">Admin server minecraft <span>70%</span></div>
+      <div class="navbar-item">NodeJS <span>75%</span></div>
+      <div class="navbar-item">collaboration <span>90%</span></div>
     </div>
-  </div>
-  <!-- Pre-header End -->
+</section>
 
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav class="main-nav">
-            </a>
-            <!-- ***** Logo End ***** -->
-            <!-- ***** Menu Start ***** -->
-            <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="#about">About</a></li>
-              <li class="scroll-to-section"><a href="https://tokoandre.site/">Store</a></li>
-              <li class="scroll-to-section"><a href="homepage_3.html">Server</a></li>
-              <li class="scroll-to-section"><a href="https://firgunaa.blogspot.com/?m=1">Blog</a></li>
-              <li class="scroll-to-section"><a href="https://wa.me/message/P27NTCQQAL7ED1">Contact</a></li> 
-              <li class="scroll-to-section"><div class="border-first-button"><a href="#top">Free Quote</a></div></li> 
-            </ul>        
-            <a class='menu-trigger'>
-                <span>Menu</span>
-            </a>
-            <!-- ***** Menu End ***** -->
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+<footer>
+  <p>© 2025 i am Firguna</p>
+</footer>
 
-  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-6 align-self-center">
-              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <h6>Yo Hallo !</h6>
-                    <h2>Firguna Team disini</h2>
-                    <p>kami akan membantumu sebisa mungkin, kami menyediakan beberapa produk dari offline maupun online. Panel Bot Whatsapps, Server Minecraft, Nomer kosong Berbagai negara, Aplik...</p>
-                  </div>
-                  <div class="col-lg-12">
-                    <div class="border-first-button scroll-to-section">
-                      <a href="https://wa.me/message/P27NTCQQAL7ED1">Hubungi Team Kami</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <img src="assets/images/slider-dec-v3.png" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- WhatsApp Button -->
+<a href="https://wa.me/62882008612013" class="wa-btn" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
 
-  <div id="about" class="about section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="about-left-image  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
-                <img src="assets/images/about-dec-v3.png" alt="">
-              </div>
-            </div>
-            <div class="col-lg-6 align-self-center  wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-              <div class="about-right-content">
-                <div class="section-heading">
-                  <h6>Tentang Kami</h6>
-                  <h4>Siapa dan Bagaimana  <em>Firguna Team</em></h4>
-                  <div class="line-dec"></div>
-                </div>
-                <p>Firguna adalah sebuah Platfrom jual-beli dan jasa-jasa yang berdiri pada tanggal 25 Oktober 2020, Nadif Sebagai Pencetus dan pengembang Firguna, berusaha semaksimal mungkin mem...</p>
-                <div class="row">
-                  <div class="col-lg-4 col-sm-4">
-                    <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
-                      <div class="progress" data-percentage="90">
-                        <span class="progress-left">
-                          <span class="progress-bar"></span>
-                        </span>
-                        <span class="progress-right">
-                          <span class="progress-bar"></span>
-                        </span>
-                        <div class="progress-value">
-                          <div>
-                            90%<br>
-                            <span>Pelayanan 🔥</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-sm-4">
-                    <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
-                      <div class="progress" data-percentage="80">
-                        <span class="progress-left">
-                          <span class="progress-bar"></span>
-                        </span>
-                        <span class="progress-right">
-                          <span class="progress-bar"></span>
-                        </span>
-                        <div class="progress-value">
-                          <div>
-                            80%<br>
-                            <span>Sukses ✅</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-sm-4">
-                    <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
-                      <div class="progress" data-percentage="80">
-                        <span class="progress-left">
-                          <span class="progress-bar"></span>
-                        </span>
-                        <span class="progress-right">
-                          <span class="progress-bar"></span>
-                        </span>
-                        <div class="progress-value">
-                          <div>
-                            80%<br>
-                            <span>Testimoni 👀</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
 
-  <div id="services" class="services section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h6>Tentang Layanan</h6>
-            <h4>Kenapa kamu harus yakin menjadi Tim <em>Endorsment</em></h4>
-            <div class="line-dec"></div>
-          </div>
-        </div>
-        <div class="col-lg-12">
-          <div class="naccs">
-            <div class="grid">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="menu">
-                    <div class="first-thumb active">
-                      <div class="thumb">
-                        <span class="icon"><img src="assets/images/service-icon-01.png" alt=""></span>
-                        No Ripper²
-                      </div>
-                    </div>
-                    <div>
-                      <div class="thumb">                 
-                        <span class="icon"><img src="assets/images/service-icon-02.png" alt=""></span>
-                        Kreator
-                      </div>
-                    </div>
-                    <div>
-                      <div class="thumb">                 
-                        <span class="icon"><img src="assets/images/service-icon-03.png" alt=""></span>
-                        Menejement
-                      </div>
-                    </div>
-                    <div>
-                      <div class="thumb">                 
-                        <span class="icon"><img src="assets/images/service-icon-04.png" alt=""></span>
-                        Shopping
-                      </div>
-                    </div>
-                    <div class="last-thumb">
-                      <div class="thumb">                 
-                        <span class="icon"><img src="assets/images/service-icon-01.png" alt=""></span>
-                        Top Up
-                      </div>
-                    </div>
-                  </div>
-                </div> 
-                <div class="col-lg-12">
-                  <ul class="nacc">
-                    <li class="active">
-                      <div>
-                        <div class="thumb">
-                          <div class="row">
-                            <div class="col-lg-6 align-self-center">
-                              <div class="left-text">
-                                <h4>Aman dari ripper &amp; Banyak Testimonial</h4>
-                                <p>Firguna Marketplace menjamin Produk-produknya karna sudah 100% Hasil pengecekan secara teliti dan full indent
-                                  Jadi semua dijamin aman !.</p>
-                                <div class="ticks-list"><span><i class="fa fa-check"></i> 100% Melalui Pengecekan</span> <span><i class="fa fa-check"></i> All Indent Data Seller</span> <span><i class="fa fa-check"></i> Pelayanan Cepat</span> <span><i class="fa fa-check"></i> 100% Melalui ...</span></div>
-                                <p>kalo transaksi gagal dengan produk yang garansi, kita cari enaknya aja dah.. buyer Senang kita senang</p>
-                              </div>
-                            </div>
-                            <div class="col-lg-6 align-self-center">
-                              <div class="right-image">
-                                <img src="assets/images/services-image.jpg" alt="">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <!-- (lanjutan services) -->
-                  </ul>
-                </div>          
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- Script Accordion + Copy -->
+<script>
+function toggleAccordion(id) {
+  const acc = document.getElementById(id);
+  acc.style.display = acc.style.display === "flex" ? "none" : "flex";
+}
 
-  <div id="portfolio" class="our-portfolio section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5">
-          <div class="section-heading wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
-            <h6>Tentang Rencana kami </h6>
-            <h4> Inilah Rencana<em> Kami</em></h4>
-            <div class="line-dec"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="loop owl-carousel">
-            <div class="item">
-              <a href="#">
-                <div class="portfolio-item">
-                <div class="thumb">
-                  <img src="assets/images/portfolio-01.jpg" alt="">
-                </div>
-                <div class="down-content">
-                  <h4>Membangun Cabang</h4>
-                  <span>Di Purworejo</span>
-                </div>
-              </div>
-              </a>  
-            </div>
-            <!-- (lanjutan portfolio) -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+function toggleNumber(id) {
+  event.stopPropagation();
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === "block" ? "none" : "block";
+}
 
-  <!-- GANTI BAGIAN BLOG DENGAN PRICELIST -->
-  <div class="pricing_1">
-    <div class="responsive-container-block big-container">
-      <div class="responsive-container-block container">
-        <p class="text-blk head">
-          Pricing
-        </p>
-        <div class="responsive-container-block swiping-box">
-          <div class="text-center witch switch-text">
-            <span>
-              Monthly
-            </span>
-            <div class="switch">
-              <input type="checkbox">
-              <span class="slider round">
-              </span>
-            </div>
-            <span>
-              Yearly
-            </span>
-          </div>
-        </div>
-        <div class="responsive-container-block card-container">
-          <div class="responsive-cell-block wk-desk-4 wk-ipadp-4 wk-tab-6 wk-mobile-12">
-            <div class="card card-selected">
-              <p class="text-blk">
-                Penatibus massa diam.
-              </p>
-              <h1 class="monthly-price">
-                $5
-              </h1>
-              <h1 class="d-nones yearly-price">
-                $100
-              </h1>
-              <div class="card-description">
-                <span class="monthly-plan">
-                  <p class="text-blk card-points">
-                    In enim etiam aliquet.
-                  </p>
-                  <p class="text-blk card-points">
-                    Ultricies diam arcu.
-                  </p>
-                  <p class="text-blk card-points">
-                    Pellentesque elementum.
-                  </p>
-                  <p class="text-blk card-points">
-                    Leo adipiscing adipiscing.
-                  </p>
-                  <p class="text-blk card-points">
-                    Mattis diam amet.
-                  </p>
-                </span>
-                <span class="yearly-plan d-nones">
-                  <p class="text-blk card-points">
-                    Risus donec magna turpis.
-                  </p>
-                  <p class="text-blk card-points">
-                    Lorem nibh odio montes.
-                  </p>
-                  <p class="text-blk card-points">
-                    Lacus volutpat nunc leo at.
-                  </p>
-                  <p class="text-blk card-points">
-                    Arcu in augue nunc risus.
-                  </p>
-                  <p class="text-blk card-points">
-                    Ornare vestibulum.
-                  </p>
-                </span>
-              </div>
-              <span class="buy-button">
-                <button class="btns" type="button">
-                  Buy
-                </button>
-              </span>
-            </div>
-          </div>
-          <div class="responsive-cell-block wk-desk-4 wk-ipadp-4 wk-tab-6 wk-mobile-12">
-            <div class="card">
-              <p class="text-blk">
-                Penatibus massa diam.
-              </p>
-              <h1 class="monthly-price">
-                $10
-              </h1>
-              <h1 class="d-nones yearly-price">
-                $500
-              </h1>
-              <div class="card-description">
-                <span class="monthly-plan">
-                  <p class="text-blk card-points">
-                    Risus donec magna turpis.
-                  </p>
-                  <p class="text-blk card-points">
-                    Lorem nibh odio montes.
-                  </p>
-                  <p class="text-blk card-points">
-                    Lacus volutpat nunc leo at.
-                  </p>
-                  <p class="text-blk card-points">
-                    Arcu in augue nunc risus.
-                  </p>
-                  <p class="text-blk card-points">
-                    Ornare vestibulum.
-                  </p>
-                </span>
-                <span class="yearly-plan d-nones">
-                  <p class="text-blk card-points">
-                    Vulputate sem venenatis.
-                  </p>
-                  <p class="text-blk card-points">
-                    Vulputate sem venenatis.
-                  </p>
-                  <p class="text-blk card-points">
-                    Aliquam enim habitant.
-                  </p>
-                  <p class="text-blk card-points">
-                    Nunc eu eu dolor ac arcu.
-                  </p>
-                  <p class="text-blk card-points">
-                    Id viverra hac sed semper.
-                  </p>
-                </span>
-              </div>
-              <span class="buy-button">
-                <button class="btns" type="button">
-                  Buy
-                </button>
-              </span>
-            </div>
-          </div>
-          <div class="responsive-cell-block wk-desk-4 wk-ipadp-4 wk-tab-6 wk-mobile-12">
-            <div class="card">
-              <p class="text-blk">
-                Penatibus massa diam.
-              </p>
-              <h1 class="monthly-price">
-                $20
-              </h1>
-              <h1 class="d-nones yearly-price">
-                $800
-              </h1>
-              <div class="card-description">
-                <span class="monthly-plan">
-                  <p class="text-blk card-points">
-                    In enim etiam aliquet.
-                  </p>
-                  <p class="text-blk card-points">
-                    Ultricies diam arcu.
-                  </p>
-                  <p class="text-blk card-points">
-                    Pellentesque elementum.
-                  </p>
-                  <p class="text-blk card-points">
-                    Leo adipiscing adipiscing.
-                  </p>
-                  <p class="text-blk card-points">
-                    Mattis diam amet.
-                  </p>
-                </span>
-                <span class="yearly-plan d-nones">
-                  <p class="text-blk card-points">
-                    Risus donec magna turpis.
-                  </p>
-                  <p class="text-blk card-points">
-                    Lorem nibh odio montes.
-                  </p>
-                  <p class="text-blk card-points">
-                    Lacus volutpat nunc leo at.
-                  </p>
-                  <p class="text-blk card-points">
-                    Arcu in augue nunc risus.
-                  </p>
-                  <p class="text-blk card-points">
-                    Ornare vestibulum.
-                  </p>
-                </span>
-              </div>
-              <span class="buy-button">
-                <button class="btns" type="button">
-                  Buy
-                </button>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- END PRICELIST -->
+function copyText(e, text) {
+  e.stopPropagation();
+  navigator.clipboard.writeText(text).then(() => {
+    alert("Nomor disalin!");
+  });
+}
+</script>
 
-  <div id="contact" class="contact-us section">
-    <div class="container">
-      <div class="row">
-        <!-- (lanjutan contact & footer) -->
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p>Copyright © 2025 Firguna Co., Ltd. All Rights Reserved. 
-          <br>Anak Indonesia <a href="https://templatemo.com" target="_parent" title="Berkarya Tanpa batas 🔥">Berkreasi Tanpa batas 🔥</a></p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- Scripts -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/animation.js"></script>
-  <script src="assets/js/imagesloaded.js"></script>
-  <script src="assets/js/custom.js"></script>
-
+<!-- Snake Canvas -->
+<script>
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+let snake = {body: [{ x: canvas.width / 2, y: canvas.height / 2 }], speed: 4, maxLength: 20, size: 6};
+let food = null;
+function update() {
+  if (food) {
+    let head = snake.body[0];
+    let dx = food.x - head.x, dy = food.y - head.y;
+    let distance = Math.sqrt(dx * dx + dy * dy);
+    if (distance < 5) food = null;
+    let angle = Math.atan2(dy, dx);
+    let direction = {x: Math.cos(angle) * snake.speed, y: Math.sin(angle) * snake.speed};
+    let newHead = {x: head.x + direction.x, y: head.y + direction.y};
+    snake.body.unshift(newHead);
+    if (snake.body.length > snake.maxLength) snake.body.pop();
+  }
+}
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.shadowBlur = 10; ctx.shadowColor = "#ff00ff"; ctx.fillStyle = "#ff00ff";
+  for (let i = 0; i < snake.body.length; i++) {
+    ctx.beginPath(); ctx.arc(snake.body[i].x, snake.body[i].y, snake.size, 0, Math.PI * 2); ctx.fill();
+  }
+  if (food) {
+    ctx.shadowBlur = 10; ctx.shadowColor = "#aa00aa";
+    ctx.beginPath(); ctx.arc(food.x, food.y, 7, 0, Math.PI * 2);
+    ctx.fillStyle = "#aa00aa"; ctx.fill();
+  }
+}
+function animate() {update(); draw(); requestAnimationFrame(animate);}
+window.addEventListener("touchstart", (e) => {if (!food) {let touch = e.touches[0]; food = {x: touch.clientX, y: touch.clientY};}});
+animate();
+</script>
 </body>
 </html>
