@@ -1,556 +1,101 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firguna - Register Team</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="icon" href="https://files.catbox.moe/88j3ia.jpg" type="image/x-icon">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0c0d12;
-            color: #d1d5db;
-        }
-        .bg-dark-card {
-            background-color: #1a1e27;
-        }
-        .bg-gradient-purple {
-            background-image: linear-gradient(to right, #6b21a8, #8b5cf6);
-        }
-        .modal-overlay {
-            background-color: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            z-index: 1000;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>List Kotak dengan Thumbnail & Label</title>
+  <style>
+    :root{--bg:#f3f4f6;--card:#ffffff;--muted:#6b7280;--accent:#06b6d4}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:var(--bg);color:#111}
+    .wrap{max-width:1100px;margin:36px auto;padding:20px}
+    h1{margin:0 0 14px;font-size:1.4rem}
+
+    /* Grid container */
+    .box-grid{display:grid;gap:16px;grid-template-columns:repeat(1,1fr)}
+    @media(min-width:640px){.box-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:992px){.box-grid{grid-template-columns:repeat(3,1fr)}}
+
+    /* Card style */
+    .box{
+      display:flex;flex-direction:column;gap:10px;background:var(--card);border-radius:12px;overflow:hidden;
+      border:1px solid rgba(17,24,39,0.06);
+      box-shadow:0 6px 18px rgba(2,6,23,0.04);
+      transition:transform .18s ease, box-shadow .18s ease
+    }
+    .box:hover{transform:translateY(-6px);box-shadow:0 18px 30px rgba(2,6,23,0.08)}
+
+    .thumb{position:relative}
+    .thumb img{width:100%;height:160px;object-fit:cover;display:block}
+    .label{
+      position:absolute;top:10px;left:10px;
+      background:var(--accent);color:white;font-size:.8rem;font-weight:600;
+      padding:4px 10px;border-radius:8px;
+    }
+
+    .content{padding:14px}
+    .title{font-size:1rem;margin:0 0 4px}
+    .desc{margin:0;color:var(--muted);font-size:.92rem}
+
+    .actions{display:flex;gap:8px;margin-top:10px}
+    .btn{padding:8px 12px;border-radius:10px;text-decoration:none;display:inline-block;font-weight:600}
+    .btn.ghost{background:transparent;border:1px solid rgba(17,24,39,0.12);color:#111}
+    .btn.primary{background:var(--accent);color:white}
+  </style>
 </head>
-<body class="p-4 md:p-8 flex justify-center items-start min-h-screen">
+<body>
+  <div class="wrap">
+    <h1>List Kotak dengan Thumbnail & Label</h1>
 
-    <div class="w-full max-w-2xl">        
-        <header class="flex items-center justify-between py-4 border-b border-gray-700 mb-6 relative">
-            <div class="flex items-center space-x-2">
-                <span class="p-2 bg-indigo-500 bg-opacity-20 rounded-full text-indigo-400">
-                    <i class="fa-solid fa-warehouse fa-lg"></i>
-                </span>
-                <span class="text-xl font-semibold text-gray-200">Firguna Team</span>
-            </div>
-            
-            <div class="relative">
-                <button id="profile-menu-button" class="p-2 text-gray-400 hover:text-gray-200">
-                    <i class="fa-solid fa-circle-user fa-2x"></i>
-                </button>
-                               
-                <div id="profile-menu" class="hidden absolute right-0 mt-2 w-64 bg-dark-card rounded-xl shadow-lg border border-gray-700 z-50">
-                    <div class="p-4 space-y-4">
-                        
-                        <div class="space-y-1">
-                            <label for="profile-name-input" class="text-xs font-semibold text-gray-400 uppercase">Nama</label>
-                            <input type="text" id="profile-name-input" class="w-full p-2 bg-gray-700 rounded-lg text-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500" placeholder="Kevin">
-                        </div>
-
-                        <div class="space-y-1">
-                            <label for="profile-wa-input" class="text-xs font-semibold text-gray-400 uppercase">No WA</label>
-                            <input type="tel" id="profile-wa-input" class="w-full p-2 bg-gray-700 rounded-lg text-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500" placeholder="+6281234567890">
-                        </div>
-
-                        <div class="space-y-1">
-                            <label for="payment-bank-input" class="text-xs font-semibold text-gray-400 uppercase">Nama Bank / E-Wallet</label>
-                            <input type="text" id="payment-bank-input" class="w-full p-2 bg-gray-700 rounded-lg text-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500" placeholder="Contoh: Dana A.N Muhammad Nadif Setiawan">
-                        </div>
-                        <div class="space-y-1">
-                            <label for="payment-number-input" class="text-xs font-semibold text-gray-400 uppercase">Nomor Pembayaran</label>
-                            <input type="text" id="payment-number-input" class="w-full p-2 bg-gray-700 rounded-lg text-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500" placeholder="Contoh: 0882008612013">
-                        </div>
-
-                        <div class="flex items-center justify-between p-3 bg-gray-700 rounded-lg">
-                            <div class="flex items-center space-x-3">
-                                <span class="text-indigo-400">
-                                    <i class="fa-solid fa-wallet fa-lg"></i>
-                                </span>
-                                <div>
-                                    <h4 class="text-xs font-semibold text-gray-400 uppercase">Total Testimoni</h4>
-                                    <p id="profile-balance" class="text-sm text-green-400 font-bold">67 Testimonial</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center space-x-3 p-3 bg-gray-700 rounded-lg">
-                            <span class="text-indigo-400">
-                                <i class="fa-solid fa-envelope fa-lg"></i>
-                            </span>
-                            <div>
-                                <h4 class="text-xs font-semibold text-gray-400 uppercase">Total Team</h4>
-                                <p id="total-emails-sent" class="text-sm text-gray-200 font-bold">20 Team Terkonfimasi</p>
-                            </div>
-                        </div>
-
-                        <div class="border-t border-gray-700 pt-4 space-y-2">
-                            <button id="btn-notification-open" class="w-full text-left flex items-center justify-between p-3 rounded-lg hover:bg-gray-700 transition-colors duration-200">
-                                <div class="flex items-center space-x-3">
-                                    <span class="text-indigo-400">
-                                        <i class="fa-solid fa-bell fa-lg"></i>
-                                    </span>
-                                    <span class="text-gray-200">Notifikasi</span>
-                                </div>
-                                <span id="notification-count" class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full hidden"></span>
-                            </button>
-                            <button id="save-profile-button" class="w-full p-3 rounded-lg bg-gradient-purple text-white font-semibold transition-all duration-200 flex items-center justify-center space-x-2 hover:opacity-90">
-                                <i class="fa-solid fa-save fa-lg"></i>
-                                <span>Simpan Profil</span>
-                            </button>
-                        </div>
-
-                        <div class="border-t border-gray-700 pt-2">
-                            <a href="/admin" class="w-full text-left flex items-center justify-center p-3 rounded-lg text-gray-400 hover:text-gray-200 hover:bg-gray-700 transition-colors duration-200">
-                                <i class="fa-solid fa-user-gear fa-lg mr-2"></i>
-                                <span>Panel Admin</span>
-                            </a>
-                        </div>
-                        <div class="border-t border-gray-700 pt-2">
-                            <a href="https://wa.me/62882008612013" class="w-full text-left flex items-center justify-center p-3 rounded-lg text-gray-400 hover:text-gray-200 hover:bg-gray-700 transition-colors duration-200">
-                                <i class="fa-solid fa-headset fa-lg mr-2"></i>
-                                <span>Customer Service</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <nav class="flex space-x-2 p-2 bg-dark-card rounded-xl shadow-lg mb-6">
-            <button id="tab-submission" class="flex-1 flex items-center justify-center space-x-2 p-3 text-sm font-medium rounded-lg bg-gradient-purple text-white shadow-lg transition-colors duration-200">
-                <i class="fa-solid fa-envelope fa-lg"></i>
-                <span>Email Submission</span>
-            </button>
-            <button id="tab-history" class="flex-1 flex items-center justify-center space-x-2 p-3 text-sm font-medium rounded-lg text-gray-400 hover:bg-gray-700 transition-colors duration-200">
-                <i class="fa-solid fa-clock-rotate-left fa-lg"></i>
-                <span>Riwayat Pengiriman</span>
-            </button>
-        </nav>
-
-        <main id="main-content">
-            <div id="card-tutorial-rules" class="p-6 bg-dark-card rounded-xl shadow-lg transition-all duration-300 mb-6">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="flex items-center space-x-3">
-                        <span class="p-2 bg-indigo-500 bg-opacity-20 rounded-full text-indigo-400">
-                            <i class="fa-solid fa-book fa-lg"></i>
-                        </span>
-                        <h2 class="text-lg font-semibold text-gray-200">Tutorial & Rules</h2>
-                    </div>
-                </div>
-                
-                <ul class="list-disc list-inside text-gray-400">
-                    <li class="mb-2">           
-                        Masukkan email (per baris)
-                    </li>
-                    <li class="mb-2">           
-                        Password wajib PERINTAH805 (besar semua)
-                    </li>
-                    <li class="mb-2">           
-                        Gmail harus nama orang tidak boleh sama & berurutan
-                    </li>
-                    <li class="mb-2">           
-                        Isi data profil yg valid 
-                    </li>
-                    <li class="mb-2">           
-                        Admin transfer sesuai data profil kalian
-                    </li>
-                    <li class="mb-2">           
-                        Gmail terdeteksi Verif tidak akan di payment
-                    </li>        
-                    <li class="mb-2">           
-                        Gmail harus fress, no duplikat
-                    </li>
-                    <li class="mb-2">           
-                        Melanggar rules tidak di transfer
-                    </li>
-                    <li class="mb-2">
-                        <a href="https://t.me/kemzstore805" class="hover:text-indigo-400 transition-colors duration-200">Ada masalah hubungi admin</a>
-                    </li>
-                </ul>
-            </div>
-          
-            <div id="card-submission" class="p-6 bg-dark-card rounded-xl shadow-lg transition-all duration-300">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="flex items-center space-x-3">
-                        <span class="p-2 bg-indigo-500 bg-opacity-20 rounded-full text-indigo-400">
-                            <i class="fa-solid fa-envelope fa-lg"></i>
-                        </span>
-                        <h2 class="text-lg font-semibold text-gray-200">Management Email</h2>
-                    </div>
-                </div>
-                <p id="email-price-info" class="text-sm text-gray-500 mb-4">Stor email untuk diproses. Harga per email: Rp. 1000</p>
-                
-                <form id="email-form">
-                    <div class="mb-4">
-                        <label for="email-list" class="block text-sm font-medium text-gray-400 mb-1">Email (per baris)</label>
-                        <textarea id="email-list" rows="5" class="w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="arman@gmail.com&#10;resa4@gmail.com&#10;andika38@gmail.com"></textarea>
-                    </div>
-
-                    <p class="text-xs text-gray-500 mb-6">
-                        <i class="fa-solid fa-circle-info fa-sm text-blue-400"></i>
-                        PAYMENT MAXIMAL 3X24 JAM.
-                    </p>
-
-                    <div class="mb-6 relative">
-                        <label for="common-password" class="block text-sm font-medium text-gray-400 mb-1">Password</label>
-                        <input type="password" id="common-password" class="w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 pr-10" placeholder="Password wajib PERINTAH805">
-                        
-                        <button type="button" id="toggle-password" class="absolute inset-y-0 right-0 top-6 pr-3 flex items-center text-gray-400 hover:text-gray-200">
-                            <i id="eye-icon" class="fa-solid fa-eye"></i>
-                        </button>
-                    </div>
-
-                    <button type="submit" class="w-full p-3 rounded-lg bg-gradient-purple text-white font-semibold transition-all duration-200 flex items-center justify-center space-x-2 hover:opacity-90 disabled:opacity-50" id="submit-button">
-                        <div id="spinner" class="hidden h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                        <span id="submit-text">Kirim Email</span>
-                    </button>
-                    <p id="status-message" class="mt-4 text-center text-sm font-medium"></p>
-                </form>
-            </div>
-            
-            <div id="card-history" class="p-6 bg-dark-card rounded-xl shadow-lg transition-all duration-300 hidden">
-                <h2 class="text-lg font-semibold text-gray-200 mb-4">Coming Soon.</h2>
-                <div id="history-list" class="space-y-4">
-                </div>
-            </div>
-        </main>
-    </div>
-   
-
-    <div id="notification-modal" class="fixed inset-0 hidden modal-overlay flex justify-center items-center p-4">
-        <div class="bg-dark-card rounded-xl shadow-2xl p-6 w-full max-w-lg relative">
-            <button id="btn-close-notification" class="absolute top-3 right-3 text-gray-400 hover:text-gray-200">
-                <i class="fa-solid fa-xmark fa-lg"></i>
-            </button>
-            <h3 class="text-lg font-semibold text-gray-200 mb-4">Notifikasi</h3>
-            <ul id="notification-list" class="space-y-4 text-gray-400 max-h-80 overflow-y-auto pr-2">
-
-            </ul>
+    <section class="box-grid">
+      <!-- Card 1 -->
+      <article class="box">
+        <div class="thumb">
+          <span class="label">Artikel</span>
+          <img src="https://picsum.photos/id/1015/600/400" alt="Artikel Gambar">
         </div>
-    </div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const tabSubmission = document.getElementById('tab-submission');
-            const tabHistory = document.getElementById('tab-history');
-            const cardTutorialRules = document.getElementById('card-tutorial-rules');
-            const cardSubmission = document.getElementById('card-submission');
-            const cardHistory = document.getElementById('card-history');
-            const form = document.getElementById('email-form');
-            const emailList = document.getElementById('email-list');
-            const commonPasswordInput = document.getElementById('common-password');
-            const submitButton = document.getElementById('submit-button');
-            const submitText = document.getElementById('submit-text');
-            const spinner = document.getElementById('spinner');
-            const statusMessage = document.getElementById('status-message');
-            const emailPriceInfo = document.getElementById('email-price-info');
+        <div class="content">
+          <h3 class="title">Panduan Memulai</h3>
+          <p class="desc">Ringkasan singkat tentang langkah awal yang harus dilakukan.</p>
+          <div class="actions">
+            <a class="btn ghost" href="https://contoh.com/artikel" target="_blank">Lihat</a>
+            <a class="btn primary" href="https://contoh.com/artikel" target="_blank">Baca</a>
+          </div>
+        </div>
+      </article>
 
-            const profileMenuButton = document.getElementById('profile-menu-button');
-            const profileMenu = document.getElementById('profile-menu');
-            const profileNameInput = document.getElementById('profile-name-input');
-            const profileWaInput = document.getElementById('profile-wa-input');
-            const paymentBankInput = document.getElementById('payment-bank-input');
-            const paymentNumberInput = document.getElementById('payment-number-input');
-            const saveProfileButton = document.getElementById('save-profile-button');
-            const btnNotificationOpen = document.getElementById('btn-notification-open');
-            const btnCloseNotification = document.getElementById('btn-close-notification');
-            const notificationModal = document.getElementById('notification-modal');
-            const notificationList = document.getElementById('notification-list');
-            const notificationCount = document.getElementById('notification-count');
-            const totalEmailsSentEl = document.getElementById('total-emails-sent');
-            const profileBalanceEl = document.getElementById('profile-balance');
-            const historyList = document.getElementById('history-list');
-            const historyEmpty = document.getElementById('history-empty');
+      <!-- Card 2 -->
+      <article class="box">
+        <div class="thumb">
+          <span class="label">Produk</span>
+          <img src="https://picsum.photos/id/1005/600/400" alt="Produk Gambar">
+        </div>
+        <div class="content">
+          <h3 class="title">Template Landing</h3>
+          <p class="desc">Template ringan untuk kampanye dan promosi online.</p>
+          <div class="actions">
+            <a class="btn ghost" href="https://contoh.com/template" target="_blank">Preview</a>
+            <a class="btn primary" href="https://contoh.com/template" target="_blank">Unduh</a>
+          </div>
+        </div>
+      </article>
 
-            const togglePasswordButton = document.getElementById('toggle-password');
-            const eyeIcon = document.getElementById('eye-icon');
-            
-            togglePasswordButton.addEventListener('click', () => {
-                const type = commonPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                commonPasswordInput.setAttribute('type', type);
-                eyeIcon.classList.toggle('fa-eye');
-                eyeIcon.classList.toggle('fa-eye-slash');
-            });
-
-
-            let userId = localStorage.getItem('userId');
-
-            emailList.addEventListener('blur', () => {
-                emailList.value = emailList.value.toLowerCase();
-            });
-
-            async function fetchProfile() {
-                try {
-                    const response = await fetch(`/api/profile?userId=${userId || ''}`);
-                    const profile = await response.json();
-                    
-                    if (profile.newUserId) {
-                        userId = profile.newUserId;
-                        localStorage.setItem('userId', userId);
-                    }
-                    
-                    profileNameInput.value = profile.name || '';
-                    profileWaInput.value = profile.waNumber || '';
-                    paymentBankInput.value = profile.bankName || '';
-                    paymentNumberInput.value = profile.paymentNumber || '';
-                    totalEmailsSentEl.textContent = `${profile.totalEmailsSent || 0} Email`;
-                    profileBalanceEl.textContent = `Rp. ${profile.balance ? profile.balance.toLocaleString('id-ID') : 0}`;
-                    if (profile.settings && profile.settings.emailPrice) {
-                        emailPriceInfo.textContent = `Tambahkan email untuk diproses. Harga per email: Rp. ${profile.settings.emailPrice.toLocaleString('id-ID')}`;
-                    }
-                } catch (error) {
-                    console.error("Gagal mengambil profil:", error);
-                }
-            }
-
-            async function fetchNotifications() {
-                try {
-                    const response = await fetch(`/api/notifications?userId=${userId}`);
-                    const notifs = await response.json();
-                    renderNotifications(notifs);
-                } catch (error) {
-                    console.error("Gagal mengambil notifikasi:", error);
-                }
-            }
-
-            function renderNotifications(notifs) {
-                notificationList.innerHTML = '';
-                if (notifs.length === 0) {
-                    notificationList.innerHTML = `<li class="text-center text-gray-500">Tidak ada notifikasi.</li>`;
-                    notificationCount.classList.add('hidden');
-                } else {
-                    notifs.forEach(notif => {
-                        const li = document.createElement('li');
-                        li.className = 'p-4 rounded-lg bg-gray-700 relative';
-                        li.innerHTML = `
-                            <div class="flex items-center justify-between">
-                                <p class="text-sm font-semibold text-gray-200">${notif.title}</p>
-                                <button class="delete-notification absolute top-2 right-2 text-gray-400 hover:text-red-400" data-id="${notif._id}">
-                                    <i class="fa-solid fa-xmark fa-lg"></i>
-                                </button>
-                            </div>
-                            <p class="text-xs text-gray-400 mt-1">${new Date(notif.timestamp).toLocaleString('id-ID')}</p>
-                        `;
-                        notificationList.appendChild(li);
-                    });
-                    notificationCount.classList.remove('hidden');
-                    notificationCount.textContent = notifs.length;
-                }
-            }
-
-            async function fetchHistory() {
-                if (!userId) {
-                    historyEmpty.classList.remove('hidden');
-                    return;
-                }
-                try {
-                    const response = await fetch('/api/user/submissions', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ userId })
-                    });
-                    const submissions = await response.json();
-                    renderHistory(submissions);
-                } catch (error) {
-                    console.error("Gagal mengambil riwayat:", error);
-                }
-            }
-
-            function renderHistory(submissions) {
-                historyList.innerHTML = '';
-                if (submissions.length === 0) {
-                    historyEmpty.classList.remove('hidden');
-                } else {
-                    historyEmpty.classList.add('hidden');
-                    submissions.forEach(sub => {
-                        const div = document.createElement('div');
-                        const statusColor = sub.status === 'completed' ? 'text-green-400' : 'text-yellow-400';
-                        const statusText = sub.status === 'completed' ? 'Selesai' : 'Menunggu Konfirmasi';
-                        div.className = 'p-4 rounded-lg bg-gray-700';
-                        div.innerHTML = `
-                            <div class="flex items-center justify-between">
-                                <p class="text-sm font-semibold text-gray-200">${sub.emails.length} Email Dikirim</p>
-                                <span class="text-xs font-bold ${statusColor}">${statusText}</span>
-                            </div>
-                            <p class="text-xs text-gray-400 mt-1">${new Date(sub.timestamp).toLocaleString('id-ID')}</p>
-                        `;
-                        historyList.appendChild(div);
-                    });
-                }
-            }
-            
-            fetchProfile();
-            
-            notificationList.addEventListener('click', async (e) => {
-                const deleteButton = e.target.closest('.delete-notification');
-                if (deleteButton) {
-                    const idToDelete = deleteButton.dataset.id;
-                    try {
-                        const response = await fetch(`/api/notifications/${idToDelete}`, { 
-                            method: 'DELETE',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ userId })
-                        });
-                        if (response.ok) {
-                            await fetchNotifications();
-                        }
-                    } catch (error) {
-                        console.error("Gagal menghapus notifikasi:", error);
-                    }
-                }
-            });
-
-            profileMenuButton.addEventListener('click', (e) => {
-                e.stopPropagation();
-                profileMenu.classList.toggle('hidden');
-            });
-
-            document.addEventListener('click', (e) => {
-                if (!profileMenu.contains(e.target) && !profileMenuButton.contains(e.target)) {
-                    profileMenu.classList.add('hidden');
-                }
-            });
-            
-            saveProfileButton.addEventListener('click', async () => {
-                const name = profileNameInput.value;
-                const waNumber = profileWaInput.value;
-                const bankName = paymentBankInput.value;
-                const paymentNumber = paymentNumberInput.value;
-
-                try {
-                    const response = await fetch('/api/save-profile', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ userId, name, waNumber, bankName, paymentNumber })
-                    });
-                    const result = await response.json();
-                    if (response.ok) {
-                        console.log(result.message);
-                    } else {
-                        console.error(result.error);
-                    }
-                } catch (error) {
-                    console.error('Gagal menyimpan profil.');
-                }
-            });
-
-            tabSubmission.addEventListener('click', () => {
-                tabSubmission.classList.add('bg-gradient-purple', 'text-white');
-                tabHistory.classList.remove('bg-gradient-purple', 'text-white');
-                tabHistory.classList.add('text-gray-400');
-                cardSubmission.classList.remove('hidden');
-                cardTutorialRules.classList.remove('hidden');
-                cardHistory.classList.add('hidden');
-                fetchProfile();
-            });
-
-            tabHistory.addEventListener('click', () => {
-                tabHistory.classList.add('bg-gradient-purple', 'text-white');
-                tabSubmission.classList.remove('bg-gradient-purple', 'text-white');
-                tabSubmission.classList.add('text-gray-400');
-                cardHistory.classList.remove('hidden');
-                cardSubmission.classList.add('hidden');
-                cardTutorialRules.classList.add('hidden');
-                fetchHistory();
-            });
-
-            btnNotificationOpen.addEventListener('click', (e) => {
-                e.stopPropagation();
-                profileMenu.classList.add('hidden');
-                notificationModal.classList.remove('hidden');
-                fetchNotifications();
-            });
-
-            btnCloseNotification.addEventListener('click', () => {
-                notificationModal.classList.add('hidden');
-            });
-
-            notificationModal.addEventListener('click', (e) => {
-                if (e.target === notificationModal) {
-                    notificationModal.classList.add('hidden');
-                }
-            });
-
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-
-                const nameValue = profileNameInput.value.trim();
-                const waValue = profileWaInput.value.trim();
-                const bankNameValue = paymentBankInput.value.trim();
-                const paymentNumberValue = paymentNumberInput.value.trim();
-
-                if (!nameValue || !waValue) {
-                    statusMessage.textContent = 'Silakan lengkapi Nama,NoPe, NoWA Anda di menu profil,untuk mempermudah proses pembayaran.';
-                    statusMessage.classList.remove('text-green-400');
-                    statusMessage.classList.add('text-red-400');
-                    return;
-                }
-
-                submitButton.disabled = true;
-                submitText.textContent = 'Memproses...';
-                spinner.classList.remove('hidden');
-                statusMessage.textContent = '';
-                
-                const emails = emailList.value.split('\n').map(email => email.trim()).filter(email => email.length > 0);
-                const commonPassword = commonPasswordInput.value.trim();
-                
-                if (emails.length === 0) {
-                    statusMessage.textContent = 'Silakan masukkan setidaknya satu alamat email.';
-                    statusMessage.classList.remove('text-green-400');
-                    statusMessage.classList.add('text-red-400');
-                    submitButton.disabled = false;
-                    submitText.textContent = 'Kirim Email';
-                    spinner.classList.add('hidden');
-                    return;
-                }
-
-                try {
-                    const response = await fetch('/api/submit-emails', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ 
-                            userId,
-                            emails, 
-                            commonPassword, 
-                            name: nameValue, 
-                            waNumber: waValue,
-                            bankName: bankNameValue,
-                            paymentNumber: paymentNumberValue
-                        })
-                    });
-
-                    const result = await response.json();
-
-                    if (response.ok) {
-                        statusMessage.textContent = result.message;
-                        statusMessage.classList.remove('text-red-400');
-                        statusMessage.classList.add('text-green-400');
-                        emailList.value = '';
-                        commonPasswordInput.value = '';
-                        await fetchNotifications();
-                    } else {
-                        statusMessage.textContent = result.error || 'Terjadi kesalahan pada server.';
-                        statusMessage.classList.remove('text-green-400');
-                        statusMessage.classList.add('text-red-400');
-                    }
-
-                } catch (error) {
-                    console.error('Error:', error);
-                    statusMessage.textContent = 'Tidak dapat terhubung ke server. Silakan coba lagi.';
-                    statusMessage.classList.remove('text-green-400');
-                    statusMessage.classList.add('text-red-400');
-                } finally {
-                    submitButton.disabled = false;
-                    submitText.textContent = 'Kirim Email';
-                    spinner.classList.add('hidden');
-                }
-            });
-        });
-    </script>
+      <!-- Card 3 -->
+      <article class="box">
+        <div class="thumb">
+          <span class="label">Tutorial</span>
+          <img src="https://picsum.photos/id/1016/600/400" alt="Tutorial Gambar">
+        </div>
+        <div class="content">
+          <h3 class="title">CSS Grid Lanjutan</h3>
+          <p class="desc">Contoh penggunaan grid untuk layout modern.</p>
+          <div class="actions">
+            <a class="btn ghost" href="https://contoh.com/tutorial" target="_blank">Lihat</a>
+            <a class="btn primary" href="https://contoh.com/tutorial" target="_blank">Pelajari</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
 </body>
 </html>
