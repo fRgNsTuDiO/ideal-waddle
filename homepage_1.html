@@ -1,971 +1,556 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Minecraft servers in Indonesia | Minecraft Server List</title>
-	<meta name="language" content="en" />
-	<meta name="author" content="Listforge">
-	<meta name="description" content="Minecraft servers located in Indonesia" />
-		<link rel="preload" as="style" href="/assets/css/bootstrap.min.css" media="all">
-	<link rel="preload" as="style" href="/assets/css/styles.min.css" media="all">
-	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/styles.min.css"/>
-	<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="ff9b66a948b82d4cfa3e4ca5-|49"></script><link rel="preload" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"></noscript>
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="canonical" href="https://minecraft-mp.com/country/indonesia/" />		<script defer data-domain="minecraft-mp.com" src="https://plausible.io/js/script.js" type="ff9b66a948b82d4cfa3e4ca5-text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kemz Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" href="https://files.catbox.moe/8hm9ex.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c0d12;
+            color: #d1d5db;
+        }
+        .bg-dark-card {
+            background-color: #1a1e27;
+        }
+        .bg-gradient-purple {
+            background-image: linear-gradient(to right, #6b21a8, #8b5cf6);
+        }
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 1000;
+        }
+    </style>
 </head>
-<body>
-<div class="menu">
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-collapse-menu" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" title="Minecraft Server List" href="/"><img src="/images/logo_top.png" width="50" height="50" alt="Minecraft Server List" /></a>
-			</div>
-			<div class="collapse navbar-collapse" id="bs-collapse-menu">
-				<ul class="nav navbar-nav">
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Server List <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="/servers/latest/">Latest Servers</a></li>
-							<li><a href="/servers/updated/">Recently Updated</a></li>
-							<li><a href="/">Servers by Score</a></li>
-							<li><a href="/servers/random/">Random Servers</a></li>
-							<li><a href="/servers/private/">Private Servers</a></li>
-							<li><a href="/countries/">Servers by Countries</a></li>
-							<li><a href="/versions/">Servers by Versions</a></li>
-							<li><a href="/server-ping/">Servers by Ping</a></li>
-							<li><a href="/types/">Servers by Types</a></li>
-							<li><a href="/themes/">Servers by Themes</a></li>
-							<li><a href="/youtube-videos/">Servers by Videos</a></li>
-							<li><a href="/servers/players/">Most Played Servers</a></li>
-						</ul>
-					</li>
-					<li><a href="/search/">Search</a></li>
-										<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i> Login/Register <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="/register/">Register</a></li>
-							<li><a href="/login/">Login</a></li>
-							<li><a href="/password-reset/">Password Reset</a></li>
-							<li><a href="/activation/resend/">Resend Activation Email</a></li>
-						</ul>
-					</li>
-										<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Help/FAQ <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="/help/">Help/FAQ</a></li>
-							<li><a href="/votifier/">Votifier Tutorial</a></li>
-							<li><a href="/help/api/">API Documentation</a></li>
-							<li><a href="/servers/premium/faq/">Premium FAQ</a></li>							<li><a href="/help/ping/">Ping FAQ</a></li>							<li><a href="/achievements/">Achievement List</a></li>							<li><a href="/achievements/leaderboard/">Achievement Leaderboard</a></li>							<li><a href="/servers/hosting/">Server Hosting</a></li>
-						</ul>
-					</li>
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="/about/">About</a></li>
-							<li><a href="/minecraft/">Minecraft</a></li>
-							<li><a href="/stats/">Statistics</a></li>
-							<li><a href="/partners/">Partners</a></li>
-						</ul>
-					</li>
-					<li class="yourserver"><a href="/your-server/"><i class="fa fa-server"></i> Your Server</a></li>
-				</ul>
-
-
-				<form class="navbar-form navbar-right hidden-xs hidden-sm" role="search" action="/search/" method="post">
-					<div class="input-group add-on">
-						<input class="form-control" placeholder="Search" name="keyword" id="keyword" type="text">
-						<div class="input-group-btn">
-							<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-						</div>
-					</div>
-				</form>
-
-				<ul class="navsocial nav navbar-nav navbar-right hidden-xs hidden-sm">
-																				<li><a href="https://twitter.com/minecraftslist" title="Twitter" target="_blank"><i class="fa fa-twitter-square fa-lg"></i></a></li>
-																			</ul>
-
-			</div>
-		</div>
-	</nav>
-</div>
-
-<div class="header hidden-xs">
-	<div class="container">
-			</div>
-</div>
-
-<div class="content">
-	<div class="container">
-
-		
-		
-		
-		
-		
-				<div style="height: 10px;"></div>
-		<div class="row">
-		<div id="topadspot" class="col-md-12" align="center">
-			<ins class="adsbygoogle"
-			style="display:block;height:100px"
-			data-ad-client="ca-pub-5285023748323139"
-			data-ad-slot="2702424961"></ins>
-			<script type="ff9b66a948b82d4cfa3e4ca5-text/javascript">(adsbygoogle = window.adsbygoogle || []).push({});</script>
-		</div>
-		</div>
-					
-		<ul class="breadcrumb">
-	<li><a href="/">Minecraft Servers</a></li>
-	<li><a href="/countries/">Countries</a></li>
-	<li class="active">Indonesia</li>
-</ul>
-
-<h1>Minecraft Servers In Indonesia <img src="/images/flags/Indonesia.png" style="vertical-align:middle" border="0" alt="Indonesia" title="Indonesia" class="country-flag"/></h1>
-
-Servers: <strong>301</strong><br/>
-<p><div class="well">Explore our Minecraft server list, featuring a wide array of Minecraft servers located in Indonesia. This collection is specially curated to showcase the best Indonesian servers, offering a variety of game modes and community experiences. Whether you're looking for intense PvP battles, collaborative building projects, or just a casual gameplay experience, our list brings you the finest Minecraft servers Indonesia has to offer. Dive into these unique Indonesian servers and join a growing community of local and international players!</div></p>
-
-
-<ul class="pagination pull-right">
-		<li class="active"><a href="/country/indonesia/">1</a></li><li><a href="/country/indonesia/2/">2</a></li>
-	
-	
-			
-	
-			
-	
-		
-	<li><a href="/country/indonesia/3/">3</a></li>
-
-		
-	
-		
-	<li><a href="/country/indonesia/4/">4</a></li>
-
-		
-	
-		
-	<li><a href="/country/indonesia/5/">5</a></li>
-
-		
-	
-		
-	<li><a href="/country/indonesia/6/">6</a></li>
-
-		
-	
-		
-	<li><a href="/country/indonesia/7/">7</a></li>
-
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<li class="disabled"><a href="#">...</a></li>
-	<li><a href="/country/indonesia/12/">12</a></li> <li><a href="/country/indonesia/13/">13</a></li> 	<li><a href="/country/indonesia/2/">Next</a></li></ul>
-<div class="clearfix"></div>
-
-
-<table class="table table-bordered">
-	<thead>
-		<tr>
-			<th class="hidden-xs" width="8%"><i class="fa fa-list-ol"></i> Rank</th>
-			<th width="48%"><i class="fa fa-hdd-o"></i> Server</th>
-			<th class="hidden-xs" width="10%"><i class="fa fa-group"></i> Players</th>
-			<th class="hidden-xs" width="9%"><i class="fa fa-power-off"></i> Status</th>
-			<th class="hidden-xs" width="25%"><i class="fa fa-tags"></i> Tags</th>
-					</tr>
-	</thead>
-	<tbody>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s287720"><img src="/images/favicon/287720.png?ts=1753815319" height="64" width="64" border="0" alt="KandangAlwi" title="KandangAlwi" loading="lazy" /></a></div>			<strong>#49</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s287720">
-				<video src="https://minecraft-mp.com/images/banners/banner-287720-1738749575.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>KandangAlwi</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_7/" class="btn btn-info btn-sm"  title="Minecraft 1.21.7 Servers"><i class="fa fa-cog"></i> 1.21.7</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s287720" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>kalwi.id</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="kalwi.id" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_7/" class="btn btn-info btn-sm" title="Minecraft 1.21.7 Servers"><i class="fa fa-cog"></i> 1.21.7</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 114/2025</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>kalwi.id</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="kalwi.id" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">114/2025</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Cross-Play</span> 						<span class="badge">Discord</span> 						<span class="badge">Economy</span> 						<span class="badge">Jobs</span> 						<span class="badge">Land Claim</span> 						<span class="badge">OneBlock</span> 						<span class="badge">Ranks</span> 						<span class="badge">Skyblock</span> 						<span class="badge">Survival</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s339723"><img src="/images/favicon/339723.png?ts=1755558436" height="64" width="64" border="0" alt="AlwiNation" title="AlwiNation" loading="lazy" /></a></div>			<strong>#72</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s339723">
-				<video src="https://minecraft-mp.com/images/banners/banner-339723-1739705570.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>AlwiNation</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_7/" class="btn btn-info btn-sm"  title="Minecraft 1.21.7 Servers"><i class="fa fa-cog"></i> 1.21.7</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s339723" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>alwination.id</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="alwination.id" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_7/" class="btn btn-info btn-sm" title="Minecraft 1.21.7 Servers"><i class="fa fa-cog"></i> 1.21.7</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 219/1888</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>alwination.id</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="alwination.id" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">219/1888</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Casual</span> 						<span class="badge">Cross-Play</span> 						<span class="badge">Earth</span> 						<span class="badge">Skyblock</span> 						<span class="badge">SMP</span> 						<span class="badge">Survival</span> 						<span class="badge">Vanilla</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s320411"><img src="/images/favicon/320411.png?ts=1755212785" height="64" width="64" border="0" alt="MineGens" title="MineGens" loading="lazy" /></a></div>			<strong>#87</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s320411">
-				<video src="https://minecraft-mp.com/images/banners/banner-320411-1686920875.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>MineGens</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_8/" class="btn btn-info btn-sm"  title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s320411" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>minegens.id</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="minegens.id" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_8/" class="btn btn-info btn-sm" title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 76/88</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>minegens.id</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="minegens.id" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">76/88</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Cross-Play</span> 						<span class="badge">Discord</span> 						<span class="badge">Jobs</span> 						<span class="badge">Land Claim</span> 						<span class="badge">OneBlock</span> 						<span class="badge">Ranks</span> 						<span class="badge">Skyblock</span> 						<span class="badge">Survival</span> 						<span class="badge">Vanilla</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s333355"><img src="/images/favicon/333355.png?ts=1737764593" height="64" width="64" border="0" alt="Minesive" title="Minesive" loading="lazy" /></a></div>			<strong>#105</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s333355">
-				<video src="https://minecraft-mp.com/images/banners/banner-333355-1721379218.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>Minesive</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_5/" class="btn btn-info btn-sm"  title="Minecraft 1.21.5 Servers"><i class="fa fa-cog"></i> 1.21.5</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s333355" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>minesive.com</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="minesive.com" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_5/" class="btn btn-info btn-sm" title="Minecraft 1.21.5 Servers"><i class="fa fa-cog"></i> 1.21.5</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 107/500</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>minesive.com</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="minesive.com" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">107/500</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Earth</span> 						<span class="badge">Economy</span> 						<span class="badge">Events</span> 						<span class="badge">OneBlock</span> 						<span class="badge">Paper</span> 						<span class="badge">Skyblock</span> 						<span class="badge">SMP</span> 						<span class="badge">Survival</span> 						<span class="badge">War</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s306253"><img src="/images/favicon/306253.png?ts=1750951626" height="64" width="64" border="0" alt="Kaizen Network (Minecraft Server Indonesia)" title="Kaizen Network (Minecraft Server Indonesia)" loading="lazy" /></a></div>			<strong>#121</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s306253">
-				<video class="lazy" data-src="https://minecraft-mp.com/images/banners/banner-306253-1754539392.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>Kaizen Network (Minecraft Server Indonesia)</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_8/" class="btn btn-info btn-sm"  title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s306253" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>mp.kaizenmc.id</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="mp.kaizenmc.id" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_8/" class="btn btn-info btn-sm" title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 75/80</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>mp.kaizenmc.id</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="mp.kaizenmc.id" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">75/80</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Creative</span> 						<span class="badge">Cross-Play</span> 						<span class="badge">Discord</span> 						<span class="badge">Economy</span> 						<span class="badge">Land Claim</span> 						<span class="badge">PvP</span> 						<span class="badge">Roleplay</span> 						<span class="badge">Skyblock</span> 						<span class="badge">Survival</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s329071"><img src="/images/favicon/329071.png?ts=1752661598" height="64" width="64" border="0" alt="RelxMC" title="RelxMC" loading="lazy" /></a></div>			<strong>#175</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s329071">
-				<video class="lazy" data-src="https://minecraft-mp.com/images/banners/banner-329071-1735918613.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>RelxMC</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_4/" class="btn btn-info btn-sm"  title="Minecraft 1.21.4 Servers"><i class="fa fa-cog"></i> 1.21.4</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s329071" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>play.relxmc.com</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="play.relxmc.com" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_4/" class="btn btn-info btn-sm" title="Minecraft 1.21.4 Servers"><i class="fa fa-cog"></i> 1.21.4</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 18/500</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>play.relxmc.com</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="play.relxmc.com" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">18/500</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Cross-Play</span> 						<span class="badge">Economy</span> 						<span class="badge">Land Claim</span> 						<span class="badge">PvP</span> 						<span class="badge">Skyblock</span> 						<span class="badge">Survival</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s326073"><img src="/images/favicon/326073.png?ts=1750094725" height="64" width="64" border="0" alt="ZenyLand Network" title="ZenyLand Network" loading="lazy" /></a></div>			<strong>#176</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s326073">
-				<video class="lazy" data-src="https://minecraft-mp.com/images/banners/banner-326073-1750185249.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>ZenyLand Network</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_5/" class="btn btn-info btn-sm"  title="Minecraft 1.21.5 Servers"><i class="fa fa-cog"></i> 1.21.5</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s326073" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>mc.zenyland.com</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="mc.zenyland.com" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_5/" class="btn btn-info btn-sm" title="Minecraft 1.21.5 Servers"><i class="fa fa-cog"></i> 1.21.5</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 60/200</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>mc.zenyland.com</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="mc.zenyland.com" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">60/200</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Adventure</span> 						<span class="badge">Discord</span> 						<span class="badge">Economy</span> 						<span class="badge">Land Claim</span> 						<span class="badge">Minigames</span> 						<span class="badge">PvE</span> 						<span class="badge">PvP</span> 						<span class="badge">Roleplay</span> 						<span class="badge">Survival</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s347207"><img src="/images/favicon/347207.png?ts=1754705736" height="64" width="64" border="0" alt="ChosenMC" title="ChosenMC" loading="lazy" /></a></div>			<strong>#213</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s347207">
-				<video class="lazy" data-src="https://minecraft-mp.com/images/banners/banner-347207-1754705629.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>ChosenMC</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_8/" class="btn btn-info btn-sm"  title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s347207" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>chosenmc.net</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="chosenmc.net" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_8/" class="btn btn-info btn-sm" title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 31/500</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>chosenmc.net</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="chosenmc.net" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">31/500</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Cross-Play</span> 						<span class="badge">Discord</span> 						<span class="badge">Skyblock</span> 						<span class="badge">SlimeFun</span> 						<span class="badge">Survival</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s225640"><img src="/images/favicon/225640.png?ts=1754314273" height="64" width="64" border="0" alt="Silhouette Project Craft | mc.spcid.net" title="Silhouette Project Craft | mc.spcid.net" loading="lazy" /></a></div>			<strong>#226</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s225640">
-				<video class="lazy" data-src="https://minecraft-mp.com/images/banners/banner-225640-1746951828.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>Silhouette Project Craft | mc.spcid.net</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_8/" class="btn btn-info btn-sm"  title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s225640" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>mc.spcid.net</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="mc.spcid.net" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_8/" class="btn btn-info btn-sm" title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 22/150</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>mc.spcid.net</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="mc.spcid.net" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">22/150</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Adventure</span> 						<span class="badge">Casual</span> 						<span class="badge">Challenge</span> 						<span class="badge">Economy</span> 						<span class="badge">Events</span> 						<span class="badge">OneBlock</span> 						<span class="badge">PvE</span> 						<span class="badge">Roleplay</span> 						<span class="badge">Survival</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s345588"><img src="/images/favicon/345588.png?ts=1755640198" height="64" width="64" border="0" alt="Zeraphine AOG" title="Zeraphine AOG" loading="lazy" /></a></div>			<strong>#241</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s345588">
-				<video class="lazy" data-src="https://minecraft-mp.com/images/banners/banner-345588-1751120164.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>Zeraphine AOG</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21/" class="btn btn-info btn-sm"  title="Minecraft 1.21 Servers"><i class="fa fa-cog"></i> 1.21</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s345588" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>zeraphinesmp.xyz</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="zeraphinesmp.xyz" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21/" class="btn btn-info btn-sm" title="Minecraft 1.21 Servers"><i class="fa fa-cog"></i> 1.21</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 4/100</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>zeraphinesmp.xyz</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="zeraphinesmp.xyz" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">4/100</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Adventure</span> 						<span class="badge">Anarchy</span> 						<span class="badge">Economy</span> 						<span class="badge">Faction</span> 						<span class="badge">SMP</span> 						<span class="badge">Survival</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="height: 69px;"></div>			<strong>#244</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-								<h4><a href="/server-s346356">Bakwan Public</a></h4>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_8/" class="btn btn-info btn-sm"  title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s346356" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>mc.bakwan.id</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="mc.bakwan.id" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_8/" class="btn btn-info btn-sm" title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 43/1500</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>mc.bakwan.id</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="mc.bakwan.id" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">43/1500</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Adventure</span> 						<span class="badge">Casual</span> 						<span class="badge">PvP</span> 						<span class="badge">Roleplay</span> 						<span class="badge">Skyblock</span> 						<span class="badge">SMP</span> 						<span class="badge">Spigot</span> 						<span class="badge">Survival</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s340112"><img src="/images/favicon/340112.png?ts=1755126108" height="64" width="64" border="0" alt="Voltraz MC" title="Voltraz MC" loading="lazy" /></a></div>			<strong>#255</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s340112">
-				<video class="lazy" data-src="https://minecraft-mp.com/images/banners/banner-340112-1747107786.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>Voltraz MC</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_8/" class="btn btn-info btn-sm"  title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s340112" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>voltraz.xyz</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="voltraz.xyz" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_8/" class="btn btn-info btn-sm" title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 28/500</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>voltraz.xyz</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="voltraz.xyz" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">28/500</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Adventure</span> 						<span class="badge">Arena</span> 						<span class="badge">Cross-Play</span> 						<span class="badge">Economy</span> 						<span class="badge">Raiding</span> 						<span class="badge">Ranks</span> 						<span class="badge">SMP</span> 						<span class="badge">Survival</span> 						<span class="badge">War</span> 						</td>
-
-					</tr>
-						<tr height="100">
-			<td colspan="5" style="padding: 10px;">
-				<div class="row"><div id="midadspot" class="col-md-12" align="center">
-					<ins class="adsbygoogle"
-					style="display:block;height:100px"
-					data-ad-client="ca-pub-5285023748323139"
-					data-ad-slot="2702424961"></ins>
-					<script type="ff9b66a948b82d4cfa3e4ca5-text/javascript">(adsbygoogle = window.adsbygoogle || []).push({});</script>
-				</div></div>
-			</td>
-		</tr>
-				<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s331699"><img src="/images/favicon/331699.png?ts=1755303989" height="64" width="64" border="0" alt="ZUMINEL" title="ZUMINEL" loading="lazy" /></a></div>			<strong>#268</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s331699">
-				<video class="lazy" data-src="https://minecraft-mp.com/images/banners/banner-331699-1727878712.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>ZUMINEL</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_7/" class="btn btn-info btn-sm"  title="Minecraft 1.21.7 Servers"><i class="fa fa-cog"></i> 1.21.7</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s331699" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>zuminel.id:25565</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="zuminel.id:25565" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_7/" class="btn btn-info btn-sm" title="Minecraft 1.21.7 Servers"><i class="fa fa-cog"></i> 1.21.7</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 12/999</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>zuminel.id:25565</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="zuminel.id:25565" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">12/999</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Adventure</span> 						<span class="badge">Challenge</span> 						<span class="badge">Cross-Play</span> 						<span class="badge">Economy</span> 						<span class="badge">Events</span> 						<span class="badge">McMMO</span> 						<span class="badge">Ranks</span> 						<span class="badge">SMP</span> 						<span class="badge">Survival</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s334416"><img src="/images/favicon/334416.png?ts=1752434191" height="64" width="64" border="0" alt="MineHive" title="MineHive" loading="lazy" /></a></div>			<strong>#297</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s334416">
-				<video class="lazy" data-src="https://minecraft-mp.com/images/banners/banner-334416-1741277025.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>MineHive</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_8/" class="btn btn-info btn-sm"  title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s334416" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>minehive.id</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="minehive.id" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_8/" class="btn btn-info btn-sm" title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 26/300</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>minehive.id</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="minehive.id" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">26/300</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">BungeeCord</span> 						<span class="badge">Earth</span> 						<span class="badge">Economy</span> 						<span class="badge">Events</span> 						<span class="badge">Skyblock</span> 						<span class="badge">SlimeFun</span> 						<span class="badge">SMP</span> 						<span class="badge">Survival</span> 						<span class="badge">Towny</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s336811"><img src="/images/favicon/336811.png?ts=1753282547" height="64" width="64" border="0" alt="Project Seria" title="Project Seria" loading="lazy" /></a></div>			<strong>#304</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s336811">
-				<video class="lazy" data-src="https://minecraft-mp.com/images/banners/banner-336811-1727800258.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>Project Seria</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_6/" class="btn btn-info btn-sm"  title="Minecraft 1.21.6 Servers"><i class="fa fa-cog"></i> 1.21.6</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s336811" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>mc.seria.id</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="mc.seria.id" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_6/" class="btn btn-info btn-sm" title="Minecraft 1.21.6 Servers"><i class="fa fa-cog"></i> 1.21.6</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 5/30</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>mc.seria.id</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="mc.seria.id" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">5/30</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Cross-Play</span> 						<span class="badge">Discord</span> 						<span class="badge">Economy</span> 						<span class="badge">Faction</span> 						<span class="badge">Land Claim</span> 						<span class="badge">PvE</span> 						<span class="badge">PvP</span> 						<span class="badge">Roleplay</span> 						<span class="badge">Survival</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s337227"><img src="/images/favicon/337227.png?ts=1753562552" height="64" width="64" border="0" alt="SlimeCube Network" title="SlimeCube Network" loading="lazy" /></a></div>			<strong>#322</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s337227">
-				<video class="lazy" data-src="https://minecraft-mp.com/images/banners/banner-337227-1750274996.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>SlimeCube Network</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_10/" class="btn btn-info btn-sm"  title="Minecraft 1.10 Servers"><i class="fa fa-cog"></i> 1.10</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s337227" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>play.slimecube.xyz</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="play.slimecube.xyz" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_10/" class="btn btn-info btn-sm" title="Minecraft 1.10 Servers"><i class="fa fa-cog"></i> 1.10</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 5/1000</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>play.slimecube.xyz</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="play.slimecube.xyz" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">5/1000</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Bukkit</span> 						<span class="badge">Cross-Play</span> 						<span class="badge">Discord</span> 						<span class="badge">Paper</span> 						<span class="badge">Skyblock</span> 						<span class="badge">SlimeFun</span> 						<span class="badge">Survival</span> 						<span class="badge">Survival Games</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s346648"><img src="/images/favicon/346648.png?ts=1755506895" height="64" width="64" border="0" alt="DINO NETWORK" title="DINO NETWORK" loading="lazy" /></a></div>			<strong>#325</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s346648">
-				<video class="lazy" data-src="https://minecraft-mp.com/images/banners/banner-346648-1753448006.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>DINO NETWORK</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_7/" class="btn btn-info btn-sm"  title="Minecraft 1.21.7 Servers"><i class="fa fa-cog"></i> 1.21.7</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s346648" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>play.dinonetwork.org:25565</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="play.dinonetwork.org:25565" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_7/" class="btn btn-info btn-sm" title="Minecraft 1.21.7 Servers"><i class="fa fa-cog"></i> 1.21.7</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 4/2025</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>play.dinonetwork.org:25565</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="play.dinonetwork.org:25565" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">4/2025</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Cross-Play</span> 						<span class="badge">Economy</span> 						<span class="badge">Jobs</span> 						<span class="badge">Land Claim</span> 						<span class="badge">Paper</span> 						<span class="badge">PvE</span> 						<span class="badge">PvP</span> 						<span class="badge">SMP</span> 						<span class="badge">Survival</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s345177"><img src="/images/favicon/345177.png?ts=1755641072" height="64" width="64" border="0" alt="ELAINA SMP" title="ELAINA SMP" loading="lazy" /></a></div>			<strong>#333</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s345177">
-				<video class="lazy" data-src="https://minecraft-mp.com/images/banners/banner-345177-1750027072.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>ELAINA SMP</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_20_1/" class="btn btn-info btn-sm"  title="Minecraft 1.20.1 Servers"><i class="fa fa-cog"></i> 1.20.1</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s345177" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>play.elainasmp.my.id:19312</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="play.elainasmp.my.id:19312" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_20_1/" class="btn btn-info btn-sm" title="Minecraft 1.20.1 Servers"><i class="fa fa-cog"></i> 1.20.1</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 0/50</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>play.elainasmp.my.id:19312</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="play.elainasmp.my.id:19312" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">0/50</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Adventure</span> 						<span class="badge">Economy</span> 						<span class="badge">Jobs</span> 						<span class="badge">Land Claim</span> 						<span class="badge">McMMO</span> 						<span class="badge">PvP</span> 						<span class="badge">Ranks</span> 						<span class="badge">SMP</span> 						<span class="badge">Survival</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s346624"><img src="/images/favicon/346624.png?ts=1755509225" height="64" width="64" border="0" alt="Noesantara Network" title="Noesantara Network" loading="lazy" /></a></div>			<strong>#348</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s346624">
-				<video class="lazy" data-src="https://minecraft-mp.com/images/banners/banner-346624-1753378345.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>Noesantara Network</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_8/" class="btn btn-info btn-sm"  title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s346624" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>noesantara.xyz</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="noesantara.xyz" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_8/" class="btn btn-info btn-sm" title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 12/500</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/></a>
-				
-						<strong>noesantara.xyz</strong></button>
-
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="noesantara.xyz" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-
-				</div>
-
-			</td>
-			<td class="hidden-xs">12/500</td>
-			<td class="hidden-xs"><button type="button" class="btn btn-success btn-sm">Online</button></td>
-			<td class="hidden-xs">
-						<span class="badge">Economy</span> 						<span class="badge">Jobs</span> 						<span class="badge">Vanilla</span> 						</td>
-
-					</tr>
-						<tr height="90">
-			<td class="hidden-xs">
-			<div style="margin-bottom: 5px;"><a href="/server-s333194"><img src="/images/favicon/333194.png?ts=1755358532" height="64" width="64" border="0" alt="Vista Valley" title="Vista Valley" loading="lazy" /></a></div>			<strong>#401</strong></td>
-			<td>
-				<div style="width: 100%; height: 67px;">
-				<a href="/server-s333194">
-				<video class="lazy" data-src="https://minecraft-mp.com/images/banners/banner-333194-1753496421.mp4" width="468" height="60" muted autoplay loop playsinline allowfullscreen="false"><h4>Vista Valley</h4></video></a>
-				</div>
-				
-				<div class="hidden-xs">
-					<a href="/version/1_21_8/" class="btn btn-info btn-sm"  title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<div class="btn-group" role="group" aria-label="">
-						<a href="/server-s333194" class="btn btn-default btn-sm"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" border="0" style="vertical-align:middle"/> <strong>play.vistavalley.xyz</strong></a>
-						<button type="button" role="button" class="btn btn-default btn-sm clipboard" data-clipboard-action="copy" data-clipboard-text="play.vistavalley.xyz" title="Click to copy the server address."><i class="fa fa-clipboard" aria-hidden="true"></i></button>					</div>
-				</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<button type="button" class="btn btn-success btn-sm">Online</button>					<a href="/version/1_21_8/" class="btn btn-info btn-sm" title="Minecraft 1.21.8 Servers"><i class="fa fa-cog"></i> 1.21.8</a>
-					<span class="btn btn-info btn-sm"><i class="fa fa-group"></i> 8/100</span>
-									</div>
-
-				<div class="visible-xs" style="padding-top: 5px;">
-					<div class="btn-group" role="group" aria-label="">
-						<button type="button" role="button" class="btn btn-default btn-sm">
-						<a href="/country/indonesia/"><img src="/images/flags/Indonesia.png" height="12" width="20" alt="Indonesia" title="Indonesia" borde
+<body class="p-4 md:p-8 flex justify-center items-start min-h-screen">
+
+    <div class="w-full max-w-2xl">        
+        <header class="flex items-center justify-between py-4 border-b border-gray-700 mb-6 relative">
+            <div class="flex items-center space-x-2">
+                <span class="p-2 bg-indigo-500 bg-opacity-20 rounded-full text-indigo-400">
+                    <i class="fa-solid fa-warehouse fa-lg"></i>
+                </span>
+                <span class="text-xl font-semibold text-gray-200">Kemz Store</span>
+            </div>
+            
+            <div class="relative">
+                <button id="profile-menu-button" class="p-2 text-gray-400 hover:text-gray-200">
+                    <i class="fa-solid fa-circle-user fa-2x"></i>
+                </button>
+                               
+                <div id="profile-menu" class="hidden absolute right-0 mt-2 w-64 bg-dark-card rounded-xl shadow-lg border border-gray-700 z-50">
+                    <div class="p-4 space-y-4">
+                        
+                        <div class="space-y-1">
+                            <label for="profile-name-input" class="text-xs font-semibold text-gray-400 uppercase">Nama</label>
+                            <input type="text" id="profile-name-input" class="w-full p-2 bg-gray-700 rounded-lg text-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500" placeholder="User Tele Email">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="profile-wa-input" class="text-xs font-semibold text-gray-400 uppercase">No WA</label>
+                            <input type="tel" id="profile-wa-input" class="w-full p-2 bg-gray-700 rounded-lg text-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500" placeholder="+6281234567890">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="payment-bank-input" class="text-xs font-semibold text-gray-400 uppercase">Nama Bank / E-Wallet</label>
+                            <input type="text" id="payment-bank-input" class="w-full p-2 bg-gray-700 rounded-lg text-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500" placeholder="Contoh: BCA / Dana">
+                        </div>
+                        <div class="space-y-1">
+                            <label for="payment-number-input" class="text-xs font-semibold text-gray-400 uppercase">Nomor Pembayaran</label>
+                            <input type="text" id="payment-number-input" class="w-full p-2 bg-gray-700 rounded-lg text-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500" placeholder="Contoh: 1234567890">
+                        </div>
+
+                        <div class="flex items-center justify-between p-3 bg-gray-700 rounded-lg">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-indigo-400">
+                                    <i class="fa-solid fa-wallet fa-lg"></i>
+                                </span>
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-400 uppercase">Saldo</h4>
+                                    <p id="profile-balance" class="text-sm text-green-400 font-bold">Rp. 0</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3 p-3 bg-gray-700 rounded-lg">
+                            <span class="text-indigo-400">
+                                <i class="fa-solid fa-envelope fa-lg"></i>
+                            </span>
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-400 uppercase">Total Email Terkirim</h4>
+                                <p id="total-emails-sent" class="text-sm text-gray-200 font-bold">0 Emails</p>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-gray-700 pt-4 space-y-2">
+                            <button id="btn-notification-open" class="w-full text-left flex items-center justify-between p-3 rounded-lg hover:bg-gray-700 transition-colors duration-200">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-indigo-400">
+                                        <i class="fa-solid fa-bell fa-lg"></i>
+                                    </span>
+                                    <span class="text-gray-200">Notifikasi</span>
+                                </div>
+                                <span id="notification-count" class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full hidden"></span>
+                            </button>
+                            <button id="save-profile-button" class="w-full p-3 rounded-lg bg-gradient-purple text-white font-semibold transition-all duration-200 flex items-center justify-center space-x-2 hover:opacity-90">
+                                <i class="fa-solid fa-save fa-lg"></i>
+                                <span>Simpan Profil</span>
+                            </button>
+                        </div>
+
+                        <div class="border-t border-gray-700 pt-2">
+                            <a href="/admin" class="w-full text-left flex items-center justify-center p-3 rounded-lg text-gray-400 hover:text-gray-200 hover:bg-gray-700 transition-colors duration-200">
+                                <i class="fa-solid fa-user-gear fa-lg mr-2"></i>
+                                <span>Panel Admin</span>
+                            </a>
+                        </div>
+                        <div class="border-t border-gray-700 pt-2">
+                            <a href="https://t.me/kemzstore805" class="w-full text-left flex items-center justify-center p-3 rounded-lg text-gray-400 hover:text-gray-200 hover:bg-gray-700 transition-colors duration-200">
+                                <i class="fa-solid fa-headset fa-lg mr-2"></i>
+                                <span>Customer Service</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="flex space-x-2 p-2 bg-dark-card rounded-xl shadow-lg mb-6">
+            <button id="tab-submission" class="flex-1 flex items-center justify-center space-x-2 p-3 text-sm font-medium rounded-lg bg-gradient-purple text-white shadow-lg transition-colors duration-200">
+                <i class="fa-solid fa-envelope fa-lg"></i>
+                <span>Email Submission</span>
+            </button>
+            <button id="tab-history" class="flex-1 flex items-center justify-center space-x-2 p-3 text-sm font-medium rounded-lg text-gray-400 hover:bg-gray-700 transition-colors duration-200">
+                <i class="fa-solid fa-clock-rotate-left fa-lg"></i>
+                <span>Riwayat Pengiriman</span>
+            </button>
+        </nav>
+
+        <main id="main-content">
+            <div id="card-tutorial-rules" class="p-6 bg-dark-card rounded-xl shadow-lg transition-all duration-300 mb-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center space-x-3">
+                        <span class="p-2 bg-indigo-500 bg-opacity-20 rounded-full text-indigo-400">
+                            <i class="fa-solid fa-book fa-lg"></i>
+                        </span>
+                        <h2 class="text-lg font-semibold text-gray-200">Tutorial & Rules</h2>
+                    </div>
+                </div>
+                
+                <ul class="list-disc list-inside text-gray-400">
+                    <li class="mb-2">           
+                        Masukkan email (per baris)
+                    </li>
+                    <li class="mb-2">           
+                        Password wajib PERINTAH805 (besar semua)
+                    </li>
+                    <li class="mb-2">           
+                        Gmail harus nama orang tidak boleh sama & berurutan
+                    </li>
+                    <li class="mb-2">           
+                        Isi data profil yg valid 
+                    </li>
+                    <li class="mb-2">           
+                        Admin transfer sesuai data profil kalian
+                    </li>
+                    <li class="mb-2">           
+                        Gmail terdeteksi Verif tidak akan di payment
+                    </li>        
+                    <li class="mb-2">           
+                        Gmail harus fress, no duplikat
+                    </li>
+                    <li class="mb-2">           
+                        Melanggar rules tidak di transfer
+                    </li>
+                    <li class="mb-2">
+                        <a href="https://t.me/kemzstore805" class="hover:text-indigo-400 transition-colors duration-200">Ada masalah hubungi admin</a>
+                    </li>
+                </ul>
+            </div>
+          
+            <div id="card-submission" class="p-6 bg-dark-card rounded-xl shadow-lg transition-all duration-300">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center space-x-3">
+                        <span class="p-2 bg-indigo-500 bg-opacity-20 rounded-full text-indigo-400">
+                            <i class="fa-solid fa-envelope fa-lg"></i>
+                        </span>
+                        <h2 class="text-lg font-semibold text-gray-200">Management Email</h2>
+                    </div>
+                </div>
+                <p id="email-price-info" class="text-sm text-gray-500 mb-4">Stor email untuk diproses. Harga per email: Rp. 1000</p>
+                
+                <form id="email-form">
+                    <div class="mb-4">
+                        <label for="email-list" class="block text-sm font-medium text-gray-400 mb-1">Email (per baris)</label>
+                        <textarea id="email-list" rows="5" class="w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="arman@gmail.com&#10;resa4@gmail.com&#10;andika38@gmail.com"></textarea>
+                    </div>
+
+                    <p class="text-xs text-gray-500 mb-6">
+                        <i class="fa-solid fa-circle-info fa-sm text-blue-400"></i>
+                        PAYMENT MAXIMAL 3X24 JAM.
+                    </p>
+
+                    <div class="mb-6 relative">
+                        <label for="common-password" class="block text-sm font-medium text-gray-400 mb-1">Password</label>
+                        <input type="password" id="common-password" class="w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 pr-10" placeholder="Password wajib PERINTAH805">
+                        
+                        <button type="button" id="toggle-password" class="absolute inset-y-0 right-0 top-6 pr-3 flex items-center text-gray-400 hover:text-gray-200">
+                            <i id="eye-icon" class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+
+                    <button type="submit" class="w-full p-3 rounded-lg bg-gradient-purple text-white font-semibold transition-all duration-200 flex items-center justify-center space-x-2 hover:opacity-90 disabled:opacity-50" id="submit-button">
+                        <div id="spinner" class="hidden h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        <span id="submit-text">Kirim Email</span>
+                    </button>
+                    <p id="status-message" class="mt-4 text-center text-sm font-medium"></p>
+                </form>
+            </div>
+            
+            <div id="card-history" class="p-6 bg-dark-card rounded-xl shadow-lg transition-all duration-300 hidden">
+                <h2 class="text-lg font-semibold text-gray-200 mb-4">Coming Soon.</h2>
+                <div id="history-list" class="space-y-4">
+                </div>
+            </div>
+        </main>
+    </div>
+   
+
+    <div id="notification-modal" class="fixed inset-0 hidden modal-overlay flex justify-center items-center p-4">
+        <div class="bg-dark-card rounded-xl shadow-2xl p-6 w-full max-w-lg relative">
+            <button id="btn-close-notification" class="absolute top-3 right-3 text-gray-400 hover:text-gray-200">
+                <i class="fa-solid fa-xmark fa-lg"></i>
+            </button>
+            <h3 class="text-lg font-semibold text-gray-200 mb-4">Notifikasi</h3>
+            <ul id="notification-list" class="space-y-4 text-gray-400 max-h-80 overflow-y-auto pr-2">
+
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabSubmission = document.getElementById('tab-submission');
+            const tabHistory = document.getElementById('tab-history');
+            const cardTutorialRules = document.getElementById('card-tutorial-rules');
+            const cardSubmission = document.getElementById('card-submission');
+            const cardHistory = document.getElementById('card-history');
+            const form = document.getElementById('email-form');
+            const emailList = document.getElementById('email-list');
+            const commonPasswordInput = document.getElementById('common-password');
+            const submitButton = document.getElementById('submit-button');
+            const submitText = document.getElementById('submit-text');
+            const spinner = document.getElementById('spinner');
+            const statusMessage = document.getElementById('status-message');
+            const emailPriceInfo = document.getElementById('email-price-info');
+
+            const profileMenuButton = document.getElementById('profile-menu-button');
+            const profileMenu = document.getElementById('profile-menu');
+            const profileNameInput = document.getElementById('profile-name-input');
+            const profileWaInput = document.getElementById('profile-wa-input');
+            const paymentBankInput = document.getElementById('payment-bank-input');
+            const paymentNumberInput = document.getElementById('payment-number-input');
+            const saveProfileButton = document.getElementById('save-profile-button');
+            const btnNotificationOpen = document.getElementById('btn-notification-open');
+            const btnCloseNotification = document.getElementById('btn-close-notification');
+            const notificationModal = document.getElementById('notification-modal');
+            const notificationList = document.getElementById('notification-list');
+            const notificationCount = document.getElementById('notification-count');
+            const totalEmailsSentEl = document.getElementById('total-emails-sent');
+            const profileBalanceEl = document.getElementById('profile-balance');
+            const historyList = document.getElementById('history-list');
+            const historyEmpty = document.getElementById('history-empty');
+
+            const togglePasswordButton = document.getElementById('toggle-password');
+            const eyeIcon = document.getElementById('eye-icon');
+            
+            togglePasswordButton.addEventListener('click', () => {
+                const type = commonPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                commonPasswordInput.setAttribute('type', type);
+                eyeIcon.classList.toggle('fa-eye');
+                eyeIcon.classList.toggle('fa-eye-slash');
+            });
+
+
+            let userId = localStorage.getItem('userId');
+
+            emailList.addEventListener('blur', () => {
+                emailList.value = emailList.value.toLowerCase();
+            });
+
+            async function fetchProfile() {
+                try {
+                    const response = await fetch(`/api/profile?userId=${userId || ''}`);
+                    const profile = await response.json();
+                    
+                    if (profile.newUserId) {
+                        userId = profile.newUserId;
+                        localStorage.setItem('userId', userId);
+                    }
+                    
+                    profileNameInput.value = profile.name || '';
+                    profileWaInput.value = profile.waNumber || '';
+                    paymentBankInput.value = profile.bankName || '';
+                    paymentNumberInput.value = profile.paymentNumber || '';
+                    totalEmailsSentEl.textContent = `${profile.totalEmailsSent || 0} Email`;
+                    profileBalanceEl.textContent = `Rp. ${profile.balance ? profile.balance.toLocaleString('id-ID') : 0}`;
+                    if (profile.settings && profile.settings.emailPrice) {
+                        emailPriceInfo.textContent = `Tambahkan email untuk diproses. Harga per email: Rp. ${profile.settings.emailPrice.toLocaleString('id-ID')}`;
+                    }
+                } catch (error) {
+                    console.error("Gagal mengambil profil:", error);
+                }
+            }
+
+            async function fetchNotifications() {
+                try {
+                    const response = await fetch(`/api/notifications?userId=${userId}`);
+                    const notifs = await response.json();
+                    renderNotifications(notifs);
+                } catch (error) {
+                    console.error("Gagal mengambil notifikasi:", error);
+                }
+            }
+
+            function renderNotifications(notifs) {
+                notificationList.innerHTML = '';
+                if (notifs.length === 0) {
+                    notificationList.innerHTML = `<li class="text-center text-gray-500">Tidak ada notifikasi.</li>`;
+                    notificationCount.classList.add('hidden');
+                } else {
+                    notifs.forEach(notif => {
+                        const li = document.createElement('li');
+                        li.className = 'p-4 rounded-lg bg-gray-700 relative';
+                        li.innerHTML = `
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-semibold text-gray-200">${notif.title}</p>
+                                <button class="delete-notification absolute top-2 right-2 text-gray-400 hover:text-red-400" data-id="${notif._id}">
+                                    <i class="fa-solid fa-xmark fa-lg"></i>
+                                </button>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-1">${new Date(notif.timestamp).toLocaleString('id-ID')}</p>
+                        `;
+                        notificationList.appendChild(li);
+                    });
+                    notificationCount.classList.remove('hidden');
+                    notificationCount.textContent = notifs.length;
+                }
+            }
+
+            async function fetchHistory() {
+                if (!userId) {
+                    historyEmpty.classList.remove('hidden');
+                    return;
+                }
+                try {
+                    const response = await fetch('/api/user/submissions', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ userId })
+                    });
+                    const submissions = await response.json();
+                    renderHistory(submissions);
+                } catch (error) {
+                    console.error("Gagal mengambil riwayat:", error);
+                }
+            }
+
+            function renderHistory(submissions) {
+                historyList.innerHTML = '';
+                if (submissions.length === 0) {
+                    historyEmpty.classList.remove('hidden');
+                } else {
+                    historyEmpty.classList.add('hidden');
+                    submissions.forEach(sub => {
+                        const div = document.createElement('div');
+                        const statusColor = sub.status === 'completed' ? 'text-green-400' : 'text-yellow-400';
+                        const statusText = sub.status === 'completed' ? 'Selesai' : 'Menunggu Konfirmasi';
+                        div.className = 'p-4 rounded-lg bg-gray-700';
+                        div.innerHTML = `
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-semibold text-gray-200">${sub.emails.length} Email Dikirim</p>
+                                <span class="text-xs font-bold ${statusColor}">${statusText}</span>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-1">${new Date(sub.timestamp).toLocaleString('id-ID')}</p>
+                        `;
+                        historyList.appendChild(div);
+                    });
+                }
+            }
+            
+            fetchProfile();
+            
+            notificationList.addEventListener('click', async (e) => {
+                const deleteButton = e.target.closest('.delete-notification');
+                if (deleteButton) {
+                    const idToDelete = deleteButton.dataset.id;
+                    try {
+                        const response = await fetch(`/api/notifications/${idToDelete}`, { 
+                            method: 'DELETE',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ userId })
+                        });
+                        if (response.ok) {
+                            await fetchNotifications();
+                        }
+                    } catch (error) {
+                        console.error("Gagal menghapus notifikasi:", error);
+                    }
+                }
+            });
+
+            profileMenuButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                profileMenu.classList.toggle('hidden');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!profileMenu.contains(e.target) && !profileMenuButton.contains(e.target)) {
+                    profileMenu.classList.add('hidden');
+                }
+            });
+            
+            saveProfileButton.addEventListener('click', async () => {
+                const name = profileNameInput.value;
+                const waNumber = profileWaInput.value;
+                const bankName = paymentBankInput.value;
+                const paymentNumber = paymentNumberInput.value;
+
+                try {
+                    const response = await fetch('/api/save-profile', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ userId, name, waNumber, bankName, paymentNumber })
+                    });
+                    const result = await response.json();
+                    if (response.ok) {
+                        console.log(result.message);
+                    } else {
+                        console.error(result.error);
+                    }
+                } catch (error) {
+                    console.error('Gagal menyimpan profil.');
+                }
+            });
+
+            tabSubmission.addEventListener('click', () => {
+                tabSubmission.classList.add('bg-gradient-purple', 'text-white');
+                tabHistory.classList.remove('bg-gradient-purple', 'text-white');
+                tabHistory.classList.add('text-gray-400');
+                cardSubmission.classList.remove('hidden');
+                cardTutorialRules.classList.remove('hidden');
+                cardHistory.classList.add('hidden');
+                fetchProfile();
+            });
+
+            tabHistory.addEventListener('click', () => {
+                tabHistory.classList.add('bg-gradient-purple', 'text-white');
+                tabSubmission.classList.remove('bg-gradient-purple', 'text-white');
+                tabSubmission.classList.add('text-gray-400');
+                cardHistory.classList.remove('hidden');
+                cardSubmission.classList.add('hidden');
+                cardTutorialRules.classList.add('hidden');
+                fetchHistory();
+            });
+
+            btnNotificationOpen.addEventListener('click', (e) => {
+                e.stopPropagation();
+                profileMenu.classList.add('hidden');
+                notificationModal.classList.remove('hidden');
+                fetchNotifications();
+            });
+
+            btnCloseNotification.addEventListener('click', () => {
+                notificationModal.classList.add('hidden');
+            });
+
+            notificationModal.addEventListener('click', (e) => {
+                if (e.target === notificationModal) {
+                    notificationModal.classList.add('hidden');
+                }
+            });
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const nameValue = profileNameInput.value.trim();
+                const waValue = profileWaInput.value.trim();
+                const bankNameValue = paymentBankInput.value.trim();
+                const paymentNumberValue = paymentNumberInput.value.trim();
+
+                if (!nameValue || !waValue) {
+                    statusMessage.textContent = 'Silakan lengkapi Nama,NoPe, NoWA Anda di menu profil,untuk mempermudah proses pembayaran.';
+                    statusMessage.classList.remove('text-green-400');
+                    statusMessage.classList.add('text-red-400');
+                    return;
+                }
+
+                submitButton.disabled = true;
+                submitText.textContent = 'Memproses...';
+                spinner.classList.remove('hidden');
+                statusMessage.textContent = '';
+                
+                const emails = emailList.value.split('\n').map(email => email.trim()).filter(email => email.length > 0);
+                const commonPassword = commonPasswordInput.value.trim();
+                
+                if (emails.length === 0) {
+                    statusMessage.textContent = 'Silakan masukkan setidaknya satu alamat email.';
+                    statusMessage.classList.remove('text-green-400');
+                    statusMessage.classList.add('text-red-400');
+                    submitButton.disabled = false;
+                    submitText.textContent = 'Kirim Email';
+                    spinner.classList.add('hidden');
+                    return;
+                }
+
+                try {
+                    const response = await fetch('/api/submit-emails', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ 
+                            userId,
+                            emails, 
+                            commonPassword, 
+                            name: nameValue, 
+                            waNumber: waValue,
+                            bankName: bankNameValue,
+                            paymentNumber: paymentNumberValue
+                        })
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        statusMessage.textContent = result.message;
+                        statusMessage.classList.remove('text-red-400');
+                        statusMessage.classList.add('text-green-400');
+                        emailList.value = '';
+                        commonPasswordInput.value = '';
+                        await fetchNotifications();
+                    } else {
+                        statusMessage.textContent = result.error || 'Terjadi kesalahan pada server.';
+                        statusMessage.classList.remove('text-green-400');
+                        statusMessage.classList.add('text-red-400');
+                    }
+
+                } catch (error) {
+                    console.error('Error:', error);
+                    statusMessage.textContent = 'Tidak dapat terhubung ke server. Silakan coba lagi.';
+                    statusMessage.classList.remove('text-green-400');
+                    statusMessage.classList.add('text-red-400');
+                } finally {
+                    submitButton.disabled = false;
+                    submitText.textContent = 'Kirim Email';
+                    spinner.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
