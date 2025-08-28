@@ -2,100 +2,244 @@
 <html lang="id">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>List Kotak dengan Thumbnail & Label</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Salinan Statis — Demo Layout</title>
+
+  <!-- Optional Google Font (works jika ada koneksi internet) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    :root{--bg:#f3f4f6;--card:#ffffff;--muted:#6b7280;--accent:#06b6d4}
+    :root{
+      --bg:#0b1220;
+      --card:#0f1724;
+      --muted:#9aa6b2;
+      --accent:#22c55e; /* green-ish accent */
+      --glass: rgba(255,255,255,0.03);
+      --text: #e6eef6;
+      --max-width:1200px;
+    }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:var(--bg);color:#111}
-    .wrap{max-width:1100px;margin:36px auto;padding:20px}
-    h1{margin:0 0 14px;font-size:1.4rem}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:linear-gradient(180deg,#061021 0%, #071627 60%);color:var(--text);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max-width);margin:28px auto;padding:20px}
 
-    /* Grid container */
-    .box-grid{display:grid;gap:16px;grid-template-columns:repeat(1,1fr)}
-    @media(min-width:640px){.box-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(min-width:992px){.box-grid{grid-template-columns:repeat(3,1fr)}}
+    /* Header */
+    header.header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#16a34a);display:grid;place-items:center;font-weight:700;color:#03220d}
+    .site-title{font-weight:700;font-size:1.05rem}
+    nav.topnav{display:flex;gap:12px;align-items:center}
+    .topnav a{padding:8px 10px;border-radius:8px;font-size:.95rem;color:var(--muted)}
+    .topnav a:hover{color:var(--text);background:var(--glass)}
 
-    /* Card style */
-    .box{
-      display:flex;flex-direction:column;gap:10px;background:var(--card);border-radius:12px;overflow:hidden;
-      border:1px solid rgba(17,24,39,0.06);
-      box-shadow:0 6px 18px rgba(2,6,23,0.04);
-      transition:transform .18s ease, box-shadow .18s ease
-    }
-    .box:hover{transform:translateY(-6px);box-shadow:0 18px 30px rgba(2,6,23,0.08)}
+    /* Layout: main + sidebar */
+    .layout{display:grid;grid-template-columns:1fr;gap:20px}
+    @media(min-width:960px){.layout{grid-template-columns:2fr 360px}}
 
-    .thumb{position:relative}
-    .thumb img{width:100%;height:160px;object-fit:cover;display:block}
-    .label{
-      position:absolute;top:10px;left:10px;
-      background:var(--accent);color:white;font-size:.8rem;font-weight:600;
-      padding:4px 10px;border-radius:8px;
-    }
+    /* Hero */
+    .hero{display:flex;flex-direction:column;gap:12px;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03)}
+    .hero-top{display:flex;gap:14px;align-items:center}
+    .hero img{width:100%;height:220px;object-fit:cover;border-radius:10px}
+    .hero h1{margin:0;font-size:1.4rem}
+    .hero p{margin:0;color:var(--muted)}
 
-    .content{padding:14px}
-    .title{font-size:1rem;margin:0 0 4px}
-    .desc{margin:0;color:var(--muted);font-size:.92rem}
+    /* Grid cards */
+    .grid{display:grid;gap:14px;grid-template-columns:repeat(1,1fr);margin-top:8px}
+    @media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1100px){.grid{grid-template-columns:repeat(2,1fr)}}
 
-    .actions{display:flex;gap:8px;margin-top:10px}
-    .btn{padding:8px 12px;border-radius:10px;text-decoration:none;display:inline-block;font-weight:600}
-    .btn.ghost{background:transparent;border:1px solid rgba(17,24,39,0.12);color:#111}
-    .btn.primary{background:var(--accent);color:white}
+    .card{display:flex;flex-direction:column;background:var(--card);border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);transition:transform .15s ease,box-shadow .15s ease}
+    .card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+    .card .thumb{position:relative}
+    .card img{width:100%;height:170px;object-fit:cover;display:block}
+    .badge{position:absolute;left:10px;top:10px;background:rgba(0,0,0,0.45);padding:6px 10px;border-radius:999px;font-weight:700;font-size:.78rem;color:var(--text)}
+    .card .card-body{padding:12px;display:flex;flex-direction:column;gap:8px}
+    .card .title{margin:0;font-size:1rem;font-weight:700;line-height:1.2}
+    .card .excerpt{margin:0;color:var(--muted);font-size:.92rem}
+    .card .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+    .card .meta .btn{padding:8px 10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);font-weight:600;color:var(--text)}
+    .card .meta .btn.primary{background:linear-gradient(90deg,var(--accent),#10b981);color:#072012;border:0}
+
+    /* Sidebar */
+    aside.sidebar{display:flex;flex-direction:column;gap:14px}
+    .widget{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    .widget h4{margin:0 0 8px;font-size:.98rem}
+    .search input{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+    .list-min{display:flex;flex-direction:column;gap:10px}
+    .mini-item{display:flex;gap:10px;align-items:center}
+    .mini-item img{width:64px;height:44px;object-fit:cover;border-radius:6px}
+    .mini-item .t{font-size:.92rem;margin:0}
+
+    /* Footer */
+    footer{margin-top:22px;color:var(--muted);font-size:.9rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+    .social a{padding:6px;border-radius:8px;background:rgba(255,255,255,0.02);margin-left:6px}
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .small{font-size:.85rem}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>List Kotak dengan Thumbnail & Label</h1>
 
-    <section class="box-grid">
-      <!-- Card 1 -->
-      <article class="box">
-        <div class="thumb">
-          <span class="label">Artikel</span>
-          <img src="https://picsum.photos/id/1015/600/400" alt="Artikel Gambar">
+    <!-- Header -->
+    <header class="header" role="banner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">WE</div>
+        <div>
+          <div class="site-title">WarungEles — Demo</div>
+          <div class="small muted">Berita, tutorial & tips</div>
         </div>
-        <div class="content">
-          <h3 class="title">Panduan Memulai</h3>
-          <p class="desc">Ringkasan singkat tentang langkah awal yang harus dilakukan.</p>
-          <div class="actions">
-            <a class="btn ghost" href="https://contoh.com/artikel" target="_blank">Lihat</a>
-            <a class="btn primary" href="https://contoh.com/artikel" target="_blank">Baca</a>
+      </div>
+
+      <nav class="topnav" role="navigation" aria-label="Main navigation">
+        <a href="#">Beranda</a>
+        <a href="#">Tutorial</a>
+        <a href="#">Produk</a>
+        <a href="#">Review</a>
+        <a href="#">Kontak</a>
+      </nav>
+    </header>
+
+    <!-- Main layout -->
+    <div class="layout">
+      <main>
+        <!-- Hero / Featured -->
+        <section class="hero">
+          <div class="hero-top">
+            <div style="flex:1">
+              <img src="https://picsum.photos/id/1039/1200/500" alt="Featured">
+            </div>
+          </div>
+          <h1>Judul Artikel Unggulan — Cara cepat & praktis</h1>
+          <p class="muted">Ringkasan singkat artikel unggulan. Contoh teks pembuka untuk menarik pembaca mengklik baca selengkapnya.</p>
+        </section>
+
+        <!-- Grid of cards -->
+        <section class="grid" aria-label="Daftar artikel">
+          <!-- Card A -->
+          <article class="card">
+            <div class="thumb">
+              <span class="badge">Artikel</span>
+              <img src="https://picsum.photos/id/1015/800/500" alt="Gambar artikel A">
+            </div>
+            <div class="card-body">
+              <h3 class="title">Panduan Memulai: Hal pertama yang harus kamu lakukan</h3>
+              <p class="excerpt muted">Intisari singkat yang menjelaskan garis besar isi artikel agar pembaca cepat paham.</p>
+              <div class="meta">
+                <a class="btn" href="#" target="_blank">Baca</a>
+                <div class="small muted">12 Ags 2025 • 5 menit</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card B -->
+          <article class="card">
+            <div class="thumb">
+              <span class="badge">Produk</span>
+              <img src="https://picsum.photos/id/1005/800/500" alt="Gambar produk">
+            </div>
+            <div class="card-body">
+              <h3 class="title">Review Template Landing: Ringan & responsif</h3>
+              <p class="excerpt muted">Ulasan singkat performa, fitur, dan rekomendasi penggunaan template landing.</p>
+              <div class="meta">
+                <a class="btn primary" href="#" target="_blank">Cek Produk</a>
+                <div class="small muted">10 Ags 2025</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card C -->
+          <article class="card">
+            <div class="thumb">
+              <span class="badge">Tutorial</span>
+              <img src="https://picsum.photos/id/1016/800/500" alt="Gambar tutorial">
+            </div>
+            <div class="card-body">
+              <h3 class="title">CSS Grid Lanjutan — Layout modern tanpa framework</h3>
+              <p class="excerpt muted">Contoh penggunaan grid untuk membuat layout kompleks namun tetap sederhana.</p>
+              <div class="meta">
+                <a class="btn" href="#" target="_blank">Pelajari</a>
+                <div class="small muted">7 Ags 2025 • 8 menit</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card D -->
+          <article class="card">
+            <div class="thumb">
+              <span class="badge">Tips</span>
+              <img src="https://picsum.photos/id/1021/800/500" alt="Gambar tips">
+            </div>
+            <div class="card-body">
+              <h3 class="title">Tips Ringkas untuk Optimasi Website</h3>
+              <p class="excerpt muted">Langkah mudah untuk mempercepat loading dan meningkatkan pengalaman pengguna.</p>
+              <div class="meta">
+                <a class="btn" href="#" target="_blank">Baca</a>
+                <div class="small muted">3 Ags 2025</div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="sidebar" aria-label="Sidebar">
+        <div class="widget search">
+          <h4>Cari</h4>
+          <input type="search" placeholder="Cari artikel..." aria-label="Cari artikel">
+        </div>
+
+        <div class="widget">
+          <h4>Artikel Terbaru</h4>
+          <div class="list-min">
+            <a class="mini-item" href="#">
+              <img src="https://picsum.photos/id/1025/200/140" alt="mini">
+              <div class="t">Judul artikel terbaru 1</div>
+            </a>
+            <a class="mini-item" href="#">
+              <img src="https://picsum.photos/id/1033/200/140" alt="mini">
+              <div class="t">Judul artikel terbaru 2</div>
+            </a>
+            <a class="mini-item" href="#">
+              <img src="https://picsum.photos/id/1042/200/140" alt="mini">
+              <div class="t">Judul artikel terbaru 3</div>
+            </a>
           </div>
         </div>
-      </article>
 
-      <!-- Card 2 -->
-      <article class="box">
-        <div class="thumb">
-          <span class="label">Produk</span>
-          <img src="https://picsum.photos/id/1005/600/400" alt="Produk Gambar">
-        </div>
-        <div class="content">
-          <h3 class="title">Template Landing</h3>
-          <p class="desc">Template ringan untuk kampanye dan promosi online.</p>
-          <div class="actions">
-            <a class="btn ghost" href="https://contoh.com/template" target="_blank">Preview</a>
-            <a class="btn primary" href="https://contoh.com/template" target="_blank">Unduh</a>
+        <div class="widget">
+          <h4>Kategori</h4>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <a class="btn" href="#">Tutorial</a>
+            <a class="btn" href="#">Produk</a>
+            <a class="btn" href="#">Review</a>
+            <a class="btn" href="#">Tips</a>
           </div>
         </div>
-      </article>
+      </aside>
+    </div>
 
-      <!-- Card 3 -->
-      <article class="box">
-        <div class="thumb">
-          <span class="label">Tutorial</span>
-          <img src="https://picsum.photos/id/1016/600/400" alt="Tutorial Gambar">
-        </div>
-        <div class="content">
-          <h3 class="title">CSS Grid Lanjutan</h3>
-          <p class="desc">Contoh penggunaan grid untuk layout modern.</p>
-          <div class="actions">
-            <a class="btn ghost" href="https://contoh.com/tutorial" target="_blank">Lihat</a>
-            <a class="btn primary" href="https://contoh.com/tutorial" target="_blank">Pelajari</a>
-          </div>
-        </div>
-      </article>
-    </section>
+    <!-- Footer -->
+    <footer>
+      <div>© <strong>WarungEles (Demo)</strong> — Semua konten contoh.</div>
+      <div class="social">
+        <span class="small muted">Ikuti:</span>
+        <a href="#" title="Twitter">Tw</a>
+        <a href="#" title="Facebook">Fb</a>
+        <a href="#" title="YouTube">Yt</a>
+      </div>
+    </footer>
   </div>
 </body>
 </html>
+
+Catatan cepat:
+
+Gambar menggunakan https://picsum.photos (placeholder). Ganti src pada <img> dengan URL gambar asli jika ingin persis.
+
+Link pada tombol/thumbnail sekarang # — ganti ke URL aslinya.
+
+Kalau mau aku sesuaikan warna, font, atau ubah supaya lebih mirip (mis. font spesifik, spacing, warna hijau/logo) beri tahu — aku langsung perbarui.
+
+
