@@ -1,426 +1,605 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Penilaian Layanan Toko — Light / Dark</title>
-  <style>
-    :root{
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --text: #0f1724;
-      --muted: #6b7280;
-      --accent: #ffb020;
-      --radius: 14px;
-      --shadow: 0 8px 24px rgba(15,23,36,0.06);
-    }
-    .dark {
-      --bg: #0b1220;
-      --card: #071122;
-      --text: #e6eef8;
-      --muted: #98a0b3;
-      --accent: #f6c85f;
-      --shadow: 0 10px 30px rgba(2,6,23,0.8);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: radial-gradient(circle at 10% 10%, rgba(255,255,255,0.04), transparent 10%),
-                  linear-gradient(180deg,var(--bg),var(--bg));
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:28px;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portofolio & Produk - Shiro</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    .wrap{
-      width:100%;
-      max-width:920px;
-      display:grid;
-      grid-template-columns: 240px 1fr;
-      gap:20px;
-      align-items:start;
-    }
+body {
+background: #000;
+color: #e0f7fa;
+font-family: 'Segoe UI', sans-serif;
+line-height: 1.6;
+scroll-behavior: smooth;
+}
 
-    /* Left column (image / logo) */
-    .left {
-      background:linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:18px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      align-items:center;
-    }
-    .logo{
-      width:160px;
-      height:160px;
-      border-radius:12px;
-      background-size:cover;
-      background-position:center;
-      box-shadow: 0 6px 20px rgba(2,6,23,0.08), inset 0 -6px 16px rgba(0,0,0,0.06);
-      border: 1px solid rgba(255,255,255,0.03);
-    }
-    .thumb{
-      width:100%;
-      height:120px;
-      border-radius:10px;
-      background-size:cover;
-      background-position:center;
-      margin-top:6px;
-      border: 1px solid rgba(255,255,255,0.03);
-    }
-    .theme-toggle{
-      margin-top:auto;
-      display:flex;
-      gap:8px;
-      align-items:center;
-      width:100%;
-      justify-content:center;
-    }
+canvas#particles {
+position: fixed;
+top: 0; left: 0;
+width: 100%;
+height: 100%;
+z-index: 0;
+}
 
-    /* Right column (card) */
-    .card{
-      background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.02));
-      border-radius: var(--radius);
-      padding:22px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(0,0,0,0.04);
-    }
-    .shop-row{
-      display:flex;
-      gap:14px;
-      align-items:center;
-    }
-    .shop-avatar{
-      width:64px;height:64px;border-radius:10px;background-size:cover;background-position:center;border:1px solid rgba(0,0,0,0.04)
-    }
-    .shop-info{
-      display:flex;flex-direction:column;
-    }
-    .shop-name{
-      font-size:18px;font-weight:700;
-      line-height:1;
-      outline:none;
-    }
-    .shop-meta{font-size:13px;color:var(--muted);margin-top:6px}
+.container {
+position: relative;
+z-index: 2;
+padding: 20px 30px 60px;
+max-width: 1200px;
+margin: auto;
+text-align: center;
+}
 
-    .rating-box{
-      margin-top:18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
-      padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,0.03);
-      display:flex;flex-direction:column;gap:12px;
-    }
+.profile img {
+width: 140px;
+height: 140px;
+border-radius: 50%;
+border: 4px solid #0ff;
+box-shadow: 0 0 15px #0ff;
+margin: auto;
+display: block;
+}
 
-    .stars{
-      display:flex;gap:8px;align-items:center;
-    }
-    .star{
-      width:46px;height:46px;border-radius:10px;display:inline-grid;place-items:center;
-      font-size:22px;cursor:pointer;user-select:none;
-      transition:transform .12s ease, box-shadow .12s ease;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      border:1px solid rgba(0,0,0,0.04);
-    }
-    .star:hover{ transform: translateY(-4px); box-shadow: 0 8px 20px rgba(2,6,23,0.08); }
-    .star.active{
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.0));
-      box-shadow: 0 10px 26px rgba(0,0,0,0.08);
-    }
+.profile h1 {
+color: #00ffe7;
+margin-top: 10px;
+font-size: 1.5rem;
+font-weight: bold;
+}
 
-    .star svg{ filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12)); }
+/* Deskripsi di bawah nama profile */
+.profile .desc {
+margin-top: 8px;
+font-size: 1rem;
+color: #4deeea;
+font-style: italic;
+max-width: 350px;
+margin-left: auto;
+margin-right: auto;
+line-height: 1.4;
+}
 
-    .rating-result{
-      margin-top:6px;
-      padding-top:6px;
-      border-top:1px dashed rgba(0,0,0,0.04);
-      color:var(--muted);
-      font-size:14px;
-      display:flex;gap:12px;align-items:center;flex-wrap:wrap;
-    }
+h2 {
+margin-top: 40px;
+color: #0ff;
+font-size: 1.3rem;
+}
 
-    /* small helpers */
-    .btn {
-      border: none;
-      padding:8px 12px;
-      border-radius:10px;
-      cursor:pointer;
-      font-weight:600;
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      color:var(--text);
-      outline:1px solid rgba(0,0,0,0.04);
-    }
-    .small{font-size:13px;padding:6px 10px;border-radius:9px}
-    .muted{color:var(--muted)}
-    input[type="text"]{font-size:16px;padding:6px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent;color:var(--text)}
-    label.small{font-size:12px;color:var(--muted)}
+.products-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1.5rem;
+margin-top: 1rem;
+}
 
-    footer.note{margin-top:14px;font-size:13px;color:var(--muted)}
-    @media (max-width:840px){
-      .wrap{grid-template-columns:1fr; padding:12px;}
-      .left{flex-direction:row;gap:12px;padding:12px}
-      .logo{width:96px;height:96px}
-    }
-  </style>
+.product-card {
+background: #111;
+padding: 1rem;
+border-radius: 10px;
+box-shadow: 0 0 10px #0ff;
+text-align: center;
+transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 0 20px #00ffe7;
+}
+
+.product-card img {
+width: 100%;
+max-width: 160px;
+margin: 0 auto 0.5rem;
+display: block;
+border-radius: 8px;
+}
+
+.product-card h3 {
+color: #0ff;
+margin: 0.5rem 0;
+}
+
+.product-card ul {
+text-align: left;
+padding-left: 1rem;
+margin: 0.5rem 0;
+}
+
+.product-card ul li {
+margin-bottom: 4px;
+}
+
+.product-card .price {
+font-weight: bold;
+margin-top: 0.5rem;
+}
+
+.product-card a {
+display: block;
+margin-top: 0.8rem;
+padding: 12px;
+background: #25D366;
+color: #000;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+box-shadow: 0 0 8px #0ff;
+transition: background 0.2s, box-shadow 0.2s;
+}
+
+.button-channel.telegram:hover {
+    background: #1c8ec3;
+}
+
+.product-card a:hover {
+background: #1ebe5d;
+box-shadow: 0 0 15px #0ff;
+}
+
+.button-channel {
+display: block;
+width: 220px;
+margin: 1.5rem auto 0;
+padding: 12px;
+background: #0077b6;
+color: #fff;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+box-shadow: 0 0 8px #0ff;
+transition: 0.2s;
+}
+
+.button-channel:hover {
+background: #005f99;
+box-shadow: 0 0 15px #0ff;
+}
+
+/* Tombol keren untuk payment-shiro */
+.button-payment {
+display: block;
+width: 260px;
+margin: 2rem auto 0;
+padding: 14px 20px;
+background: linear-gradient(135deg, #00ffe7, #0077b6);
+color: #000;
+font-weight: bold;
+font-size: 1rem;
+border-radius: 10px;
+text-decoration: none;
+box-shadow: 0 0 15px #0ff;
+transition: 0.3s ease;
+}
+.button-payment:hover {
+background: linear-gradient(135deg, #00e6c3, #005f99);
+box-shadow: 0 0 25px #00ffe7;
+transform: scale(1.05);
+}
+
+footer {
+margin-top: 40px;
+font-size: 0.9rem;
+color: #aaa;
+}
+
+#music-player {
+position: fixed;
+bottom: 20px;
+left: 20px;
+z-index: 3;
+}
+
+#music-btn {
+background: #111;
+color: #0ff;
+border: none;
+border-radius: 50%;
+width: 60px;
+height: 60px;
+font-size: 30px;
+cursor: pointer;
+box-shadow: 0 0 10px #0ff;
+}
+
+/* Button Mini WhatsApp dengan GIF animasi */
+.whatsapp-mini-btn {
+position: fixed;
+bottom: 20px;
+right: 20px;
+width: 50px;
+height: 50px;
+background-color: #25d366;
+border-radius: 50%;
+box-shadow: 0 4px 10px rgba(37, 211, 102, 0.6);
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+transition: background-color 0.3s ease, box-shadow 0.3s ease;
+z-index: 9999;
+overflow: hidden;
+}
+.whatsapp-mini-btn:hover {
+background-color: #1ebe5d;
+box-shadow: 0 6px 15px rgba(37, 211, 102, 0.9);
+}
+.whatsapp-mini-btn img {
+width: 28px;
+height: 28px;
+pointer-events: none;
+user-select: none;
+filter: drop-shadow(0 0 2px rgba(0,0,0,0.4));
+}
+#scrollTopBtn {
+position: fixed;
+bottom: 70px; /* posisi agak di atas tombol WhatsApp */
+right: 20px;
+z-index: 10000;
+display: none;
+background-color: #00ffe7;
+color: #000;
+border: none;
+border-radius: 50%;
+width: 50px;
+height: 50px;
+font-size: 28px;
+cursor: pointer;
+box-shadow: 0 0 15px #00ffe7;
+transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+background-color: #00c9b1;
+box-shadow: 0 0 25px #00c9b1;
+}
+
+.responsive-video {
+width: 100%;
+max-width: 640px;
+height: auto;
+margin: 20px auto;
+display: block;
+border-radius: 10px;
+box-shadow: 0 0 20px #0ff;
+}
+
+/* Benefit button 1 */
+.toggle-benefit {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #00ffe7, #0077b6);
+  color: #000;
+  font-weight: bold;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 12px #0ff;
+  transition: 0.3s ease;
+}
+
+.toggle-benefit:hover {
+  background: linear-gradient(135deg, #00e6c3, #005f99);
+  box-shadow: 0 0 18px #00ffe7;
+  transform: scale(1.03);
+}
+
+.benefit-text ul {
+  padding-left: 1rem;
+  list-style-type: disc;
+}
+
+.benefit-text li {
+  color: #00ffe7;
+  margin-bottom: 6px;
+}
+
+.video-description {
+  margin-top: 40px;
+  margin-bottom: 12px;
+  color: #00ffe7;
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: bold;
+}
+</style>
 </head>
 <body>
-  <div class="wrap" id="app">
-    <!-- LEFT: Images & theme switch -->
-    <div class="left">
-      <div id="logo" class="logo" aria-hidden="true"></div>
-      <div id="thumb" class="thumb" aria-hidden="true"></div>
 
-      <div style="width:100%;display:flex;flex-direction:column;gap:8px;margin-top:8px">
-        <label class="small muted">Logo URL</label>
-        <input id="logoUrl" type="text" placeholder="https://example.com/logo.png" />
-        <label class="small muted">Thumbnail URL</label>
-        <input id="thumbUrl" type="text" placeholder="https://example.com/thumb.jpg" />
-      </div>
+<canvas id="particles"></canvas>
 
-      <div class="theme-toggle">
-        <button id="lightBtn" class="btn small">Terang</button>
-        <button id="darkBtn"  class="btn small">Gelap</button>
-      </div>
-    </div>
+<div class="container">
+<div class="profile">
+<img src="https://files.catbox.moe/88j3ia.jpg" alt="Foto Profil Firguna" loading="lazy">
+<h1>𝕱𝖎𝖗𝖌𝖚𝖓𝖆 𝕯𝖊𝖛𝖊𝖑𝖔𝖕𝖒𝖊𝖓𝖙</h1>
+<div class="desc">Selamat datang di halaman Pricelist Firguna Marketplace, Ribuhan kebutuhan Gaming Dan Hosting Tersedia disini.</div>
+</div>
 
-    <!-- RIGHT: shop info + rating -->
-    <div class="card">
-      <div class="shop-row">
-        <div id="shopAvatar" class="shop-avatar" aria-hidden="true"></div>
-        <div class="shop-info">
-          <div contenteditable="true" id="shopName" class="shop-name" aria-label="Nama toko">Nama Toko Contoh</div>
-          <div class="shop-meta">
-            <span id="shopLocation">Lokasi: Jakarta</span> • <span id="shopCategory">Kategori: Retail</span>
-          </div>
-        </div>
-      </div>
+<section id="unggulan">
+<h2>Minecraft Bedrock Edition</h2>
+<div class="products-grid">
+<div class="product-card">
+<img src="https://files.catbox.moe/kkul8q.jpg" alt="Produk R16 C8" loading="lazy">
+<h3>PANEL PRIVAT ✨</h3>
+<ul>
+  <li>2025 Masih pake minecraft dari Google/platfrom ilegal lainnya? mana paten.</li>
+</ul>
+<button class="toggle-benefit" data-show="Lihat Benefit R16 C8" data-hide="Sembunyikan Benefit R16 C8">
+  Lihat Benefit Minecraft Ori
+</button>
+<div class="benefit-text" style="display:none; margin-top:12px;">
+  <ul>
+    <li>1. Download Langsung Dari Playstore</li>
+    <li>2. 100% Work Login Xbox</li>
+    <li>3. HP Lu aman dari Marware apapun</li>
+    <li>4. Bisa Top Up Minecoins</li>
+    <li>5. Bebas Join Server Apapun!</li>
+    <li>6. Buat Pamer ketemen lu juga bisa</li>
+    <li>7. Skin? Costume Bisa brek</li>
+    <li>Dan Benefit Lainnya!.</li>
+    <li>"Jadi dengan semurah ini lu masih mau pakai minecraft Crack?"</li>
+    
+  </ul>
+</div>
+<a href="https://wa.me/62882008612013?text=mau Beli Minecraft" target="_blank">Beli Sekarang!</a>
+</div>
 
-      <div class="rating-box" aria-label="Kotak penilaian">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <div>
-            <div style="font-weight:700;font-size:15px">Nilai Layanan</div>
-            <div class="muted" style="font-size:13px">Klik bintang untuk memberi penilaian (1 - 5)</div>
-          </div>
-          <div style="text-align:right">
-            <div class="muted small">Rating saat ini</div>
-            <div id="numericScore" style="font-weight:800;font-size:18px">0.0</div>
-          </div>
-        </div>
+<div class="product-card">
+<img src="https://files.catbox.moe/0hrnj5.jpg" alt="Produk R32 C8" loading="lazy">
+<h3>PANEL PRIVAT R32 C8 ✨</h3>
+<ul>
+  <li>📮RAM 4GB : 5K</li>
+  <li>📮RAM 5GB : 6K</li>
+  <li>📮RAM 6GB : 7K</li>
+  <li>📮RAM 7GB : 8K</li>
+  <li>📮RAM 8GB : 9K</li>
+  <li>📮RAM 10GB : 10K</li>
+  <li>📮RAM UNLI : 13K</li>
+  <li>🕊RESELLER : 25K</li>
+</ul>
+<button class="toggle-benefit" data-show="Lihat Benefit R32 C8" data-hide="Sembunyikan Benefit R32 C8">
+  Lihat Benefit R32 C8
+</button>
+<div class="benefit-text" style="display:none; margin-top:12px;">
+  <ul>
+    <li>BERGARANSI 25 HARI (1× REPLACE)</li>
+    <li>ADP CUMAN 1 (GUA)</li>
+    <li>SERVER PRIVAT</li>
+    <li>SERVER AWET</li>
+    <li>ANTI RUSUH</li>
+    <li>ANTI DELAY</li>
+    <li>ANTI COLONG SC</li>
+    <li>THEMA KEREN</li>
+    <li>VPS HIGHT QUALITY R32 C8</li>
+    <li>RESELLER JARANG PT"</li>
+    <li>RESELLER SERVER PRIVAT</li>
+    <li>RESELLER BEBAS CREATE PANEL</li>
+  </ul>
+</div>
+<a href="https://wa.me/6285338245943?text=Mau Beli Panel R32 C8" target="_blank">Contact Shiro 🍁</a>
+</div>
+</div>
+</section>
 
-        <div class="stars" id="stars" role="radiogroup" aria-label="Penilaian bintang">
-          <!-- stars inserted by JS -->
-        </div>
+<section id="baru">
+<h2>✨ Produk Lainnya ✨</h2>
+<div class="products-grid">
+<div class="product-card">
+<img src="https://files.catbox.moe/pdw2xz.jpg" alt="NOKOS WhatsApp" loading="lazy">
+<h3>NOKOS WHATSAPP ✨</h3>
+  <ul>
+    <li>HARGA NOKOS TERGANTUNG REGION</li>
+    <li>ALL REGION ADA SILAHKAH TANYA</li>
+    </li>NOTE : BILA NOKOS SUDAH ADA DI WA BUYER MAKA SELLER SUDAH TIDAK BERTANGGUNG JAWAB ❗</li>
+    <li>MURID NOKOS VVIP : 12K</li>
+    <li>MURID NOKOS VIP : 7K</li>
+  </ul>
+<button class="toggle-benefit" data-show="Benefit Murid" data-hide="Sembunyikan Benefit Murid">
+  Benefit Murid
+</button>
+<div class="benefit-text" style="display:none; margin-top:12px;">
+  <ul>
+    <li>FREE TUTOR VIDEO</li>
+    <li>BISA OPEN MURID LAGI</li>
+    <li>BISA JUALAN NOKOS ALL REGION</li>
+    <li>GET 30+ WEB NOKOS FREE DAN BERBAYAR</li>
+    <li>DIAJARIN SAMPAI BISA</li>
+    <li>DIAJARIN AMANIN NOKOS</li>
+    <li>DIAJARIN STOK NOKOS</li>
+    <li>NOTE : APA BEDANYA VIP DAN VVIP?</li>
+    <li>BEDA NYA ADA DI WEB DAN PENGAJARANNYA</li>
+  </ul>
+</div>
+<a href="https://wa.me/6285338245943?text=Mau Buy Nokos ✨" target="_blank">Contact Shiro 🍁</a>
+</div>
 
-        <!-- DI SINI: penilaian numerik & teks (letak di bawah kotak penilaian) -->
-        <div class="rating-result" id="ratingResult" aria-live="polite">
-          <div id="ratingText" class="muted">Belum ada penilaian.</div>
-          <div style="margin-left:auto">
-            <button id="resetBtn" class="btn small">Reset</button>
-          </div>
-        </div>
+<div class="product-card">
+<img src="https://files.catbox.moe/xqw8j6.jpg" alt="SEWA BOT JAGA GRUB" loading="lazy">
+<h3>SEWA BOT KOMARI - MD 🍁</h3>
+  <ul>
+   <li>SEWA 1 MINGGU 10K</li>
+   <li>SEWA 2 MINGGU 20K</li>
+   <li>SEWA 1 BULAN 40K</li>
+   <li>SEWA PERMANEN 90K</li>
+  </ul>
+<button class="toggle-benefit" data-show="Benefit Sewa Bot" data-hide="Sembunyikan Benefit Sewa Bot">
+  Benefit Sewa Bot
+</button>
+<div class="benefit-text" style="display:none; margin-top:12px;">
+  <ul>
+    <li>TOTAL FITUR 1200+</li>
+    <li>TAMPILAN MENU KEREN</li>
+    <li>MENU GAME</li>
+    <li>MENU INFO</li>
+    <li>MENU NSFW</li>
+    <li>MENU FUN</li>
+    <li>MENU RPG</li>
+    <li>MENU AI</li>
+    <li>MENU TOOLS</li>
+    <li>MENU STICKER</li>
+    <li>MENU DOWNLOADER</li>
+    <li>MENU GRUB ENABLE / DISABLE</li>
+    <li>DAN MENU KEREN LAINNYA ✨</li>
+ </ul>
+   </div>
+<a href="https://wa.me/6285338245943?text=Mau Sewa Bot Jaga Grup 💤" target="_blank">Contact Shiro 🍁</a>
+</div>
 
-        <footer class="note">Catatan: semua gambar diambil dari link di kolom kiri — ganti link lalu tekan Enter untuk memperbarui.</footer>
-      </div>
-    </div>
-  </div>
+<div class="product-card">
+<img src="https://files.catbox.moe/oqyiv3.jpg" alt="SCRIPT BUG ♨️" loading="lazy">
+<h3>SCRIPT BUG ♨️</h3>
+<ul>
+<li>SCRIPT NTED CRASHER</li>
+<li>SCRIPT DAPZY</li>
+<li>OWN DAPZY</li>
+<li>RESELLER DAPZY</li>
+</ul>
+<div class="price">Klik tombol untuk order ✨</div>
+<a href="https://wa.me/6285338245943?text=Info Script Bug Nya" target="_blank">Contact Shiro 🍁</a>
+</div>
 
-  <script>
-    /****************************************************************
-     * Konfigurasi awal (ubah nilai default link & shop name di sini)
-     ****************************************************************/
-    const DEFAULTS = {
-      theme: localStorage.getItem('shop_theme') || 'light', // 'light' or 'dark'
-      logoUrl: localStorage.getItem('shop_logo') || 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3e2a6a3c8f2f3b9d8c5f5b8e6d0a6f6a',
-      thumbUrl: localStorage.getItem('shop_thumb') || 'https://images.unsplash.com/photo-1542834369-f10ebf06d3cb?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8f9b7d6c2d9e7a6b5c4d3e2f1a0b9c8d',
-      avatarUrl: localStorage.getItem('shop_avatar') || 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=7b6f5e4d3c2b1a0f9e8d7c6b5a4b3c2d',
-      shopName: localStorage.getItem('shop_name') || 'Toko Firguna'
-    };
+<div class="product-card">
+<img src="https://files.catbox.moe/xjjpp6.jpg" alt="Produk Tambahan" loading="lazy">
+<h3>PRODUK TAMBAHAN 🌌</h3>
+<ul>
+<li>MURID SUNTIK SOSMED 10K</li>
+<li>JASA RENAME SCRIPT 15K</li>
+<li>JASA PEMBUATAN WEBSITE PAYMENT 15K</li>
+<li>JADI BOT BUG</li>
+<li>>~<</li>
+</ul>
+<div class="price">Klik tombol untuk order ✨</div>
+<a href="https://wa.me/6285338245943?text=Mau Order 🌌" target="_blank">Contact Shiro 🍁</a>
+</div>
 
-    // DOM refs
-    const app = document.getElementById('app');
-    const logo = document.getElementById('logo');
-    const thumb = document.getElementById('thumb');
-    const logoUrlIn = document.getElementById('logoUrl');
-    const thumbUrlIn = document.getElementById('thumbUrl');
-    const shopAvatar = document.getElementById('shopAvatar');
-    const shopNameEl = document.getElementById('shopName');
-    const numericScore = document.getElementById('numericScore');
-    const ratingText = document.getElementById('ratingText');
-    const ratingResult = document.getElementById('ratingResult');
-    const starsWrap = document.getElementById('stars');
-    const lightBtn = document.getElementById('lightBtn');
-    const darkBtn = document.getElementById('darkBtn');
-    const resetBtn = document.getElementById('resetBtn');
+</div>
+<a href="https://t.me/ShiroGandezblood" target="_blank" class="button-channel telegram">My Telegram</a>
+<a href="https://whatsapp.com/channel/0029Vb348RKDjiOgFHPkCc3E" target="_blank" class="button-channel">Channel Utama</a>
+<a href="https://whatsapp.com/channel/0029Vb03scT1CYoZTsizbw2q" target="_blank" class="button-channel">Channel Testimoni</a>
 
-    // state
-    let currentTheme = DEFAULTS.theme;
-    let rating = Number(localStorage.getItem('shop_rating') || 0);
+<!-- Tombol keren ke payment-shiro -->
+<a href="https://firguna.my.id" target="_blank" class="button-payment">Kembali Kemenu Utama</a>
 
-    // helper: set backgrounds from URLs
-    function setImages(logoUrl, thumbUrl, avatarUrl){
-      logo.style.backgroundImage = `url("${logoUrl}")`;
-      thumb.style.backgroundImage = `url("${thumbUrl}")`;
-      shopAvatar.style.backgroundImage = `url("${avatarUrl}")`;
-      // store
-      localStorage.setItem('shop_logo', logoUrl);
-      localStorage.setItem('shop_thumb', thumbUrl);
-      localStorage.setItem('shop_avatar', avatarUrl);
-    }
+</section>
 
-    // init image input values
-    logoUrlIn.value = DEFAULTS.logoUrl;
-    thumbUrlIn.value = DEFAULTS.thumbUrl;
-    setImages(DEFAULTS.logoUrl, DEFAULTS.thumbUrl, DEFAULTS.avatarUrl);
+<button id="scrollTopBtn" title="Scroll ke Atas">↑</button>
 
-    // apply theme
-    function applyTheme(t){
-      if(t === 'dark') document.documentElement.classList.add('dark');
-      else document.documentElement.classList.remove('dark');
-      localStorage.setItem('shop_theme', t);
-      currentTheme = t;
-    }
-    applyTheme(currentTheme);
+<div class="video-description">
+  My Bini Terakomari Gandezblood ✨
+</div>
 
-    lightBtn.addEventListener('click', ()=>applyTheme('light'));
-    darkBtn.addEventListener('click', ()=>applyTheme('dark'));
+<footer>© All Right Firguna Team 2025</footer>
+</div>
 
-    // Update images when user edits the inputs and presses Enter or leaves field
-    function attachImageInputHandlers(){
-      logoUrlIn.addEventListener('change', ()=> setImages(logoUrlIn.value || DEFAULTS.logoUrl, thumbUrlIn.value || DEFAULTS.thumbUrl, DEFAULTS.avatarUrl));
-      thumbUrlIn.addEventListener('change', ()=> setImages(logoUrlIn.value || DEFAULTS.logoUrl, thumbUrlIn.value || DEFAULTS.thumbUrl, DEFAULTS.avatarUrl));
-      // also allow Enter
-      [logoUrlIn, thumbUrlIn].forEach(input=>{
-        input.addEventListener('keydown', (e)=>{
-          if(e.key === 'Enter'){
-            e.preventDefault();
-            input.blur();
-            setImages(logoUrlIn.value || DEFAULTS.logoUrl, thumbUrlIn.value || DEFAULTS.thumbUrl, DEFAULTS.avatarUrl);
-          }
-        });
-      });
-    }
-    attachImageInputHandlers();
+<!-- Music Player -->
+<div id="music-player">
+<button id="music-btn">🎧</button>
+</div>
+<audio id="bgMusic" loop>
+<source src="https://files.catbox.moe/5xxg3r.mp3" type="audio/mpeg">
+</audio>
 
-    // shop name editable handler
-    shopNameEl.textContent = DEFAULTS.shopName;
-    shopNameEl.addEventListener('input', ()=>{
-      localStorage.setItem('shop_name', shopNameEl.textContent.trim());
+<!-- Button Mini WhatsApp dengan GIF animasi -->
+<a href="https://wa.me/6285338245943" target="_blank" aria-label="Chat WhatsApp" class="whatsapp-mini-btn" title="Chat via WhatsApp">
+<img src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyOHR2b2Z4ZjZmMTN1cHA2ZmZ3M2FyZzVoOXJhbWhzaGFqenplaGlpcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/CNUb51EbTxuRG/giphy.gif" alt="WhatsApp Animated Icon" loading="lazy" />
+</a>
+
+<!-- JS: Particle Background & Music -->
+<script>
+  document.querySelectorAll('.toggle-benefit').forEach(button => {
+    button.addEventListener('click', () => {
+      const benefit = button.nextElementSibling;
+      const isVisible = benefit.style.display === 'block';
+
+      benefit.style.display = isVisible ? 'none' : 'block';
+
+      const showText = button.getAttribute('data-show');
+      const hideText = button.getAttribute('data-hide');
+      button.textContent = isVisible ? showText : hideText;
     });
+  });
+</script>
 
-    // create star buttons (1..5)
-    function makeStarSVG(filled){
-      // simple star path
-      return `
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="${filled ? 'currentColor' : 'none'}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M12 .587l3.668 7.431 8.2 1.2-5.934 5.788 1.4 8.166L12 18.896l-7.334 3.876 1.4-8.166L.132 9.218l8.2-1.2z" stroke="currentColor" stroke-width="0.6"/>
-        </svg>`;
-    }
 
-    function renderStars(current){
-      starsWrap.innerHTML = '';
-      for(let i=1;i<=5;i++){
-        const b = document.createElement('button');
-        b.className = 'star';
-        b.setAttribute('role','radio');
-        b.setAttribute('aria-checked', String(i===Math.round(current)));
-        b.setAttribute('aria-label', `${i} bintang`);
-        b.dataset.value = i;
-        // highlight visually if <= rating
-        const filled = i <= Math.round(current);
-        b.innerHTML = makeStarSVG(filled);
-        // click sets rating
-        b.addEventListener('click', ()=> {
-          rating = i;
-          localStorage.setItem('shop_rating', rating);
-          updateRatingUI();
-        });
-        // hover preview
-        b.addEventListener('mouseover', ()=> {
-          renderStarsHover(i);
-        });
-        b.addEventListener('mouseout', ()=> {
-          renderStars(rating);
-        });
-        starsWrap.appendChild(b);
-      }
-    }
+<script>
+const canvas = document.getElementById('particles'), ctx = canvas.getContext('2d');
+canvas.width = innerWidth; canvas.height = innerHeight;
 
-    function renderStarsHover(hoverVal){
-      Array.from(starsWrap.children).forEach((el,idx)=>{
-        const i = idx + 1;
-        el.innerHTML = makeStarSVG(i <= hoverVal);
-      });
-    }
+class Particle {
+constructor() {
+this.x = Math.random() * canvas.width;
+this.y = Math.random() * canvas.height;
+this.vx = (Math.random() - 0.5) * 1.2;
+this.vy = (Math.random() - 0.5) * 1.2;
+this.size = Math.random() * 3 + 1;
+}
+update() {
+this.x += this.vx; this.y += this.vy;
+if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+}
+draw() {
+const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 4);
+grad.addColorStop(0, 'rgba(0,255,255,0.8)');
+grad.addColorStop(1, 'rgba(0,255,255,0)');
+ctx.fillStyle = grad;
+ctx.beginPath();
+ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+ctx.fill();
+}
+}
 
-    function updateRatingUI(){
-      renderStars(rating);
-      numericScore.textContent = (rating ? rating.toFixed(1) : '0.0');
-      if(!rating){
-        ratingText.textContent = 'Belum ada penilaian.';
-        ratingText.classList.add('muted');
-      } else {
-        // simple mapping text
-        const txt = ['Sangat Buruk','Buruk','Cukup','Bagus','Sangat Bagus'][rating-1];
-        ratingText.textContent = `${rating} / 5 — ${txt} — Diberikan untuk "${shopNameEl.textContent.trim() || 'Toko'}"`;
-        ratingText.classList.remove('muted');
-      }
-    }
+const particlesArray = [];
+for (let i = 0; i < 80; i++) {
+particlesArray.push(new Particle());
+}
 
-    // reset
-    resetBtn.addEventListener('click', ()=>{
-      rating = 0;
-      localStorage.removeItem('shop_rating');
-      updateRatingUI();
-    });
+function animate() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+particlesArray.forEach(p => {
+p.update();
+p.draw();
+});
+requestAnimationFrame(animate);
+}
 
-    // initialize
-    renderStars(rating);
-    updateRatingUI();
+animate();
 
-    // Accessibility: allow keyboard rating
-    starsWrap.addEventListener('keydown', (e)=>{
-      const key = e.key;
-      if(['ArrowRight','ArrowUp','ArrowLeft','ArrowDown','Home','End','Enter',' '].includes(key)){
-        e.preventDefault();
-        if(key === 'ArrowRight' || key === 'ArrowUp') rating = Math.min(5, rating + 1 || 1);
-        if(key === 'ArrowLeft' || key === 'ArrowDown') rating = Math.max(1, rating - 1 || 0);
-        if(key === 'Home') rating = 1;
-        if(key === 'End') rating = 5;
-        if(key === 'Enter' || key === ' ') {
-          // no-op (already set)
-        }
-        localStorage.setItem('shop_rating', rating);
-        updateRatingUI();
-      }
-    });
+// Musik toggle
+const musicBtn = document.getElementById('music-btn');
+const bgMusic = document.getElementById('bgMusic');
+musicBtn.addEventListener('click', () => {
+if (bgMusic.paused) {
+bgMusic.play();
+musicBtn.style.color = '#00ffe7';
+} else {
+bgMusic.pause();
+musicBtn.style.color = '#0ff';
+}
+ });
+ 
+const scrollTopBtn = document.getElementById('scrollTopBtn');
 
-    // small: let user press Ctrl+S to save name (prevent browser save)
-    document.addEventListener('keydown', (e)=> {
-      if((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's'){
-        e.preventDefault();
-        localStorage.setItem('shop_name', shopNameEl.textContent.trim());
-        alert('Nama toko disimpan.');
-      }
-    });
+window.addEventListener('scroll', () => {
+if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+scrollTopBtn.style.display = 'block';
+} else {
+scrollTopBtn.style.display = 'none';
+}
+});
 
-    // load persisted values into UI (if present)
-    (function loadPersisted(){
-      const persistedLogo = localStorage.getItem('shop_logo');
-      const persistedThumb = localStorage.getItem('shop_thumb');
-      const persistedAvatar = localStorage.getItem('shop_avatar');
-      const persistedName = localStorage.getItem('shop_name');
-      if(persistedLogo) logoUrlIn.value = persistedLogo;
-      if(persistedThumb) thumbUrlIn.value = persistedThumb;
-      if(persistedLogo || persistedThumb || persistedAvatar) setImages(logoUrlIn.value || DEFAULTS.logoUrl, thumbUrlIn.value || DEFAULTS.thumbUrl, persistedAvatar || DEFAULTS.avatarUrl);
-      if(persistedName) shopNameEl.textContent = persistedName;
-    })();
+scrollTopBtn.addEventListener('click', () => {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
 
-  </script>
+</script>
+
 </body>
 </html>
+
