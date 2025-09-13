@@ -1,216 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Firguna - Portofolio</title>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-  <link rel="icon" href="https://files.catbox.moe/88j3ia.jpg" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firguna - Beranda</title>
+    <link href="templatemo-nexus-style.css" rel="stylesheet">
+    <link rel="icon" href="https://files.catbox.moe/88j3ia.jpg" type="image/x-icon">
 
-  <style>
-    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; scroll-behavior: smooth;}
-    body {background: linear-gradient(45deg, #0a0215, #1b0033); color: #fff; text-align: center; overflow-x: hidden; position: relative;}
-    #gameCanvas {position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 10;}
-    .profile {margin-top: 60px; position: relative; z-index: 11;}
-    .profile img {width: 120px; height: 120px; border-radius: 50%; border: 3px solid #ff00ff; box-shadow: 0 0 15px #ff00ff;}
-    .content {margin-top: 20px; padding-bottom: 50px; position: relative; z-index: 11;}
-    .neon-text {color: #ff00ff; text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;}
-    .navbar {display: flex; flex-direction: column; align-items: flex-start; justify-content: center; margin: 10px auto; max-width: 350px; padding: 10px 20px;}
-    .navbar-item {padding: 12px; width: 100%; background: rgba(255, 0, 255, 0.2); margin-bottom: 10px; border-radius: 5px; cursor: pointer; text-align: left; transition: 0.3s; display: flex; justify-content: space-between; align-items: center;}
-    .navbar-item:hover {background: rgba(255, 0, 255, 0.4);}
-    .navbar-item span {font-size: 14px; color: #ff00ff; font-weight: bold;}
-    .accordion-content {display: none; flex-direction: column; width: 100%; margin-top: 5px;}
-    .method {padding: 10px; background: rgba(0,255,255,0.2); border-radius: 5px; margin-top: 5px; cursor: pointer;}
-    .method:hover {background: rgba(0,255,255,0.4);}
-    .method-number {display: none; margin-top: 5px; font-size: 14px; color: #00ffff;}
-    .copy-btn {margin-left: 10px; background: #ff00ff; border: none; color: #fff; padding: 3px 6px; border-radius: 3px; cursor: pointer;}
-    .list {list-style: none; padding: 0; margin-top: 15px;}
-    .list-item {font-size: 18px; margin: 10px 0; color: #00ffff; text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;}
-    footer {background: rgba(0, 0, 0, 0.9); padding: 20px; text-align: center; border-top: 3px solid #ff00ff; position: relative; z-index: 11;}
-    .wa-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      padding: 10px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #25D366;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .wa-btn img {
-      width: 35px;
-      height: 35px;
-    }
-  </style>
+
 </head>
-<body>
-
-<canvas id="gameCanvas"></canvas>
-
-<!-- Profile -->
-<div class="profile" data-aos="zoom-in">
-  <img src="https://files.catbox.moe/eikr61.jpg" alt="Firguna profile">
-  <h2 class="neon-text">Firguna</h2>
-</div>
-
-<!-- Content -->
-<div class="content">
-  <section id="about" class="section" data-aos="fade-up">
-    <p>Welcome to Firguna's portofolio, please continue your destination by interacting with the available buttons</p>
-  </section>
-
-  <section id="links" class="section" data-aos="fade-up">
-    <div class="navbar">
-      <!-- Payment Accordion -->
-      <div class="navbar-item" onclick="toggleAccordion('payment')">
-        Payment <span>▼</span>
-      </div>
-      <div id="payment" class="accordion-content">
-        <div class="method" onclick="toggleNumber('Dana')">Dana
-          <div id="Dana" class="method-number">0882008612013 A.N Muhammad Nadif Setiawan 
-            <button class="copy-btn" onclick="copyText(event, '0882008612013')">Salin</button>
-          </div>
-        </div>
-        <div class="method" onclick="toggleNumber('Gopay')">Gopay
-          <div id="Gopay" class="method-number">0882008612013 A.N Nadif Setiawan 
-            <button class="copy-btn" onclick="copyText(event, '0882008612013')">Salin</button>
-          </div>
-        </div>
-        <div class="method" onclick="toggleNumber('Ovo')">Ovo
-          <div id="Ovo" class="method-number">0882008612013 A.N Firguna 
-            <button class="copy-btn" onclick="copyText(event, '0882008612013')">Salin</button>
-          </div>
-        </div>
-        <div class="method" onclick="toggleNumber('Qris')">Qris
-          <div id="Qris" class="method-number">Maintenance !</div>
-        </div>
-      </div>
-
-   <!-- Table for other links -->
-    <table style="width:100%; margin-top:15px; border-collapse:collapse; color:white; text-align:left;">
-      <tr>
-        <td style="padding:10px; background:rgba(255, 0, 255, 0.2); border-radius:5px;">
-          <a href="https://sociabuzz.com/firgun/tribe" target="_blank" style="color:white; text-decoration:none;">Suport Seller !</a>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding:10px; background:rgba(255, 0, 255, 0.2); border-radius:5px; margin-top:5px;">
-          <a href="pricelist.html" target="_blank" style="color:white; text-decoration:none;">Pricelist</a>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding:10px; background:rgba(255, 0, 255, 0.2); border-radius:5px; margin-top:5px;">
-          <a href="https://chat.whatsapp.com/JTwXN6jT0CaJALfGJmamGR?mode=ac_t" target="_blank" style="color:white; text-decoration:none;">Informasi</a>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding:10px; background:rgba(255, 0, 255, 0.2); border-radius:5px; margin-top:5px;">
-          <a href="https://firguna.my.id" target="_blank" style="color:white; text-decoration:none;">Saluran Utama</a>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding:10px; background:rgba(255, 0, 255, 0.2); border-radius:5px; margin-top:5px;">
-          <a href="https://whatsapp.com/firguna/0029Vb4G0rVDJ6H3Ne5DSE05" target="_blank" style="color:white; text-decoration:none;">Testimoni</a>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding:10px; background:rgba(255, 0, 255, 0.2); border-radius:5px; margin-top:5px;">
-          <a href="https://lynk.id/firguna" target="_blank" style="color:white; text-decoration:none;">Short Link 2</a>
-        </td>
-      </tr>
-    </table>
-  </div>
-</section>
-
-<section id="skills" class="section" data-aos="fade-up">
-    <h2 class="neon-text">Skills</h2>
-    <div class="navbar">
-      <div class="navbar-item">management <span>80%</span></div>
-      <div class="navbar-item">interactions <span>95%</span></div>
-      <div class="navbar-item">friendlines <span>100%</span></div>
-      <div class="navbar-item">Trust <span>99%</span></div>
-      <div class="navbar-item">HTML Coding <span>70%</span></div>
-      <div class="navbar-item">NodeJS <span>75%</span></div>
-      <div class="navbar-item">collaboration <span>90%</span></div>
+<body id="top">
+    <!-- Enhanced Background Elements -->
+    <div class="cyber-bg">
+        <div class="cyber-gradient"></div>
+        <div class="matrix-rain" id="matrixRain"></div>
     </div>
-</section>
+    
+    <div class="particles" id="particlesContainer"></div>
+    
+    <div class="data-streams" id="dataStreams"></div>
+    
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    
+    <div class="grid-overlay">
+        <div class="grid-lines"></div>
+        <div class="grid-glow"></div>
+    </div>
+    
+    <div class="scanlines"></div>
+    <div class="noise-overlay"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#top" class="logo">Firguna</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricelist.html">Pricing</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://tako.id/dippch">Support</a></li>
+            </ul>
+            <div class="nav-bottom">
+                <a href="#" class="cyber-button">Access Terminal</a>
+            </div>
+            <button class="mobile-menu-button" id="mobileMenuBtn">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </nav>
 
-<footer>
-  <p>© All Right Firguna Team 2025</p>
-</footer>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="#top" class="mobile-menu-logo">Firguna</a>
+            <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+        </div>
+        <div class="mobile-menu-cta">
+            <a href="https://firgunaxgilzz.kusstore.xyz/" class="cyber-button">Access Terminal</a>
+        </div>
+        <nav class="mobile-menu-nav">
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 
-<!-- WhatsApp Button -->
-<a href="https://wa.me/62882008612013" class="wa-btn" target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1 class="hero-title">
+                <span class="hero-nexus">FIRGUNA</span><span class="hero-flow">ID</span>
+            </h1>
+            <p class="hero-subtitle">Trusted Indonesian Online Store by many people.</p>
+            </div>
+        </div>
+    </section>
 
-<!-- Music -->
-<audio src="https://pomf2.lain.la/f/v5ukkzz.m4a" autoplay controls></audio>
+    <!-- Stats Section -->
+    <section class="stats fade-up" id="stats">
+        <div class="stats-container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">70+</span>
+                    <span class="stat-label">Testimonial</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-label">Uptime</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Tasks Processed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Countries</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- AOS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
+    <!-- Features Section -->
+    <section class="features fade-up" id="features">
+        <div class="features-container">
+            <div class="section-header">
+                <h2 class="section-title">What Is Firguna?</h2>
+                <p class="section-subtitle">An Indonesia-based marketplace that collaborates with dozens of parties to reduce the potential for fraud!</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Guaranteed quality</h3>
+                    <p>Experience lightning-fast transactions with our Customer Service Team who handles customers in a friendly and responsive manner.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔮</div>
+                    <h3>Pterodactyl Without delay</h3>
+                    <p>Well maintained panel without any issues whatsoever!</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Open to the Public</h3>
+                    <p>All our teams are waiting for you to join the Firguna Team!</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Quantum Encryption</h3>
+                    <p>Military-grade security protocols with quantum encryption that makes your data literally impossible to breach.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Hyperdrive Sync</h3>
+                    <p>Instantaneous synchronization across all devices and platforms with zero latency, no matter the distance.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Mind Reading Analytics</h3>
+                    <p>Predictive analytics so advanced, it anticipates your team's needs before they even know what they need.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Script Accordion + Copy -->
-<script>
-function toggleAccordion(id) {
-  const acc = document.getElementById(id);
-  acc.style.display = acc.style.display === "flex" ? "none" : "flex";
-}
+    <!-- Pricing Section -->
+    <section class="pricing fade-up" id="pricing">
+        <div class="pricing-container">
+            <div class="section-header">
+                <h2 class="section-title">Access Levels</h2>
+                <p class="section-subtitle">Choose your gateway to the future of collaboration</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Initiate</div>
+                    <div class="plan-price">20K</div>
+                    <div class="plan-period">per-admin</div>
+                    <ul class="plan-features">
+                        <li>shop name goes up, more well known to the public</li>
+                        <li>Become an admin in 1 of the busiest Whattapps groups</li>
+                        <li>given 1 endorsement team to help promote the store</li>
+                    </ul>
+                    <a href="https://wa.me?62882008612013" class="btn-secondary">Join Now</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="plan-name">Nexus</div>
+                    <div class="plan-price">150K</div>
+                    <div class="plan-period">per-admin</div>
+                    <ul class="plan-features">
+                        <li>shop name goes up, more well known to the public</li>
+                        <li>Become an admin in 1 of the busiest Whattapps groups</li>
+                        <li>given 15 endorsement team to help promote the store</li>
+                        <li>Priority neural support</li>
+                        <li>get whattapps bot script</li>
+                        <li>likely to get an advertising campaign on TikTok Ads</li>
+                        <li>Get FREE admin panel access</li>
+                    </ul>
+                    <a href="https://wa.me?62882008612013" class="btn-primary">Join Now</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="plan-name">Transcend</div>
+                    <div class="plan-price">50K</div>
+                    <div class="plan-period">per-ADMIN</div>
+                    <ul class="plan-features">
+                        <li>shop name goes up, more well known to the public</li>
+                        <li>Become an admin in 1 of the busiest Whattapps groups</li>
+                        <li>given 10 endorsement team to help promote the store</li>
+                        <li>Priority neural support</li>
+                        <li>get whattapps bot script</li>
+                        <li>likely to get an advertising campaign on TikTok Ads</li>
+                    </ul>
+                    <a href="https://wa.me?62882008612013" class="btn-secondary">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-function toggleNumber(id) {
-  event.stopPropagation();
-  const el = document.getElementById(id);
-  el.style.display = el.style.display === "block" ? "none" : "block";
-}
+    <!-- Contact Section -->
+    <section class="contact fade-up" id="contact">
+        <div class="contact-container">
+            <div class="section-header">
+                <h2 class="section-title">Initialize Contact</h2>
+                <p class="section-subtitle">Send a transmission through the neural network</p>
+            </div>
+            
+            <div class="contact-form-wrapper">
+                <div class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Your Gmail</label>
+                        <input type="email" id="email" name="email" placeholder="your.gmail@gmail.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your reasons</label>
+                        <textarea id="message" name="message" rows="5" placeholder="The reason you contacted our team" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary btn-submit">Transmit Message</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-function copyText(e, text) {
-  e.stopPropagation();
-  navigator.clipboard.writeText(text).then(() => {
-    alert("Nomor disalin! Jangan Lupa Bukti Transaksinya Dikirim!");
-  });
-}
-</script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <span class="footer-separator">•</span>
+                <a href="#">Terms of Service</a>
+                <span class="footer-separator">•</span>
+                <a href="#">Documentation</a>
+                <span class="footer-separator">•</span>
+                <a href="#">Contact Support</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Firguna. All realities reserved.</p>
+                <p class="footer-credit">Brought to you by <a href="Indonesian Children" target="_blank" rel="noopener nofollow">Indonesian Children</a></p>
+            </div>
+        </div>
+    </footer>
 
-<!-- Snake Canvas -->
-<script>
-const canvas = document.getElementById("gameCanvas");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-let snake = {body: [{ x: canvas.width / 2, y: canvas.height / 2 }], speed: 4, maxLength: 20, size: 6};
-let food = null;
-function update() {
-  if (food) {
-    let head = snake.body[0];
-    let dx = food.x - head.x, dy = food.y - head.y;
-    let distance = Math.sqrt(dx * dx + dy * dy);
-    if (distance < 5) food = null;
-    let angle = Math.atan2(dy, dx);
-    let direction = {x: Math.cos(angle) * snake.speed, y: Math.sin(angle) * snake.speed};
-    let newHead = {x: head.x + direction.x, y: head.y + direction.y};
-    snake.body.unshift(newHead);
-    if (snake.body.length > snake.maxLength) snake.body.pop();
-  }
-}
-function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.shadowBlur = 10; ctx.shadowColor = "#ff00ff"; ctx.fillStyle = "#ff00ff";
-  for (let i = 0; i < snake.body.length; i++) {
-    ctx.beginPath(); ctx.arc(snake.body[i].x, snake.body[i].y, snake.size, 0, Math.PI * 2); ctx.fill();
-  }
-  if (food) {
-    ctx.shadowBlur = 10; ctx.shadowColor = "#aa00aa";
-    ctx.beginPath(); ctx.arc(food.x, food.y, 7, 0, Math.PI * 2);
-    ctx.fillStyle = "#aa00aa"; ctx.fill();
-  }
-}
-function animate() {update(); draw(); requestAnimationFrame(animate);}
-window.addEventListener("touchstart", (e) => {if (!food) {let touch = e.touches[0]; food = {x: touch.clientX, y: touch.clientY};}});
-animate();
-</script>
+    <script src="firrdate.js"></script>
 </body>
 </html>
